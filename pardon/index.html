@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARDON ME???</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+<body>
+
+    <div class="container is-fluid py-4 has-text-centered">
+        <button class="button is-large" id="howdy">Howdy</button>
+        <div id="quote-holder" class="content is-size-4	py-4"></div>
+    </div>
+    
+    <script>
+        function startsWithVowel(word){
+            var vowels = ("aeiouAEIOU"); 
+            return vowels.indexOf(word[0]) !== -1;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const well = ["cum on", "eat", "fuck", "spank", "twiddle", "slap", "punch", "fondle", "twist", "suck", "smash", "jiggle", "rub", "lube up", "juice", "play with", "kill", "toot", "lick", "squeeze", "pluck", "drain", "walk on", "steal", "yank", "lock up"];
+            const my = ["nipple", "butt", "titties", "pussy", "dick", "asshole", "urethra", "nutsack", "throat", "testes", "vulva", "vagina", "undies", "dick cheese", "rectum", "pisser", "mouth", "pimples", "clit", "ass hair", "rolls", "toe jam", "fart hole", "semen", "bladder", "pooper"];
+            const and = ["tickle", "make me", "call me", "grab me", "fart on", "give me", "tongue punch", "fry me up", "spit on", "poop on", "pinch", "sit on"];
+            const a = ["pickle", "biscuit", "grandaddy", "lollipop", "love handle", "taint", "condom", "fiddle", "blister", "hooker", "hemorrhoid", "dingleberry", "liberal", "monkey", "butt plug", "dildo", "dick tip", "bitch", "shit stain", "booger", "pubic hair", "tea bag", "wet one", "gigolo", "waffle", "anal bead"];
+
+            document.getElementById("howdy").addEventListener("click", function(e){
+                e.preventDefault()
+                const p1 = well[Math.floor(Math.random() * well.length)]
+                const p2 = my[Math.floor(Math.random() * my.length)]
+                const p3 = and[Math.floor(Math.random() * and.length)]
+                const p4 = a[Math.floor(Math.random() * a.length)]
+
+                var result = `Well, ${p1} my ${p2} and ${p3} `;
+                if (startsWithVowel(p4)){
+                    result += `an `;
+                } else {
+                    result += `a `;
+                }
+                result += `${p4}!!!`;
+
+                document.getElementById("quote-holder").innerHTML = result
+                
+            });
+
+        });
+    </script>
+</body>
+</html>
