@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPC Generator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Balsamiq Sans', cursive;
+        }
+
+        #npc-sheet {
+            width:420px;
+            margin:0 auto;
+            display:none;
+        }
+
+        #npc-sheet.active {
+            display:table;
+        }
+
+        .controls {
+            width:420px;
+            margin:0 auto;
+            text-align:center;
+            padding:15px 0;
+        }
+
+        table td {
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+
+        <select id="race">
+            <option value="human">Human</option>
+            <option value="orc">Orc</option>
+        </select>
+        
+        <button id="generate">This is a button</button>
+
+    </div>
+
+    <table border="1" id="npc-sheet">
+
+        <tr>
+
+            <td width="25%">Name</td>
+            <td id="npc-name"></td>
+
+        </tr>
+
+        <tr>
+
+            <td>Race</td>
+            <td id="npc-race-name" style="text-transform: capitalize;"></td>
+
+        </tr>
+
+        <tr>
+
+            <td>Age</td>
+            <td id="npc-age"></td>
+
+        </tr>
+
+        <tr>
+
+            <td>Current loot</td>
+            <td id="npc-loot"></td>
+
+        </tr>
+
+        <tr>
+
+            <td>Quirk</td>
+            <td id="npc-quirk"></td>
+
+        </tr>
+
+        <tr>
+            <td>Physical trait</td>
+            <td id="npc-trait"></td>
+        </tr>
+        
+
+    </table>
+
+    
+    
+    
+    <script>
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max)+1);
+        }
+
+        function randomItem(items){ 
+            return items[Math.floor(Math.random() * items.length)];
+        }
+
+        var human_names = [
+            "Frank",
+            "Susan",
+            "Gertrude",
+            "Dingleberry"
+        ];
+
+        var human_titles = [
+            "the Great",
+            "the Honorable",
+            "the Noble",
+            "the Just"
+        ];
+
+        var orc_names = [
+            "Gnasha",
+            "Kruncha",
+            "Bloodfist",
+            "Chungus"
+        ]
+
+        var orc_titles = [
+            "the Bloody",
+            "the Gnashy",
+            "the Crunchy",
+            "the Chonky"
+        ]
+
+        var names = {
+            "human" : human_names,
+            "orc" : orc_names
+        };
+
+        var titles = {
+            "human": human_titles,
+            "orc" : orc_titles
+        }
+
+        var pickpocket_common = [
+            "Pocket lint",
+            "Stick of Dried meat",
+            "1 copper coin",
+            "Scrap of useless paper"
+        ];
+
+        var pickpocket_uncommon = [
+            getRandomInt(5)+1 + " copper coins",
+            "A Ration of food",
+            "1 gold piece",
+            "Small mirror"
+        ];
+
+        var pickpocket_rare = [
+            "5 gold pieces",
+            "A small gem",
+            "A silver ring",
+            "A flask of Whiskey"
+        ];
+
+        var quirks = [
+        "Always asks for a bite of whatever someone is eating.",
+        "Always buying new clothes",
+        "Always carries fresh cut flowers",
+        "Always eating or drinking",
+        "Always out of breath.",
+        "Always practicing a fire starting cantrip.",
+        "Always scratching a rash.",
+        "Asks often about own appearance.",
+        "Asks rhetorical questions.",
+        "Belches often.",
+        "Bites fingernails",
+        "Boring",
+        "Calls PCs by wrong names consistently.",
+        "Carries cloth covered basket (What is in there?)",
+        "Carries small lizard.",
+        "Carves simple animal figurines for children.",
+        "changes hair color weekly",
+        "Cleans nails with knife as he speaks.",
+        "Clothes made of woven leaves, yet lives in town.",
+        "Complainer",
+        "Complains of heartburn.",
+        "Complements sincerely.",
+        "Conceited, obnoxiously so.",
+        "depressed",
+        "dislikes music",
+        "disorganized",
+        "Doesn’t let things go.",
+        "Dude hooks thumbs in his belt when he stands.",
+        "fair-skinned",
+        "Falsely claims he was an adventurer too.",
+        "Feeds crumbs to birds.",
+        "Fidgets",
+        "foul-mouthed",
+        "Giggles endearingly.",
+        "Goes barefoot whenever possible",
+        "Goes strictly by-the-book",
+        "graceful",
+        "greedy",
+        "Hands coppers to beggar kids.",
+        "Hard of hearing to hilarious results.",
+        "Has long pauses before talking.",
+        "hates children",
+        "haunted",
+        "Highly superstitious.",
+        "Hopelessly optimistic.",
+        "Instructs PCs in latest fashion, yet looks a little silly.",
+        "Invades personal space on every meeting.",
+        "Is a chain smoker",
+        "Is always chewing on a stick.",
+        "Jingles gold pieces in pocket.",
+        "Keeps a goat on a leash.",
+        "Keeps hand on PCs shoulder when speaking to them.",
+        "Kind",
+        "likes children",
+        "likes smoking",
+        "likes to read books",
+        "Likes to take things apart to see how they work",
+        "lonely",
+        "Machiavellian",
+        "Makes plans.",
+        "Makes puns.",
+        "Military mannerisms, clear in how he carries himself.",
+        "Mixes languages during every conversation.",
+        "Mutters to himself and twitches.",
+        "NPC gives himself a different name every meeting.",
+        "NPC rubs the back of his neck as he speaks.",
+        "Ogles opposite sex openly.",
+        "Openly racist.",
+        "Picks ears",
+        "Picks lint off PCs clothes.",
+        "Polishes odd eyepieces, but never puts them on.",
+        "Pouts.",
+        "profusely sweats even when at rest",
+        "Refers to good ‘ole days in every conversation.",
+        "Repeats things back to you.",
+        "Rings sewn all over his/her clothes.",
+        "Rubs chin as in deep thought.",
+        "Rubs hands together",
+        "Rubs hands together when he speaks.",
+        "Rubs large belly as he (she?) talks.",
+        "Rubs palms on thighs.",
+        "Says “hmmm hmmm” often. (Habit or is he that agreeable?)",
+        "Sharpens knife incessantly.",
+        "She blows stray hair out of eyes.",
+        "She carries satchel filed with junk.",
+        "She nods often.",
+        "She snorts when laughing (It’s endearing.)",
+        "She stares off when speaking.",
+        "Smacks palm with fist.",
+        "Sniffs the air.",
+        "Spit polished bracelet that clearly holds personal meaning.",
+        "Spits when talking",
+        "Sucks on teeth",
+        "superstitious",
+        "Sways nervously.",
+        "Talks often about seeing the world some day.",
+        "Tugs on ear.",
+        "Wine colored birthmark highly visible on body.",
+        ];
+
+        var traits = [
+        "Acne",
+"Armor is covered in strange runes.",
+"Balding",
+"Blind, but looks through familiar’s eyes.",
+"bony physique",
+"deep-voiced",
+"Facial piercings.",
+"Freckled.",
+"Gap between teeth.",
+"Gaps between teeth",
+"gap-toothed",
+"Hair dye on collar",
+"Has a heart shape cut into skin.",
+"Has a wizard hat covered in fish hooks.",
+"Has an engorged leech on hand.",
+"Has black eye.",
+"Has immaculately spotless boots.",
+"Has name monogrammed on the back of his tunic.",
+"high-voiced",
+"Ink stained fingers.",
+"Leaves in hair always.",
+"light blue-eyes",
+"light brown eyes",
+"long",
+"Long manicured nails.",
+"Mismatched eyes",
+"Missing 7th finger.",
+"Missing limb, joints, fingers, teeth",
+"Monocle",
+"Nose bleeds.",
+"NPC has no fingernails (You learn he survived torture.)",
+"Obvious cosmetics.",
+"Obvious wig.",
+"Oily skin.",
+"Out of touch clothing (Perhaps even unusual for the environment.)",
+"Overweight",
+"Rash",
+"Rope burns around wrists.",
+"rosy-cheeked",
+"rough-skinned",
+"sanguine",
+"Scar",
+"scrawny physique",
+"Shaving cuts on face (Interesting if this was a Dwarf who had shaved.)",
+"She has an animal claw scar that is highly visible.",
+"Single beard braid.",
+"Smells like alcohol.",
+"Smells like horses.",
+"squat",
+"strong physique",
+"Sunburned.",
+"Sweats.",
+"Tattoo",
+"taupe-haired",
+"Underweight",
+"Unusual jewelry.",
+"veiled",
+"Wandering eye",
+"always gets a sunburn",
+"always stands with his or her hands behind their back, sometimes in an “at ease” position, though he/she was never in the military",
+"can only hear out of one ear",
+"can only see out of one eye",
+"can’t stay clean; always dirty",
+"cracks his/her neck all the time",
+"drags his or her feet",
+"drools when hungry/excited",
+"foams at the mouth when excited/angry",
+"has a limp",
+"has a noticeable birthmark",
+"has a noticeable burn scar",
+"has a noticeable scar from a weapon",
+"has a noticeable tattoo",
+"has a piercing",
+"has a very, very bushy mustache",
+"has extremely hairy arms",
+"has several hidden body piercings or tattoos that regular clothing conceal",
+"has several parts of his or her body that are double jointed and bend or flex in an unnatural or uncanny manner",
+"has vividly blue hair",
+"he has no beard",
+"he/she has allergies (to give more depth, give strong allergic reactions to the common nasty ones like nuts, bee stings, strawberries, pollen, cow’s milk, cats, horses, etc.)",
+"his/her feet are incredibly bad-smelling",
+"incessantly cracks knuckles",
+"is bald",
+"is exclusively left-handed",
+"is gassy",
+"looks just like another character, or a famous figure of the day",
+"profusely sweats even when at rest",
+"puts hand on someone else’s hand/arm/shoulder/leg as much as possible when talking",
+"sneezes extra loud",
+"squints a lot",
+"thrives in cold weather, hates warm weather",
+"thrives in hot weather, hates cold weather",
+"urinates frequently",
+"walks as if he/she is afraid of being followed",
+"walks as if he/she is in constant danger of being attacked",
+"writes with left hand, but does everything else right-handed",
+        ]
+
+        function rollLoot(){
+            // rolls random loot for the npc
+            var pickpocket_loot = [
+                randomItem(pickpocket_common)
+            ];
+
+            var pickpocket_roll = getRandomInt(10);
+
+            if(pickpocket_roll >= 5){
+                pickpocket_loot.push(randomItem(pickpocket_uncommon));
+            }
+
+            if(pickpocket_roll >= 9){
+                pickpocket_loot.push(randomItem(pickpocket_rare));
+            }
+
+            return pickpocket_loot;
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function(){           
+
+            var button = document.getElementById("generate");
+            var npc_name = document.getElementById("npc-name");
+            var npc_age = document.getElementById("npc-age");
+            var npc_loot = document.getElementById("npc-loot");
+            var npc_race_name = document.getElementById("npc-race-name");
+            var npc_quirk = document.getElementById("npc-quirk");
+            var npc_trait = document.getElementById("npc-trait");
+            var npc_sheet = document.getElementById("npc-sheet");
+
+            button.addEventListener("click", function(){
+                
+                var npc_race = document.getElementById("race").value;
+                npc_name.innerHTML = randomItem(names[npc_race]) + " " + randomItem(titles[npc_race]);
+                npc_age.innerHTML = getRandomInt(69);
+                npc_race_name.innerHTML = npc_race;
+                var loot = rollLoot();
+                npc_loot.innerHTML = loot.join(", ");
+                npc_quirk.innerHTML = randomItem(quirks);
+                npc_trait.innerHTML = randomItem(traits);
+                npc_sheet.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+    
+</body>
+</html>
