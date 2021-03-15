@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding:0;
+    margin:0;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    overflow-x:hidden;
+    background:black;
+
+}
+
+.row {
+    width:100%;
+    display:flex;
+}
+
+#game {
+    max-width:800px;
+    width:100%;
+    margin:33px auto;
+    background:red;
+    padding:15px;
+}
+
+#score-and-timer {
+    justify-content:space-between;
+    padding:15px;
+}
+
+#playfield {
+    background-image:url("images/whos_that_pokemon.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    padding-top: 75%;
+    position:relative;
+}
+
+#game-over {
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    padding:15px;
+    background:#000;
+    color:#fff;
+    text-align:center;
+    display:none;
+}
+
+#pokemon {
+    position:absolute;
+    top:50%;
+    left:0;
+    width:50%;
+    transform:translateY(-50%);
+}
+
+#pokemon-image {
+    max-width:100%;
+    filter:contrast(0%) brightness(0%);
+    transition:all 0.5s;
+}
+
+#pokemon-name {
+    text-align:center;
+    display:none;
+    text-transform: capitalize;
+}
+
+
+#controls {
+    justify-content: center;
+    padding:15px;
+}
+
+#after-start {
+    display:none;
+}
+
+
+.active {
+    display:block !important;
+}
