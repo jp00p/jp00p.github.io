@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<!--
+
+ ██▓     ██████ ▓█████ ▓█████     █    ██
+▓██▒   ▒██    ▒ ▓█   ▀ ▓█   ▀     ██  ▓██▒
+▒██▒   ░ ▓██▄   ▒███   ▒███      ▓██  ▒██░
+░██░     ▒   ██▒▒▓█  ▄ ▒▓█  ▄    ▓▓█  ░██░
+░██░   ▒██████▒▒░▒████▒░▒████▒   ▒▒█████▓
+░▓     ▒ ▒▓▒ ▒ ░░░ ▒░ ░░░ ▒░ ░   ░▒▓▒ ▒ ▒
+ ▒ ░   ░ ░▒  ░ ░ ░ ░  ░ ░ ░  ░   ░░▒░ ░ ░
+ ▒ ░   ░  ░  ░     ░      ░       ░░░ ░ ░
+ ░           ░     ░  ░   ░  ░      ░
+
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VOYAGER BINGO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+      html,body {
+        width:100%;
+        height:100%;
+        text-align:center;
+        background:#111;
+        padding:0;
+        margin:0;
+        font-family:'Oswald', sans-serif;
+      }
+      table {
+        font-size:26px;
+        letter-spacing:0.6px;
+        box-sizing:border-box;
+        width:70%;
+        height:90%;
+        margin:25px auto;
+        border:1px #333 solid;
+        background:#fff;
+      }
+      td {
+        font-weight:900;
+        border-collapse:collapse;
+        width:20%;
+        height:20%;
+        text-align:center;
+        border:1px #333 solid;
+        vertical-align:middle;
+        background-size:cover;
+        background-repeat:no-repeat;
+        cursor:pointer;
+        background-position:center;
+        color:#333;
+        transition:all 0.2s ease-in;
+        position:relative;
+      }
+
+      td.active {
+        color:#fff;
+        text-shadow:0px 0px 8px #000;
+      }
+
+      @media screen and (max-width : 1000px){
+        table {
+            width:100%;
+            height:100%;
+        }
+      }
+
+      @media screen and (max-width : 320px){
+        html,body { overflow:hidden; }
+        table {
+            width:320px;
+            font-size:0.8em;
+            margin:0;
+            height:50%;
+            border:none;
+            table-layout:fixed;
+        }
+        td {
+            border:1px #333 solid;
+            word-wrap: break-word;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <table>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td id="free">Free</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+
+<script>
+
+    var api_key = "FR57D8JH3LYH";
+    var search_terms = ["Star Trek Voyager", "Trek Janeway", "Voyager Doctor", "Neelix", "Harry Kim Voyager", "Seven of Nine", "Tom Paris Voyager", "Chakotay", "Trek Voyager Funny"];
+
+    var stuff = [
+    'Shields are down to 15%',
+    'Unauthorized transport in progress',
+    'The doctor is broken',
+    'Holodeck malfunction',
+    'Abandon ship!',
+    'Interference prevents use of transporter',
+    'Kim gets his heart broken',
+    'Kim gets yelled at',
+    'Another shuttlecraft destroyed',
+    'Spatial anomoly',
+    'Aliens steal Voyager\'s technology',
+    'Surefire way to get home snatched away at last minute',
+    'Maquis tactic saves the day',
+    'Red alert!',
+    'Rare material required to repair Voyager',
+    'Bioneural gel packs malfunction',
+    '"We\'re venting plasma!"',
+    'B\'elanna rejects her Klingon/Human side',
+    'Voyager steals aliens\' technology',
+    'Kes/Seven does something Alien',
+    'Energy life forms invade the ship/take over the crew',
+    'Neelix brags about his skills/past',
+    'Neelix cooks something',
+    'Tuvok finds something illogical',
+    'Try to eject the warp core',
+    'Seemingly friendly alien with ominous motives',
+    'Energy source turns out to be sentient creature',
+    'Someone gets kidnapped',
+    'Miraculous medical procedure',
+    'Panflutes',
+    'Tom Paris witticism about alien on viewscreen',
+    'Debate breaking Starfleet regulations',
+    'Temporal anomoly!',
+    'The Doctor sings',
+    'Distress call received',
+    'The Doctor boasts',
+    'The Doctor imitates Dr. McCoy from TOS',
+    'Chakotay mentions his people',
+    'A main character dies',
+    'WARP PARTICLES!',
+    'The Borg show up!',
+    'The Kaazon show up!',
+    'The Vidiians show up!',
+    'Self destruct activated',
+    'Janeway orders/drinks coffee',
+    'Janeway takes no shit',
+    'Tuvok is secretly funny',
+    'Tom Paris points out the obvious',
+    'Tom Paris has a dumb look on his face',
+    'Janeway takes the ship off course to investigate some interstellar phenomenon',
+    'B\'Elanna threatens a colleague with physical violence',
+    'The crew laments Neelix\' awful cooking'
+    ];
+    var used_array = [];
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var cells = document.querySelectorAll('td:not(#free)');
+        cells.forEach(function(cell){
+            pick = Math.floor(Math.random()*stuff.length);
+            cell.innerHTML = stuff[pick];
+            stuff.splice(pick, 1);
+        })
+
+        var allcells = document.querySelectorAll('td')
+        allcells.forEach(function(cell){
+            cell.addEventListener('click', function(){
+
+                var toggle = this.style;
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                
+                cell.className = cell.className ? "" : "active";
+                
+                if(cell.className == "active"){
+                    fetch(search_url)
+                    .then(data => data.json())
+                    .then(data => {
+                        toggle.backgroundImage = "url("+data.results[0].media[0].tinygif.url+")";
+                    })
+                } else {
+                    toggle.backgroundImage = "";
+                }
+            });
+        })
+    });
+
+
+
+  </script>
+  </body>
+</html>
