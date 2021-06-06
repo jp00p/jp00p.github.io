@@ -29,7 +29,7 @@
         margin:0;
         font-family:'Oswald', sans-serif;
       }
-      p { color:#888; }
+      p, label { color:#888; }
       table {
         font-size:26px;
         letter-spacing:0.6px;
@@ -89,6 +89,8 @@
   </head>
   <body>
 
+    <form><label><input type="checkbox" id="toggle-safemode">Season 1-2 safemode</label></form>
+
     <table>
     <tr>
         <td>&nbsp;</td>
@@ -133,7 +135,7 @@
     var api_key = "FR57D8JH3LYH";
     var search_terms = ["Star Trek DS9", "Deep Space Nine Star Trek", "Sisko DS9", "Quark DS9", "Odo DS9", "Dax DS9", "Kira DS9", "Gul Dukat DS9", "Garak DS9", "Obrien DS9"];
 
-    var stuff = [
+    var season_1_thru_2 = [
     'Spatial anomaly',
     'Seemingly friendly alien with ominous motives',
     'Someone gets kidnapped',
@@ -189,7 +191,6 @@
     "Bashir hits on someone",
     "Bashir saves a life",
     "Bashir and Garak hanging out",
-    "Unadjective X-Men show up",
     "Rom knows more than he lets on",
     "O'Brien complains",
     "O'Brien hanging out with Bashir",
@@ -211,14 +212,11 @@
     "Prophets speak to someone",
     "Prophet's orb get used",
     "Klingons show up (not Worf)",
-    "Cardassians show up",
-    "Jem'hadar show up",
+    "Cardassians show up",    
     "Bajorans show up (not Kira)",
-    "Founders show up (not Odo)",
     "Breen show up",
     "Romulans show up",
     "One of them Sisko boys goes on a date",
-    "Ketracel white is taken",
     "A rule of acquisition is named",
     "Morn is at the bar",
     "First contact with a race from Gamma Quadrant",
@@ -235,7 +233,6 @@
     "Vic Fontaine shows up",
     "Leeta's cleavage",
     "Knuck",
-    "Worf gets mad or Worf's not there",
     "We're on Bajor",
     "We're in the Gamma quadrant",
     "We're in the mirror universe",
@@ -264,26 +261,57 @@
     "A PADD is handed to someone",
     "A system is offline",
     "There's a containment field",
-    "Belt buckle is seen",
     "Someone removes an article of clothing/uniform",
     "Scene focused on people having a meal",
     "Station malfunction",
     "Someone is wearing a frontzip uniform",
-    "The Maquis are mentioned/show up",
-    "Jeffery Combs shows up",
-    "Weyoun dies/new Weyoun shows up",
-    "MacLaughlin group: ISSUE ONE!"
+    "The Maquis are mentioned/show up",    
+    "MacLaughlin group: ISSUE ONE!",
+    "All senior staff are called",
+    "\"Some kind of...\"",
+    "Sisko smiles",
+    "Jem'hadar show up",
+    "Founders show up (not Odo)",
+    "\"On screen.\""
 ];
 
+var season_3_and_up = [
+"Ketracel white is taken",
+"Jeffery Combs shows up",
+"Weyoun dies/new Weyoun shows up",
+"A belt buckle is seen",
+"Worf gets mad",
+"Worf is acting prudish",
+];
 
-    document.addEventListener("DOMContentLoaded", function(){
+var default_stuff = season_1_thru_2.concat(season_3_and_up);
 
-        var cells = document.querySelectorAll('td:not(#free)');
-        cells.forEach(function(cell){
-            pick = Math.floor(Math.random()*stuff.length);
-            cell.innerHTML = stuff[pick];
-            stuff.splice(pick, 1);
-        })
+function load_cells(stuff){
+  var chosen_list = stuff.slice() // clone it
+  console.log(chosen_list.length)
+  var cells = document.querySelectorAll('td:not(#free)');
+  cells.forEach(function(cell){
+      pick = Math.floor(Math.random()*chosen_list.length);
+      cell.innerHTML = chosen_list[pick];
+      chosen_list.splice(pick, 1);
+  })
+}
+
+    document.addEventListener("DOMContentLoaded", function(){     
+        
+        load_cells(default_stuff);
+
+        var toggle = document.getElementById("toggle-safemode")
+        toggle.addEventListener("change", function(e){
+          var stuff;
+          if(e.currentTarget.checked){
+            stuff = season_1_thru_2;
+          } else {
+            stuff = default_stuff;
+          }
+          
+          load_cells(stuff)
+        });
 
         var allcells = document.querySelectorAll('td')
         allcells.forEach(function(cell){
