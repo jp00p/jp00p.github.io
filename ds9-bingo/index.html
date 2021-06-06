@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<!--
+
+ ██▓     ██████ ▓█████ ▓█████     █    ██
+▓██▒   ▒██    ▒ ▓█   ▀ ▓█   ▀     ██  ▓██▒
+▒██▒   ░ ▓██▄   ▒███   ▒███      ▓██  ▒██░
+░██░     ▒   ██▒▒▓█  ▄ ▒▓█  ▄    ▓▓█  ░██░
+░██░   ▒██████▒▒░▒████▒░▒████▒   ▒▒█████▓
+░▓     ▒ ▒▓▒ ▒ ░░░ ▒░ ░░░ ▒░ ░   ░▒▓▒ ▒ ▒
+ ▒ ░   ░ ░▒  ░ ░ ░ ░  ░ ░ ░  ░   ░░▒░ ░ ░
+ ▒ ░   ░  ░  ░     ░      ░       ░░░ ░ ░
+ ░           ░     ░  ░   ░  ░      ░
+
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>DS9 BINGO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+      html,body {
+        width:100%;
+        height:100%;
+        text-align:center;
+        background:#111;
+        padding:0;
+        margin:0;
+        font-family:'Oswald', sans-serif;
+      }
+      p { color:#888; }
+      table {
+        font-size:26px;
+        letter-spacing:0.6px;
+        box-sizing:border-box;
+        width:70%;
+        height:90%;
+        margin:25px auto;
+        border:1px #333 solid;
+        background:#fff;
+      }
+      td {
+        font-weight:900;
+        border-collapse:collapse;
+        width:20%;
+        height:20%;
+        text-align:center;
+        border:1px #333 solid;
+        vertical-align:middle;
+        background-size:cover;
+        background-repeat:no-repeat;
+        cursor:pointer;
+        background-position:center;
+        color:#333;
+        transition:all 0.2s ease-in;
+        position:relative;
+      }
+
+      td.active {
+        color:#fff;
+        text-shadow:0px 0px 8px #000;
+      }
+
+      @media screen and (max-width : 1000px){
+        table {
+            width:100%;
+            height:100%;
+        }
+      }
+
+      @media screen and (max-width : 320px){
+        html,body { overflow:hidden; }
+        table {
+            width:320px;
+            font-size:0.8em;
+            margin:0;
+            height:50%;
+            border:none;
+            table-layout:fixed;
+        }
+        td {
+            border:1px #333 solid;
+            word-wrap: break-word;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <table>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td id="free">Free</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<p>Refresh to get a new board!</p>
+
+<script>
+
+    var api_key = "FR57D8JH3LYH";
+    var search_terms = ["Star Trek DS9", "Deep Space Nine Star Trek", "Sisko DS9", "Quark DS9", "Odo DS9", "Dax DS9", "Kira DS9", "Gul Dukat DS9", "Garak DS9", "Obrien DS9"];
+
+    var stuff = [
+    'Spatial anomaly',
+    'Seemingly friendly alien with ominous motives',
+    'Someone gets kidnapped',
+    'Temporal anomaly!',
+    'Distress call received',
+    '"Polarity"',
+    'Banger hits the ship/station',
+    'Episode gets sexy',
+    '"SensOARS"',
+    '"Diagnostics"',
+    '"Modulate"',
+    'Computer is unable to comply',
+    'Tractor beam!',
+    '"Plot a course..."',
+    '"Personal Log"',
+    'A system is down',
+    'Someone is stunned with a phaser',
+    'Someone is flung from their console',
+    'Someone\'s phrasing can easily be turned sexual',
+    'Yet another warrior race shows up',
+    'Actor from another Trek series shows up',
+    "Sisko holds baseball",
+    "Sisko scolds somebody",
+    "Sisko calls dax old man",
+    "Sisko hugs/kisses Jake",
+    "Sisko's wife is mentioned",
+    "Quark is up to something possibly illegal",
+    "Quark begs/pleads",
+    "Someone gets Oomox",
+    "Grand Nagus shows up",
+    "Rom says 'moogie'",
+    "Rom is secretly being smart",
+    "Kira reminds us of her past",
+    "Kira acts impulsively",
+    "Kira is religious",
+    "Odo pines for Kira",
+    "Odo catches Quark",
+    "Odo transforms",
+    "Jake and Nog hanging out",
+    "Jake/Nog get in trouble",
+    "Jake is writing something",
+    "Nog complains",
+    "Dax alludes to past lives",
+    "Bashir hits on someone",
+    "Bashir saves a life",
+    "Bashir and Garak hanging out",
+    "Unadjective X-Men show up",
+    "Rom is secretly smart",
+    "O'Brien complains",
+    "O'Brien hanging out with Bashir",
+    "O'Brien performs an engineering miracle",
+    "O'Brien must suffer",
+    "Keiko complains",
+    "Excuse for Keiko not being around",
+    "Raktajino is drunk",
+    "Kanar is drunk",
+    "Dabo is played",
+    "Darts are played",
+    "Runabout/Defiant is flown",
+    "Runabout is destroyed",
+    "Wormhole opens (Intro doesn't count)",
+    "Prophets speak to someone",
+    "Prophet's orb get used",
+    "Cardassians show up",
+    "Jem'hadar show up",
+    "Founders show up",
+    "Ketracel white shows up",
+    "A rule of acquisition is named",
+    "Morn is at the bar",
+    "First contact with race from Gamma Quadrant",
+    "A ship docks with ds9",
+    "Garak alludes to secrets",
+    "Gul Dukat is friendly but obviously up to something",
+    "Gul Dukat is loses his cool",
+    "Kai Winn does something secretly evil",
+    "Kai Winn talks down to someone",
+    "Vic Fontaine shows up",
+    "Leeta's cleavage",
+    "Worf gets mad",
+    "We're on bajor",
+    "We're in the gamma quadrant",
+    "We're in the mirror universe",
+    "We're in the past",
+    "We're on earth",
+    "We're in someone's quarters",
+    "Hail acknowledged",
+    "Transporter is used",
+    "Replicator is used",
+    "Turbolift scene",
+    "Holosuites are used",
+    "Stardate is mentioned",
+    "Earth is mentioned",
+    "Reference to another series",
+    "DS9 is attacked",
+    "Phaser is fired",
+    "Alien says \"human\" like its an insult",
+    "Orders are disobeyed",
+    "Comm badges don't work",
+    "Shields are down",
+    "A PADD is handed to someone",
+    "A system is offline",
+    "There's a containment field",
+    "Shields are down",
+    "Belt buckle is seen"
+];
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var cells = document.querySelectorAll('td:not(#free)');
+        cells.forEach(function(cell){
+            pick = Math.floor(Math.random()*stuff.length);
+            cell.innerHTML = stuff[pick];
+            stuff.splice(pick, 1);
+        })
+
+        var allcells = document.querySelectorAll('td')
+        allcells.forEach(function(cell){
+            cell.addEventListener('click', function(){
+
+                var toggle = this.style;
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                
+                cell.className = cell.className ? "" : "active";
+                
+                if(cell.className == "active"){
+                    fetch(search_url)
+                    .then(data => data.json())
+                    .then(data => {
+                        toggle.backgroundImage = "url("+data.results[0].media[0].tinygif.url+")";
+                    })
+                } else {
+                    toggle.backgroundImage = "";
+                }
+            });
+        })
+    });
+
+
+
+  </script>
+  </body>
+</html>
