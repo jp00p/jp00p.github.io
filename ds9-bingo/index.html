@@ -272,7 +272,8 @@
     "Sisko smiles",
     "Jem'hadar show up",
     "Founders show up (not Odo)",
-    "\"On screen.\""
+    "\"On screen.\"",
+    "Someone calls Odo \"constable\""
 ];
 
 var season_3_and_up = [
@@ -301,7 +302,7 @@ function load_cells(stuff){
         
         load_cells(default_stuff);
 
-        var toggle = document.getElementById("toggle-safemode")
+        var toggle = document.getElementById("toggle-safemode");
         toggle.addEventListener("change", function(e){
           var stuff;
           if(e.currentTarget.checked){
