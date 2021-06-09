@@ -184,6 +184,7 @@
         var saved_board = localStorage.savedBoard;
         var generated_board = [];
         var lock_button = document.getElementById("lock");
+        console.log(saved_board)
 
         if(saved_board != "null"){
             saved_board = JSON.parse(saved_board)
