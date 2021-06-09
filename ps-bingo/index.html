@@ -186,7 +186,7 @@
         var lock_button = document.getElementById("lock");
         console.log(saved_board)
 
-        if(saved_board != "undefined" && saved_board != "null"){
+        if(saved_board && saved_board != "undefined" && saved_board != "null"){
             saved_board = JSON.parse(saved_board)
             lock_button.className = "locked";
         }
@@ -196,7 +196,7 @@
 
 
         cells.forEach(function(cell){
-            if(saved_board != "undefined" && saved_board != "null"){
+            if(saved_board && saved_board != "undefined" && saved_board != "null"){
                 cell.innerHTML = saved_board[i];
                 i++;
             } else {
