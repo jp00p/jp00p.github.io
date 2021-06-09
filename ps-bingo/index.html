@@ -181,40 +181,46 @@
 
     document.addEventListener("DOMContentLoaded", function(){
 
-        var saved_board = getCookie("savedBoard");
-        console.log(document.cookie)
+        var saved_board = localStorage.savedBoard;
         var generated_board = [];
         var lock_button = document.getElementById("lock");
 
-        if(saved_board != null){
+        if(saved_board != "null"){
             saved_board = JSON.parse(saved_board)
-            console.log(saved_board)
             lock_button.className = "locked";
         }
+
+        var cells = document.querySelectorAll('td:not(#free)');
+        var i = 0;
+
+
+        cells.forEach(function(cell){
+            if(saved_board != "null"){
+                cell.innerHTML = saved_board[i];
+                i++;
+            } else {
+                pick = Math.floor(Math.random()*stuff.length);
+                cell.innerHTML = stuff[pick];
+                generated_board.push(stuff[pick])
+                stuff.splice(pick, 1);
+                
+            }
+        })
+
 
         lock_button.addEventListener("click", function(){
             if(lock_button.className == ""){
                 // lock the board
                 lock_button.className = "locked";
-                setCookie("savedBoard", JSON.stringify(generated_board), 7)
+                localStorage.setItem("savedBoard", JSON.stringify(generated_board));
             } else {
                 lock_button.className = "";
-                setCookie("savedBoard", null, 0)
+                localStorage.setItem("savedBoard", null)
             }
         });
 
-        var cells = document.querySelectorAll('td:not(#free)');
-        
-        cells.forEach(function(cell){
-            pick = Math.floor(Math.random()*stuff.length);
-            cell.innerHTML = stuff[pick];
-            stuff.splice(pick, 1);
-            generated_board.push(pick)
-            
-        })
-        console.log(generated_board);
-
         var allcells = document.querySelectorAll('td')
+
         allcells.forEach(function(cell){
             cell.addEventListener('click', function(){
 
@@ -235,28 +241,6 @@
             });
         })
     });
-
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-    function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
 
 
   </script>
