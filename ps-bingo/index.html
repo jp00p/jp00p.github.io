@@ -233,7 +233,7 @@
             cell.addEventListener('click', function(){
 
                 var toggle = this.style;
-                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=off";
                 
                 cell.className = cell.className ? "" : "active";
                 
