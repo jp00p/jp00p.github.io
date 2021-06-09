@@ -69,6 +69,10 @@
         }
       }
 
+      #lock #locked { display:none; }
+      #lock.locked #unlocked { display:none; }
+      #lock.locked #locked { display:inline-block; }
+
       @media screen and (max-width : 320px){
         html,body { overflow:hidden; }
         table {
@@ -88,7 +92,7 @@
     </style>
   </head>
   <body>
-
+    <button id="lock"><span id="unlocked">Lock it in</span><span id="locked">Click to unlock</span></button>
     <table>
     <tr>
         <td>&nbsp;</td>
@@ -144,7 +148,12 @@
         'Cozy',
         'Cute',
         'Color',
+        'Black',
+        'White',
+        'Pastel',
+        'Pink',
         'Covered',
+        'Masked',
         'Perspective',
         'Smushed',
         'Spread',
@@ -158,18 +167,52 @@
         'Texture',
         'Warm',
         'Light',
-        'Dream'
+        'Dream',
+        'Disguise',
+        'Top',
+        'Bottom',
+        'Side',
+        'Secret',
+        'Edge',
+        'Arch',
+        'Grounded'
     ];
 
 
     document.addEventListener("DOMContentLoaded", function(){
 
+        var saved_board = getCookie("savedBoard");
+        console.log(document.cookie)
+        var generated_board = [];
+        var lock_button = document.getElementById("lock");
+
+        if(saved_board != null){
+            saved_board = JSON.parse(saved_board)
+            console.log(saved_board)
+            lock_button.className = "locked";
+        }
+
+        lock_button.addEventListener("click", function(){
+            if(lock_button.className == ""){
+                // lock the board
+                lock_button.className = "locked";
+                setCookie("savedBoard", JSON.stringify(generated_board), 7)
+            } else {
+                lock_button.className = "";
+                setCookie("savedBoard", null, 0)
+            }
+        });
+
         var cells = document.querySelectorAll('td:not(#free)');
+        
         cells.forEach(function(cell){
             pick = Math.floor(Math.random()*stuff.length);
             cell.innerHTML = stuff[pick];
             stuff.splice(pick, 1);
+            generated_board.push(pick)
+            
         })
+        console.log(generated_board);
 
         var allcells = document.querySelectorAll('td')
         allcells.forEach(function(cell){
@@ -193,6 +236,27 @@
         })
     });
 
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 
 
   </script>
