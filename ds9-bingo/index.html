@@ -308,9 +308,7 @@ var worf_squares = [
 var default_stuff = season_1_thru_2.concat(season_3_and_up).concat(worf_squares);
 
 function load_cells(stuff){
-  console.log(stuff)
   var chosen_list = stuff.slice() // clone it
-  console.log(chosen_list.length)
   var cells = document.querySelectorAll('td:not(#free)');
   cells.forEach(function(cell){
       pick = Math.floor(Math.random()*chosen_list.length);
@@ -325,40 +323,54 @@ function load_cells(stuff){
 
         var toggle_form = document.getElementById("toggles");
         var worf = document.getElementById("toggle-worfmode")
-
         var season1 = document.getElementById("toggle-safemode")
+        var eventChange = new Event('change')
+
 
         if(localStorage.season1 != "false"){
           season1.checked = true
-          toggle_form.dispatchEvent(new Event('change'))
         }
 
         if(localStorage.worf != "false"){
           worf.checked = true
-          toggle_form.dispatchEvent(new Event('change'))
         }
 
         toggle_form.addEventListener("change", function(){
           var stuff = default_stuff;
+
+          console.log("updating localstorage with", season1.checked, worf.checked)
           
           if(season1.checked){
             stuff = season_1_thru_2
-            localStorage.setItem("season1", true);
+            localStorage.setItem("season1", "true");
           } else {
             stuff = default_stuff;
-            localStorage.setItem("season1", false);
+            localStorage.setItem("season1", "false");
           }
+          
           if(worf.checked){
-            // remove worf
+            // remove the worf array
             stuff = stuff.filter(function(x){
               return worf_squares.indexOf(x) < 0
-            })
-            localStorage.setItem("worf", true);
+            });
+            localStorage.setItem("worf", "true");
           } else {
-            localStorage.setItem("worf", false);
+            localStorage.setItem("worf", "false");
           }
+
           load_cells(stuff)
-        })
+
+
+        });
+
+        if(localStorage.season1 != "false"){
+          toggle_form.dispatchEvent(eventChange);
+        }
+
+        if(localStorage.worf != "false"){
+          toggle_form.dispatchEvent(eventChange);
+        }
+
 
         var allcells = document.querySelectorAll('td')
         allcells.forEach(function(cell){
@@ -379,7 +391,12 @@ function load_cells(stuff){
                     toggle.backgroundImage = "";
                 }
             });
-        })
+        });
+
+
+
+        
+
     });
 
 
