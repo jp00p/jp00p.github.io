@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<!--
+
+ ██▓     ██████ ▓█████ ▓█████     █    ██
+▓██▒   ▒██    ▒ ▓█   ▀ ▓█   ▀     ██  ▓██▒
+▒██▒   ░ ▓██▄   ▒███   ▒███      ▓██  ▒██░
+░██░     ▒   ██▒▒▓█  ▄ ▒▓█  ▄    ▓▓█  ░██░
+░██░   ▒██████▒▒░▒████▒░▒████▒   ▒▒█████▓
+░▓     ▒ ▒▓▒ ▒ ░░░ ▒░ ░░░ ▒░ ░   ░▒▓▒ ▒ ▒
+ ▒ ░   ░ ░▒  ░ ░ ░ ░  ░ ░ ░  ░   ░░▒░ ░ ░
+ ▒ ░   ░  ░  ░     ░      ░       ░░░ ░ ░
+ ░           ░     ░  ░   ░  ░      ░
+
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ENTERPRISE BINGO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+      html,body {
+        width:100%;
+        height:100%;
+        text-align:center;
+        background:#111;
+        padding:0;
+        margin:0;
+        font-family:'Oswald', sans-serif;
+      }
+      p { color:#888; }
+      table {
+        font-size:26px;
+        letter-spacing:0.6px;
+        box-sizing:border-box;
+        width:70%;
+        height:90%;
+        margin:25px auto;
+        border:1px #333 solid;
+        background:#fff;
+      }
+      td {
+        font-weight:900;
+        border-collapse:collapse;
+        width:20%;
+        height:20%;
+        text-align:center;
+        border:1px #333 solid;
+        vertical-align:middle;
+        background-size:cover;
+        background-repeat:no-repeat;
+        cursor:pointer;
+        background-position:center;
+        color:#333;
+        transition:all 0.2s ease-in;
+        position:relative;
+      }
+
+      td.active {
+        color:#fff;
+        text-shadow:0px 0px 8px #000;
+      }
+
+      @media screen and (max-width : 1000px){
+        table {
+            width:100%;
+            height:100%;
+        }
+      }
+
+      @media screen and (max-width : 320px){
+        html,body { overflow:hidden; }
+        table {
+            width:320px;
+            font-size:0.8em;
+            margin:0;
+            height:50%;
+            border:none;
+            table-layout:fixed;
+        }
+        td {
+            border:1px #333 solid;
+            word-wrap: break-word;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <table>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td id="free">Free</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<p>Refresh to get a new board!</p>
+
+<script>
+
+    var api_key = "FR57D8JH3LYH";
+    var search_terms = ["Star Trek Enterprise", "Enterprise Trip"];
+
+    var stuff = [
+    'Polarize the Hull Plating',
+    'Spatial anomaly',
+    'Tactical Alert',
+    '"Evasive maneuvers"',
+    'Power is re-routed',
+    'Seemingly friendly alien with ominous motives',
+    'Energy source/phenomena turns out to be sentient',
+    'Turbolift scene',
+    'Someone gets kidnapped',
+    'Somebody gets taken over by another consciousness',
+    'Miraculous medical procedure',
+    'Temporal anomaly!',
+    'Distress call received',
+    'Someone on the bridge interrupts to advance the plot',
+    '"Polarity"',
+    'Banger hits the ship',
+    'Episode gets sexy',
+    '"SensOARS"',
+    '"Diagnostics"',
+    '"Modulate"',
+    '"Some kind of..."',
+    'Computer is unable to comply',
+    'Prepare the grappler',
+    '"Plot a course..."',
+    '"Personal Log"',
+    'Klingons show up! (not Worf)',
+    'Romulans show up!',
+    'A system is down',
+    'Someone is flung from their console',
+    'Someone\'s phrasing can easily be turned sexual',
+    'Yet another warrior race shows up',
+    'Actor from another Trek series shows up (besides main cast)',
+    'Deflector dish is repurposed',
+    '"On screen!"',
+    'Force/containment field',
+    'A PADD is handed to someone',
+    '"Dilithium"',
+    'Phasers have been set to stun',
+    'We\'re in Ten Forward',
+    'We\'re in someone\'s quarters',
+    'We\'re on an M-class planet',
+    'We meet a main crew\'s family member',
+    'Alien race used as stand-in for Earth demographic',
+    'Archer gives a rousing speech',
+    'Someone dies',
+    'Someone\'s life is saved',
+    'Porthos shows up!',
+    'Shran shows up!',
+    'Hayes offers wisdom',
+    'Someone speaks technobabble',
+    'Someone plays an instrument',
+    'Dramatic cut to commercial break',
+    'An admiral makes an appearance',
+    'We meet an alien species we\'ll never hear from again',
+    'Episode is directed by a cast member',
+    'A phaser is fired',
+    'Photon torpedos are fired',
+    'Dustbuster club!',
+    '"You have the bridge..."',
+    'Hypospray is used',
+    'Doorbell chimes in someone\'s quarters',
+    'Denise Crosby shows up!',
+    'Someone has been surgically altered',
+    'Visible matte painting',
+    'Someone besides Archer is in the captain\'s chair',
+    'Archer leads an away team',
+    'Someone loses their memory',
+    'Someone is tricked into believing another reality',
+    'Someone gets sweaty',
+    'We\'re in a Jeffries tube',
+    'Someone leans against a wall',
+    'Someone learns a valuable lesson',
+    'Episode opens with Captain\'s log',
+    'Another Starfleet captain shows up',
+    'Archer gets beat up',
+    'Doors cause trouble',
+    'Shakespeare is mentioned/recited',
+    'Someone is out of uniform',
+    'Someone has a damaged uniform',
+    'Someone is in dress/ceremony uniform',
+    'Moral outrage',
+    'Plasma/Coolant leak!',
+    'Comms are used without touching badge/panel',
+    'There\'s a countdown',
+    'An untranslated alien language is spoken',
+    '"Energize"',
+    'Walkin\' & talkin\'',
+    'Sparkly fabric',
+    'Colored beverage shows up',
+    '"Lifesigns/Life forms"',
+'Hoshi translates something',
+
+'A Vulcan (other than T\'Pol) acts like a snot',
+'Trip makes some reference to a stereotypically Southern item (pecan pie, catfish, mosquitoes, swamps, etc.)',
+'Admiral Forrest calls',
+'Someone mentions Chef',
+'Sparks fly around the bridge',
+'Guest star has been on Trek before (aka "Recycled Trek Actor")',
+
+'Phlox uses an animal to treat a crewmember',
+'Dinner is a recognizable dish or food item',
+'Phlox mentions some new facet of Denobulan culture',
+'Alien of the Week hits on Crewmember',
+'We see senior officers playing poker',
+
+'Trip mentions "purging the impulse manifolds"',
+
+'Someone swears',
+'Phlox does the creepy smile',
+'Archer blabs on about "why we\'re out there"',
+'Gratuitous Star Trek namedrop',
+'Phlox chuckles to himself for no good reason',
+'Stock footage of a shuttlepod leaving the ship',
+'Archer makes reference to Porthos and cheese in the same sentence',
+'Episode has a two-word title, one of which is "The"',
+'Episode has a one-word title',
+'Trip says "Cap\'n"',
+'Phlox makes that humming noise to end a sentence',
+'Blatant foreshadowing for future continuity',
+'Travis meets Alien of the Week who is visiting Enterprise',
+'Daniels shows up and acts all cryptic but insists Archer does what he says, without explanation',
+'Phlox is feeding something in his menagerie',
+'Phlox uses some disgusting extract or excretion to treat a crewmember',
+
+'Hoshi spews alien gabble',
+
+'Archer mentions his father',
+
+'Trip mentions an old girlfriend',
+
+'We see anyone in "civvies"',
+
+'We see anyone in alien latex and "native garb"',
+
+'Sparks fly around Engineering',
+
+'Phlox needs to use the MRI tube to examine someone',
+
+'T\'Pol looks up something in the Vulcan database',
+
+'The episode is directed by a former Trek actor',
+
+'We see anyone in their underwear in decon',
+'A non-main character from Enterprise has a line',
+'Archer "foreshadows" the Prime Directive',
+'Malcolm does the "Reed Walk" (the stiff-armed crouching fast gliding creep while armed)',
+'Someone mentions "phase pistols"',
+
+'Shran says "Pinkskin"',
+
+'Shran mocks Vulcans',
+'An alien shakes hands with Archer without any prior indication from the humans that it\'s a greeting',
+'We see another Starfleet ship',
+'We see another human ship',
+
+    ];
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var cells = document.querySelectorAll('td:not(#free)');
+        cells.forEach(function(cell){
+            pick = Math.floor(Math.random()*stuff.length);
+            cell.innerHTML = stuff[pick];
+            stuff.splice(pick, 1);
+        })
+
+        var allcells = document.querySelectorAll('td')
+        allcells.forEach(function(cell){
+            cell.addEventListener('click', function(){
+
+                var toggle = this.style;
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                
+                cell.className = cell.className ? "" : "active";
+                
+                if(cell.className == "active"){
+                    fetch(search_url)
+                    .then(data => data.json())
+                    .then(data => {
+                        toggle.backgroundImage = "url("+data.results[0].media[0].tinygif.url+")";
+                    })
+                } else {
+                    toggle.backgroundImage = "";
+                }
+            });
+        })
+    });
+
+
+
+  </script>
+  </body>
+</html>
