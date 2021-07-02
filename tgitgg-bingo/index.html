@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<!--
+
+ ██▓     ██████ ▓█████ ▓█████     █    ██
+▓██▒   ▒██    ▒ ▓█   ▀ ▓█   ▀     ██  ▓██▒
+▒██▒   ░ ▓██▄   ▒███   ▒███      ▓██  ▒██░
+░██░     ▒   ██▒▒▓█  ▄ ▒▓█  ▄    ▓▓█  ░██░
+░██░   ▒██████▒▒░▒████▒░▒████▒   ▒▒█████▓
+░▓     ▒ ▒▓▒ ▒ ░░░ ▒░ ░░░ ▒░ ░   ░▒▓▒ ▒ ▒
+ ▒ ░   ░ ░▒  ░ ░ ░ ░  ░ ░ ░  ░   ░░▒░ ░ ░
+ ▒ ░   ░  ░  ░     ░      ░       ░░░ ░ ░
+ ░           ░     ░  ░   ░  ░      ░
+
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TGITGG BINGO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+      html,body {
+        width:100%;
+        height:100%;
+        text-align:center;
+        background:#111;
+        padding:0;
+        margin:0;
+        font-family:'Oswald', sans-serif;
+      }
+      p { color:#888; }
+      table {
+        font-size:26px;
+        letter-spacing:0.6px;
+        box-sizing:border-box;
+        width:70%;
+        height:90%;
+        margin:25px auto;
+        border:1px #333 solid;
+        background:#fff;
+      }
+      td {
+        font-weight:900;
+        border-collapse:collapse;
+        width:20%;
+        height:20%;
+        text-align:center;
+        border:1px #333 solid;
+        vertical-align:middle;
+        background-size:cover;
+        background-repeat:no-repeat;
+        cursor:pointer;
+        background-position:center;
+        color:#333;
+        transition:all 0.2s ease-in;
+        position:relative;
+      }
+
+      td.active {
+        color:#fff;
+        text-shadow:0px 0px 8px #000;
+      }
+
+      @media screen and (max-width : 1000px){
+        table {
+            width:100%;
+            height:100%;
+        }
+      }
+
+      @media screen and (max-width : 320px){
+        html,body { overflow:hidden; }
+        table {
+            width:320px;
+            font-size:0.8em;
+            margin:0;
+            height:50%;
+            border:none;
+            table-layout:fixed;
+        }
+        td {
+            border:1px #333 solid;
+            word-wrap: break-word;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <table>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td id="free">Free</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<p>Refresh to get a new board!</p>
+
+<script>
+
+    var api_key = "FR57D8JH3LYH";
+    var search_terms = ["Star Trek TNG", "The Next Generation", "TNG Picard", "TNG Riker", "TNG Data", "TNG Troi", "TNG Geordi", "TNG Worf", "TNG Wesley", "TNG Crusher", "TNG Obrien", "Star Trek Funny", "The Next Generation Funny", "Star Trek Voyager", "Trek Janeway", "Voyager Doctor", "Neelix", "Harry Kim Voyager", "Seven of Nine", "Tom Paris Voyager", "Chakotay", "Trek Voyager Funny", "Star Trek DS9", "Deep Space Nine Star Trek", "Sisko DS9", "Quark DS9", "Odo DS9", "Dax DS9", "Kira DS9", "Gul Dukat DS9", "Garak DS9", "Obrien DS9"];
+
+    var stuff = [
+      'Someone pours a drink',
+      'Someone takes a sip',
+      'Ben talks about Africa',
+      'Can\'t hear Adam',
+      'Robs appears!',
+      'Packages are opened',
+      'The Africa song is played',
+      'The Santa Monica song is played',
+      'Someone has to take a break',
+      'Games are played',
+      'Adam Ragusea shows up in chat',
+      'Ben talks about KPODD',
+      'Adam has a fantastic joke',
+      'Ben has a fantastic joke',
+      'Adam pretends to get mad about Robs showing up',
+      'The boys are fighting again',
+      'We\'re actually in a maron open',
+      'Ben is wearing something nice',
+      'Adam\'s hair is looking great',
+      'A drink is chromakeyed out',
+      'Adam talks about Seattle',
+      'Technical difficulties',
+      'Someone does an impression',
+      'The Discord is mentioned in the chat',
+      'More than 10 subscriptions given away',
+      'Someone mentions Jeff Bezos',
+      'Adam has a shit-eating/devious grin on his face',
+      'Ben laughs heartily',
+      'Adam stonewalls a Ben joke (to comedic effect)'
+    ];
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var cells = document.querySelectorAll('td:not(#free)');
+        cells.forEach(function(cell){
+            pick = Math.floor(Math.random()*stuff.length);
+            cell.innerHTML = stuff[pick];
+            stuff.splice(pick, 1);
+        })
+
+        var allcells = document.querySelectorAll('td')
+        allcells.forEach(function(cell){
+            cell.addEventListener('click', function(){
+
+                var toggle = this.style;
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                
+                cell.className = cell.className ? "" : "active";
+                
+                if(cell.className == "active"){
+                    fetch(search_url)
+                    .then(data => data.json())
+                    .then(data => {
+                        toggle.backgroundImage = "url("+data.results[0].media[0].tinygif.url+")";
+                    })
+                } else {
+                    toggle.backgroundImage = "";
+                }
+            });
+        })
+    });
+
+
+
+  </script>
+  </body>
+</html>
