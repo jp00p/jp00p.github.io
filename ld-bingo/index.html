@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<!--
+tendi time!
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>LOWER DECKS BINGO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+      html,body {
+        width:100%;
+        height:100%;
+        margin:0;
+        text-align:center;
+        font-family:'Oswald', sans-serif;
+      }
+      body { 
+        background-color:#000;
+        background-image:url(bg.jpg); 
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:top center;
+        padding:0;
+      }
+      p { color:#0f0; cursor: pointer; text-shadow:0px 0px 3px #000; }
+      
+      .bingo-wrap { 
+        display:flex;
+        width:100%;
+        height:100%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      table {
+        font-size:26px;
+        letter-spacing:0.6px;
+        box-sizing:border-box;
+        width:70%;
+        height:90%;
+        margin:0 auto;
+        border:1px #333 solid;
+        background:#fff;
+        opacity:0.95;
+      }
+      td {
+        font-weight:900;
+        border-collapse:collapse;
+        width:20%;
+        height:20%;
+        text-align:center;
+        border:1px #333 solid;
+        vertical-align:middle;
+        background-size:cover;
+        background-repeat:no-repeat;
+        cursor:pointer;
+        background-position:center;
+        color:#333;
+        transition:all 0.2s ease-in;
+        position:relative;
+      }
+
+      td.active {
+        color:#fff;
+        text-shadow:0px 0px 8px #000;
+      }
+
+      @media screen and (max-width : 1000px){
+        table {
+            width:100%;
+            height:100%;
+        }
+      }
+
+      @media screen and (max-width : 320px){
+        html,body { overflow:hidden; }
+        table {
+            width:320px;
+            font-size:0.8em;
+            margin:0;
+            height:50%;
+            border:none;
+            table-layout:fixed;
+        }
+        td {
+            border:1px #333 solid;
+            word-wrap: break-word;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bingo-wrap">
+    <table>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td id="free">Free</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<p><a onclick="window.location.reload()">Refresh to get a new board!</a></p>
+</div>
+
+
+<script>
+
+    var api_key = "FR57D8JH3LYH";
+    var search_terms = ["Star Trek Lower Decks", "Tendi Lower Decks", "Mariner Lower Decks", "Boimler Lower Decks", "Rutherford Lower Decks"];
+
+    var stuff = [
+    'Shields are down to 15% or lower',
+    'Unauthorized transport in progress',
+    'Holodeck malfunction',
+    'Interference prevents use of transporter',
+    'Spatial anomaly',
+    'Red alert!',
+    '"We\'re venting plasma!"',
+    'Life forms invade the ship/take over the crew',
+    'Warp core ejected (or attempted)',
+    'Seemingly friendly alien with ominous motives',
+    'Energy source turns out to be sentient creature',
+    'Someone gets kidnapped',
+    'Miraculous medical procedure',
+    'Debate breaking Starfleet regulations (or actually break them)',
+    'Temporal anomaly!',
+    'Distress call received',
+    'Self destruct activated',
+    '"Polarity"',
+    'Banger hits the ship',
+    'Episode gets sexy',
+    '"SensOARS"',
+    '"Diagnostics"',
+    '"Modulate"',
+    '"Some kind of..."',
+    'Computer is unable to comply',
+    'Tractor beam!',
+    '"Plot a course..."',
+    '"Personal Log"',
+    'A system is down',
+    'Someone is stunned with a phaser',
+    'Phaser used as a tool (not as a weapon)',
+    'Someone is flung from their console',
+    'Someone is on the bridge with no credentials',
+    'Someone\'s phrasing can easily be turned sexual',
+    'Actor from another Trek series shows up',
+    'Deflector dish is repurposed',
+    'MacLaughlin group: ISSUE ONE!',
+    'Comms are used without touching badge/panel',
+    'There\'s a countdown',
+    'An untranslated alien language is spoken',
+    '"Energize"',
+    'Walkin\' & talkin\'',
+    'Sparkly fabric',
+    'Colored beverage shows up',
+    'We meet an alien species we\'ll never hear from again',
+    '"Lifesigns"',
+    'Manual override',
+    '"Attempting to compensate"',
+    'Ancient Earth saying is used',
+    'Boimler accidentally endangers the crew',
+    'Mariner saves the day!',
+    'Doctor Cats has terrible bedside manner',
+    'Jack Ransom thinks with his muscles',
+    'Captain Mom is pissed',
+    'Rutherford misses the point',
+    'Non-humanoid alien on screen',
+    'Mariner is threatened with the brig',
+    'Tendi gets excited about science',
+    'Rutherford\'s implant glitches',
+    'Boimler is nervous about something',
+    'Mariner is sarcastic',
+    'Someone gets slimed',
+    'An Earwolf podcaster voices a character (besides Mariner)',
+    'Reference to TOS/TAS',
+    'Reference to TNG',
+    'Reference to DS9',
+    'Reference to Voyager',
+    'Reference to Enterprise',
+  ];
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var cells = document.querySelectorAll('td:not(#free)');
+        cells.forEach(function(cell){
+            pick = Math.floor(Math.random()*stuff.length);
+            cell.innerHTML = stuff[pick];
+            stuff.splice(pick, 1);
+        })
+
+        var allcells = document.querySelectorAll('td')
+        allcells.forEach(function(cell){
+            cell.addEventListener('click', function(){
+
+                var toggle = this.style;
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                
+                cell.className = cell.className ? "" : "active";
+                
+                if(cell.className == "active"){
+                    fetch(search_url)
+                    .then(data => data.json())
+                    .then(data => {
+                        toggle.backgroundImage = "url("+data.results[0].media[0].tinygif.url+")";
+                    })
+                } else {
+                    toggle.backgroundImage = "";
+                }
+            });
+        })
+    });
+
+
+
+  </script>
+  </body>
+</html>
