@@ -17,19 +17,21 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>VOYAGER BINGO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title>XFILES BINGO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <style>
       html,body {
         width:100%;
         height:100%;
         margin:0;
         text-align:center;
-        font-family:'Oswald', sans-serif;
+        font-family:'Special Elite', monospace;
       }
       body { 
         background-color:#000;
-        background-image:url(bg.jpg);
+        background-image:url(https://cdn.discordapp.com/attachments/874789205295919134/875159191206133810/tumblr_peu91qIVB91qzbj4lo1_1280.jpg);
         background-repeat:repeat-x;
         background-size:contain;
         background-position:top center;
@@ -54,13 +56,12 @@
         height:90%;
         margin:0 auto;
         border:1px #333 solid;
-        background:#fff;
-        opacity:0.95;
+        background:rgba(255,255,255,.5);
         border-collapse:collapse;
       }
-      td { border:none; }
       td {
         font-weight:900;
+        outline:1px #333 solid;
         padding:0;
         border-collapse:collapse;
         width:20%;
@@ -71,21 +72,26 @@
         background-repeat:no-repeat;
         cursor:pointer;
         background-position:center;
-        color:#333;
+        color:#111;
         transition:all 0.2s ease-in;
         position:relative;
       }
 
       td.active {
         color:#fff;
-        text-shadow:0px 0px 8px #000;
-        background-color:#000;
+          text-shadow:
+          -2px -2px 0 #000,  
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            2px 2px 0 #000;
+        background-color:#050;
+        box-shadow:inset 0px 0px 20px #0a0;
       }
 
-      tr:nth-child(odd) td:nth-child(even), 
+      /* tr:nth-child(odd) td:nth-child(even), 
       tr:nth-child(even) td:nth-child(odd) {
-        background-color:#eee;
-      }
+        
+      } */
 
       @media screen and (max-width : 1000px){
         table {
@@ -105,7 +111,6 @@
             table-layout:fixed;
         }
         td {
-            border:1px #333 solid;
             word-wrap: break-word;
         }
 
@@ -156,106 +161,96 @@
 <script>
 
     var api_key = "FR57D8JH3LYH";
-    var search_terms = ["Star Trek Voyager", "Trek Janeway", "Voyager Doctor", "Neelix", "Harry Kim Voyager", "Seven of Nine", "Tom Paris Voyager", "Chakotay", "Trek Voyager Funny"];
+    var search_terms = ["xfiles", "xfiles mulder", "xfiles scully", "xfiles skinner", "xfiles simpsons", "xfiles doggett", "terminator t1000", "xfiles alien", "xfiles spooky", "xfiles sexy", "xfiles funny"];
 
     var stuff = [
-    'Shields are down to 15% or lower',
-    'Unauthorized transport in progress',
-    'The doctor is broken',
-    'Holodeck/holoemitter malfunction',
-    'Abandon ship!',
-    'Interference prevents use of transporter',
-    'Kim gets his heart broken',
-    'Kim gets yelled at',
-    'Another shuttlecraft destroyed',
-    'Spatial anomaly',
-    'Aliens steal Voyager\'s technology',
-    'Surefire way to get home snatched away at last minute',
-    'Maquis tactic saves the day',
-    'Red alert!',
-    'Rare material required to repair Voyager',
-    'Bioneural gel packs malfunction',
-    '"We\'re venting plasma!"',
-    'B\'Elanna rejects her Klingon/Human side',
-    'Voyager steals aliens\' technology',
-    'Kes/Seven does something Alien',
-    'Life forms invade the ship/take over the crew',
-    'Neelix brags about his skills/past',
-    'Neelix cooks something',
-    'Tuvok finds something illogical',
-    'Try to eject the warp core',
-    'Seemingly friendly alien with ominous motives',
-    'Energy source turns out to be sentient creature',
-    'Someone gets kidnapped',
-    'Miraculous medical procedure',
-    'Panflutes',
-    'Tom Paris witticism about alien on viewscreen',
-    'Debate breaking Starfleet regulations (or actually break them)',
-    'Temporal anomaly!',
-    'The Doctor sings',
-    'Distress call received',
-    'The Doctor boasts',
-    'The Doctor imitates Dr. McCoy from TOS',
-    'Chakotay mentions his people/is spiritual',
-    'A main character dies',
-    'WARP PARTICLES!',
-    'The Borg show up!',
-    'The Kazon show up!',
-    'The Vidiians show up!',
-    'Self destruct activated',
-    'Janeway orders/drinks coffee',
-    'Janeway takes no shit',
-    'Tuvok is secretly funny',
-    'Doctor is funny',
-    'Tom Paris is horny',
-    'Someone on the bridge interrupts to reveal a plot point',
-    '"I\'m Captain Kathryn Janeway"',
-    '"Polarity"',
-    'Banger hits the ship',
-    'Episode gets sexy',
-    '"SensOARS"',
-    '"Diagnostics"',
-    '"Modulate"',
-    'Tom Paris points out the obvious',
-    'Tom Paris has a dumb look on his face',
-    'Janeway takes the ship off course to investigate something',
-    'B\'Elanna threatens a colleague with physical violence',
-    'The crew laments Neelix\' awful cooking',
-    '"Some kind of..."',
-    'Computer is unable to comply',
-    'Tractor beam!',
-    'Neelix refers to alien flora/fauna',
-    '"Plot a course..."',
-    '"Personal Log"',
-    'A system is down',
-    'Chakotay\'s name is mispronounced',
-    'Someone is stunned with a phaser',
-    'Phaser used as a tool (not as a weapon)',
-    'Someone is flung from their console',
-    'Someone is on the bridge with no credentials',
-    'Someone\'s phrasing can easily be turned sexual',
-    'Yet another warrior race shows up',
-    'Actor from another Trek series shows up',
-    'Deflector dish is repurposed',
-    'MacLaughlin group: ISSUE ONE!',
-    'Comms are used without touching badge/panel',
-    'There\'s a countdown',
-    'An untranslated alien language is spoken',
-    '"Energize"',
-    'Walkin\' & talkin\'',
-    'Sparkly fabric',
-    'Colored beverage shows up',
-    'We meet an alien species we\'ll never hear from again',
-    '"Lifesigns"',
-    'Manual override',
-    '"Attempting to compensate"',
-    'The Only Way Out Is Through',
-    'Ancient Earth saying is used',
-    'Doctor lacks compassion',
-    'Close talking',
-    'You recognize California',
-    'Janeway touches a crewmember',
-    'Reference to the number 47'
+      '"Mulder it\'s me"',
+      '"Scully it\'s me"',
+      'Someone hangs up on someone else',
+      'Early appearance by future film/tv star',
+      'Star Trek actor is a guest star',
+      'Scully is doing an autopsy',
+      'Samantha is mentioned',
+      'The victims survive',
+      'Someone hacks some piece of technology',
+      'Scully is skeptical of Mulder\'s theory',
+      'Mulder doesn\'t believe it\'s an X-File',
+      'Scully mentions she\'s a doctor',
+      'Mulder acts lecherous',
+      'Episode ends on a cliffhanger',
+      'Killer is focused on Scully',
+      'Killer is focused on Mulder',
+      'Someone gets laid',
+      'Cigarette Smoking Man appears',
+      'Mulder makes Scully do the hard work',
+      'Killer gets killed/dies',
+      'Killer disappears forever',
+      'Scully gets kidnapped',
+      'Mulder is shot',
+      'Scully thinks it might be an X-File',
+      'Skinner disciplines the agents',
+      'Skinner goes easy on the agents',
+      'Mulder gets advice from a local psychic/mystic',
+      '10:13',
+      '11:21',
+      'Scully wears scrubs or a labcoat',
+      'Mulder is pantsless',
+      'Someone calls Mulder "Fox"',
+      'Someone calls Scully "Dana"',
+      'Flashlights are used',
+      'Scully does the eyebrow thing',
+      'Mulder smells/tastes evidence',
+      'Canadian accent is heard',
+      'Scully checks an injured person',
+      'Shirt sleeves are rolled up',
+      'Mulder has stubble or a beard',
+      'Scully refers to her faith',
+      'Walking and talking',
+      'Mulder is grossed out',
+      'We see the FBI headquarters building',
+      'Either of the agents are wearing trenchcoats',
+      'We\'re in a diner or truckstop',
+      'They almost kiss',
+      'Mulder is snacking on seeds',
+      'We see the pencils in Mulder\'s office',
+      'Krycek shows up',
+      'Lone Gunmen show up',
+      'Lone Gunmen hit on Scully',
+      'Mulder talks with an informant',
+      'Mulder makes an informant mad',
+      'An alien shows up!',
+      'We see a UFO',
+      'Episode is based on folklore',
+      'A ghost shows up!',
+      'Cops or politicians being corrupt',
+      'We see someone only in silhouette',
+      'Mulder makes a bad joke or a pun',
+      'Mulder makes an absurd conclusion',
+      'Photo is enhanced',
+      'Mulder does exactly what Scully says not to do',
+      'Local cops are dumb',
+      'Running down a hallway or in the woods',
+      'We\'re in a cave or the sewers',
+      'Time is travelled',
+      'The fog rolls in',
+      'Mulder doesn\'t get to see the alien :(',
+      'Someone mentions "the truth"',
+      'Skinner says "ass" or "damn" or "hell"',
+      'Evidence disappears',
+      'CSM lights a cigarette',
+      'Shot pans up or down from the sky',
+      'It\'s raining',
+      '"Stop! Federal agent!"',
+      'Mulder and Scully hold hands',
+      'Attempting to chase a car on foot',
+      'There\'s an "X" in the window',
+      'One of the agents is in hospital',
+      'Evidence handling procedures are suspect',
+      '"Some kind of"',
+      'Someone actually says "X-Files"',
+      'Someone will explain later',
+      'Scully witnesses clear phenomena but still doesn\'t believe',
+      'Mulder challenges authority',
     ];
 
 
@@ -273,7 +268,9 @@
             cell.addEventListener('click', function(){
 
                 var toggle = this.style;
-                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                var random_search_term = search_terms[Math.floor(Math.random()*search_terms.length)];
+                console.log(random_search_term)
+                var search_url = "https://api.tenor.com/v1/random?q=" + random_search_term + "&key=" + api_key + "&limit=5&contentfilter=low";
                 
                 cell.className = cell.className ? "" : "active";
                 
