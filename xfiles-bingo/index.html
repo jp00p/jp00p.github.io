@@ -264,6 +264,7 @@
 
     document.addEventListener("DOMContentLoaded", function(){
 
+        // load prompts into each square except free
         var cells = document.querySelectorAll('td:not(#free)');
         cells.forEach(function(cell){
             pick = Math.floor(Math.random()*stuff.length);
@@ -271,24 +272,27 @@
             stuff.splice(pick, 1);
         })
 
+        // handle clicking on all squares
         var allcells = document.querySelectorAll('td')
         allcells.forEach(function(cell){
             cell.addEventListener('click', function(){
 
                 var toggle = this.style;
+                // pick a term for the gif search
                 var random_search_term = search_terms[Math.floor(Math.random()*search_terms.length)];
-                console.log(random_search_term)
                 var search_url = "https://api.tenor.com/v1/random?q=" + random_search_term + "&key=" + api_key + "&limit=5&contentfilter=low";
                 
-                cell.className = cell.className ? "" : "active";
+                cell.className = cell.className ? "" : "active"; // toggle classname
                 
                 if(cell.className == "active"){
                     fetch(search_url)
                     .then(data => data.json())
                     .then(data => {
+                        // set square bg
                         toggle.backgroundImage = "url("+data.results[0].media[0].tinygif.url+")";
                     })
                 } else {
+                    // unset square bg
                     toggle.backgroundImage = "";
                 }
             });
