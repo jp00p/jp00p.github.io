@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index of jp00p's bingo games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background:#000;
+            color:#fff;
+            padding:2vw;
+            margin:0;
+            font-family:'Teko', sans-serif;
+        }
+
+        .bingo-list {
+            display:flex;
+            list-style:none;
+            flex-wrap:wrap;
+            padding:0;
+            margin:0;
+            align-items: center;
+            justify-content: center;
+            margin:0 auto;
+        }
+
+        .bingo-list li {
+            margin:5px;
+        }
+
+        .bingo-list li a {
+            display:block;
+            padding:5vw;
+            border:1px #fff solid;
+            color:#fff;
+            text-align: center;
+            text-decoration:none;
+            font-size:2vw;
+        }
+
+        @media (max-width:640px){
+            body {
+                padding:0;
+            }
+            .bingo-list {
+                flex-direction: column;
+                width:100%;
+                max-width:100%;
+            }
+
+            .bingo-list li {
+                margin:0;
+                width:100%;
+            }
+            .bingo-list li a {
+                padding:25px;
+                width:100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul class="bingo-list">
+        <li><a href="https://jp00p.github.io/tng-bingo">Star Trek: The Next Generation</a></li>
+        <li><a href="https://jp00p.github.io/ds9-bingo">Star Trek: Deep Space Nine</a></li>
+        <li><a href="https://jp00p.github.io/voyager-bingo">Star Trek: Voyager</a></li>
+        <li><a href="https://jp00p.github.io/ld-bingo">Star Trek: Lower Decks</a></li>
+        <li><a href="https://jp00p.github.io/xfiles-bingo">X-Files</a></li>
+    </ul>
+    
+</body>
+</html>
