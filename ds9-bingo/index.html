@@ -18,7 +18,9 @@
   <head>
     <meta charset="UTF-8">
     <title>DS9 BINGO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
       html,body {
         width:100%;
@@ -27,26 +29,34 @@
         background:#111;
         padding:0;
         margin:0;
-        font-family:'Oswald', sans-serif;
+        font-family:'Bebas Neue', sans-serif;
       }
-      p, label { color:#888; }
+      body {
+        background-image:url(bg.jpg);
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center center;
+      }
+      p, label { color:#fff; text-shadow:0px 0px 1px #000; }
       table {
-        font-size:26px;
-        letter-spacing:0.6px;
         box-sizing:border-box;
-        width:70%;
-        height:90%;
+        width:88%;
+        max-width:1440px;
+        height:80vh;
         margin:25px auto;
-        border:1px #333 solid;
-        background:#fff;
+        border:none;
       }
       td {
+        letter-spacing:0.05em;
+        line-height:normal;
         font-weight:900;
+        font-size:24px;
         border-collapse:collapse;
         width:20%;
         height:20%;
+        min-height:20%;
         text-align:center;
-        border:1px #333 solid;
+        border:1px rgba(0,0,0,0.5) solid;
         vertical-align:middle;
         background-size:cover;
         background-repeat:no-repeat;
@@ -55,33 +65,37 @@
         color:#333;
         transition:all 0.2s ease-in;
         position:relative;
+        padding:10px;
+        background-color:rgba(255,255,255,0.8)
       }
 
       td.active {
         color:#fff;
         text-shadow:0px 0px 8px #000;
+        box-shadow: inset 0px 0px 20px #C44040;
       }
 
-      @media screen and (max-width : 1000px){
+      @media screen and (max-width : 1200px){
         table {
-            width:100%;
-            height:100%;
+          width:90%;
         }
       }
 
-      @media screen and (max-width : 320px){
+      @media screen and (max-width : 800px){
         html,body { overflow:hidden; }
         table {
-            width:320px;
-            font-size:0.8em;
+            width:100%;
+            height:100%;
             margin:0;
-            height:50%;
             border:none;
             table-layout:fixed;
         }
         td {
+            font-size:calc(16px + 1vw);
             border:1px #333 solid;
             word-wrap: break-word;
+            width:20%;
+            height:20%;
         }
 
       }
@@ -133,7 +147,7 @@
 <script>
 
     var api_key = "FR57D8JH3LYH";
-    var search_terms = ["Star Trek DS9", "Deep Space Nine Star Trek", "Sisko DS9", "Quark DS9", "Odo DS9", "Dax DS9", "Kira DS9", "Gul Dukat DS9", "Garak DS9", "Obrien DS9"];
+    var search_terms = ["Star Trek DS9", "Deep Space Nine Star Trek", "Sisko DS9", "Quark DS9", "Odo DS9", "Dax DS9", "Kira DS9", "Gul Dukat DS9", "Garak DS9", "Obrien DS9", "Brunt DS9", "Weyoun DS9",];
 
     var season_1_thru_2 = [
     'Spatial anomaly',
@@ -162,11 +176,11 @@
     "Baseball is mentioned/seen",
     "Sisko scolds somebody",
     "Sisko calls Dax old man",
-    "Sisko hugs/kisses Jake",
+    "Sisko gives affection to Jake",
     "Sisko's wife is mentioned",
     "Sisko raises his voice",
     "Quark is up to something possibly illegal",
-    "Quark begs/pleads",
+    "Quark begs or pleads",
     "Latinum is mentioned",
     "Someone gets Oomox",
     "Someone is grabbed by the ear",
@@ -178,13 +192,13 @@
     "Kira is religious",
     "Kira starts to get romantic with someone",
     "Odo pines for Kira",
-    "Odo catches/foils Quark",
+    "Odo catches or foils Quark",
     "Odo alludes to his past",
     "Odo transforms",
     "Odo knows more than he lets on",
     "Odo makes a grumbling sound/harrumph",
     "Jake and Nog hanging out",
-    "Jake/Nog get in trouble",
+    "Jake or Nog get in trouble",
     "Jake is writing something",
     "Nog complains",
     "Dax alludes to past lives",
@@ -204,42 +218,44 @@
     "Raktajino is drunk",
     "Kanar is drunk",
     "Someone yells \"DABO!\"",
-    "Darts are played",
-    "Runabout/Defiant is flown",
+    "Bashir and O'Brien are playing a game",
+    "A Runabout or the Defiant is flown",
     "Runabout is destroyed",
     "A ship blows up",
     "Wormhole opens (besides intro)",
     "Kira takes no shit",
-    "Quark pours a drink",
+    "Quark prepares a drink",
     "Prophets speak to someone",
-    "Prophet's orb get used",
+    "Prophet's orb get opened",
     "Klingons show up (not Worf)",
-    "Cardassians show up",
-    "Bajorans show up (not Kira)",
-    "Romulans show up",
-    "One of them Sisko boys goes on a date",
+    "Cardassians with speaking roles (not Garak)",
+    "Bajorans with speaking roles (not Kira)",
+    "Romulans with speaking roles",
+    "One of them Sisko boys has a date",
     "A rule of acquisition is named",
     "Morn is at the bar",
     "First contact with a race from Gamma Quadrant",
     "A ship docks with DS9",
     "Garak alludes to secrets",
-    "Garak is \"just a tailor\"",
+    "Garak does obvious spy stuff",
     "Garak joins the gang",
-    "Garak does tailoring/we see his shop",
-    "Garak does something that is not plain/simple",
-    "Gul Dukat is friendly but obviously up to something",
+    "Garak does actual tailoring",
+    "We see Garak's shop",
+    "Garak and Bashir talking",
+    "Gul Dukat is up to something",
     "Gul Dukat loses his cool",
     "Gul Dukat justifies atrocities",
     "Winn does something secretly evil",
     "Winn patronizes someone",
     "Winn says \"My child\"",
     "Leeta's cleavage",
+    "A Bajoran religious leader shows up",
     "Knuck",
     "We're on Bajor",
     "We're in the Gamma quadrant",
     "We're in the mirror universe",
     "We're in sicks bay",
-    "We're in the past/future",
+    "We're in the past or future",
     "We're on Earth",
     "We're in someone's quarters",
     "Hail acknowledged",
@@ -253,7 +269,7 @@
     "Stardate is mentioned",
     "Earth is mentioned",
     "Bajor is mentioned",
-    "Cardassian planet/moon is mentioned",
+    "Cardassian planet or moon is mentioned",
     "Reference to another series",
     "DS9 is under attack/captured",
     "A phaser is fired",
@@ -264,16 +280,16 @@
     "A PADD is handed to someone",
     "A system is offline",
     "There's a containment field",
-    "Someone removes an article of clothing/uniform",
+    "Someone removes an article of clothing",
     "Scene focused on people having a meal",
     "Station malfunction",
-    "The Maquis are mentioned/show up",
+    "The Maquis are mentioned or show up",
     "All senior staff are called somewhere",
     "\"Some kind of...\"",
-    "Sisko hoots/hollers",
+    "Sisko hoots or hollers",
     "\"On screen.\"",
     "Someone calls Odo \"constable\"",
-    'Comms are used without touching badge/panel',
+    'Comms are used without touching badge or panel',
     'There\'s a countdown',
     'An untranslated alien language is spoken',
     '"Energize"',
@@ -338,8 +354,6 @@ function load_cells(stuff){
         toggle_form.addEventListener("change", function(){
           var stuff = default_stuff;
 
-          console.log("updating localstorage with", season1.checked, worf.checked)
-          
           if(season1.checked){
             stuff = season_1_thru_2
             localStorage.setItem("season1", "true");
@@ -377,7 +391,9 @@ function load_cells(stuff){
             cell.addEventListener('click', function(){
 
                 var toggle = this.style;
-                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                var search_term = search_terms[Math.floor(Math.random()*search_terms.length)];
+                console.log(search_term)
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_term + "&key=" + api_key + "&limit=5&contentfilter=low";
                 
                 cell.className = cell.className ? "" : "active";
                 
