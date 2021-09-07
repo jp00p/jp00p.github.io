@@ -20,46 +20,95 @@
     <title>TNG BINGO</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <style>
+      @font-face {
+          font-family: 'Krupper';
+          src: url('Krupper.woff2') format('woff2'),
+              url('Krupper.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+      }
       html,body {
         width:100%;
         height:100%;
-        text-align:center;
-        background:#111;
-        padding:0;
         margin:0;
-        font-family:'Oswald', sans-serif;
+        text-align:center;
+        font-family:'Krupper', sans-serif;
       }
-      p { color:#888; }
+      body { 
+        background-color:#000;
+        background-image:url(bg.jpg);
+        background-repeat:repeat-x;
+        background-size:cover;
+        background-position:center -100px;
+        padding:0;
+      }
+      p { color:#0f0; cursor: pointer; text-shadow:1px 1px 1px #000; }
+      
+      .bingo-wrap { 
+        display:flex;
+        width:100%;
+        height:100%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
       table {
-        font-size:26px;
-        letter-spacing:0.6px;
+        font-size:20px;
+        border-radius:5px;
         box-sizing:border-box;
         width:70%;
         height:90%;
-        margin:25px auto;
+        margin:0 auto;
         border:1px #333 solid;
-        background:#fff;
+        background:transparent;
+        opacity:0.95;
+        border-collapse:collapse;
       }
+      td { border:2px transparent solid; }
       td {
         font-weight:900;
+        padding:5px;
         border-collapse:collapse;
         width:20%;
         height:20%;
         text-align:center;
-        border:1px #333 solid;
         vertical-align:middle;
         background-size:cover;
         background-repeat:no-repeat;
         cursor:pointer;
         background-position:center;
-        color:#333;
+        color:#111;
         transition:all 0.2s ease-in;
         position:relative;
+        background-color:rgba(255,255,255,0.85);
+        
       }
 
       td.active {
-        color:#fff;
-        text-shadow:0px 0px 8px #000;
+        color:#2b53a7;
+        text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+        background-color:rgba(0,0,0,1);
+        box-shadow:inset 0px 0px 10px #c1c730;
+      }
+      td.active:nth-child(2n){
+        box-shadow:inset 0px 0px 10px #a71313;
+      }
+      td.active:nth-child(3n){
+        box-shadow:inset 0px 0px 10px #2b53a7;
+      }
+      td.active:nth-child(4n){
+        box-shadow:inset 0px 0px 10px #00b844;
+      }
+      td.active:nth-child(5n){
+        box-shadow:inset 0px 0px 10px #c1c730;
+      }
+
+
+
+      tr:nth-child(odd) td:nth-child(even), 
+      tr:nth-child(even) td:nth-child(odd) {
+        background-color:rgba(200,200,200,0.85);
       }
 
       @media screen and (max-width : 1000px){
@@ -69,13 +118,13 @@
         }
       }
 
-      @media screen and (max-width : 320px){
+      @media screen and (max-width : 640px){
         html,body { overflow:hidden; }
         table {
-            width:320px;
+            width:100%;
             font-size:0.8em;
             margin:0;
-            height:50%;
+            height:50vh;
             border:none;
             table-layout:fixed;
         }
@@ -145,15 +194,15 @@
     'Power is re-routed',
     'Try to eject the warp core',
     'Seemingly friendly alien with ominous motives',
-    'Energy source/phenomena turns out to be sentient',
+    'Phenomena turns out to be sentient',
     'Turbolift scene',
     'Someone gets kidnapped',
-    'Somebody gets taken over by another consciousness',
+    'Somebody gets taken over by another being',
     'Miraculous medical procedure',
     'Temporal anomaly!',
     'Distress call received',
     'Self destruct activated',
-    'Someone on the bridge interrupts to advance the plot',
+    'Someone on the bridge interrupts',
     '"Polarity"',
     'Banger hits the ship',
     'Episode gets sexy',
@@ -175,11 +224,11 @@
     'Someone is on the bridge with no credentials',
     'Someone\'s phrasing can easily be turned sexual',
     'Yet another warrior race shows up',
-    'Actor from another Trek series shows up (besides main cast)',
+    'Actor from another Trek series shows up',
     'Deflector dish is repurposed',
     'MacLaughlin group: ISSUE ONE!',
     '"On screen!"',
-    'Force/containment field',
+    'Force or containment field',
     'A PADD is handed to someone',
     'Picard manuever (shirt thing)',
     'Riker manuever (chair thing)',
@@ -210,15 +259,14 @@
     'Data uses a contraction',
     'Data has a question about human behavior',
     'Data does something super fast',
-    'Data engages in human behavior (art, comedy, etc)',
-    'Data doesn\'t use a contraction',
-    'Data malfunctions/endangers the crew',
+    'Data engages in human behavior',
+    'Data malfunctions or endangers the crew',
     'Someone tells Data to stop talking',
     'Guinan shows up!',
     'Guinan offers wisdom',
     'Nurse Ogawa shows up',
     'Keiko shows up',
-    'Troi is wearing a low-cut/short uniform',
+    'Troi is wearing a revealing uniform',
     'A child makes trouble',
     'Geordi speaks technobabble',
     'Poker is played',
@@ -227,7 +275,7 @@
     'Someone plays an instrument',
     'Dramatic cut to commercial break',
     'An admiral makes an appearance',
-    'Prime Directive is discussed/debated',
+    'Prime Directive is discussed or debated',
     'Worf insists on being honorable',
     'We meet an alien species we\'ll never hear from again',
     'O\'Brien at the transporter',
@@ -252,7 +300,7 @@
     'Picard reads an old book',
     'A ship decloaks',
     'Someone loses their memory',
-    'Someone is tricked into believing another reality',
+    'Someone believes in another reality',
     'Someone gets sweaty',
     'We\'re in a Jeffries tube',
     'Someone leans against a wall',
@@ -260,31 +308,31 @@
     'Episode opens with Captain\'s log',
     'Riker squints at something',
     'An "Old Earth" saying is brought up',
-    'Wesley talks back to his mom/the captain',
+    'Wesley talks back',
     'Another Starfleet captain shows up',
     'Doctor Crusher uses a tricorder',
     'Riker gets laid',
     'We see Geordi\'s eyes',
     'Worf gets beat up',
     'Doors cause trouble',
-    'Shakespeare is mentioned/recited',
+    'Shakespeare is referenced',
     'Someone is out of uniform',
     'Someone has a damaged uniform',
-    'Someone is in dress/ceremony uniform',
+    'Someone is in dress uniform',
+    'Crew member dresses up for aliens',
     'Moral outrage',
-    'Plasma/Coolant leak!',
+    'Plasma leak!',
     'Broccoli shows up!',
-    'Broccoli acts nervous around a lady',
-    '"Arch" or "End/Save Program"',
-    'Comms are used without touching badge/panel',
+    'Broccoli acts nervous',
+    '"Arch" or "End Program"',
+    'Comms are used without touching badge or panel',
     'There\'s a countdown',
     'An untranslated alien language is spoken',
     '"Energize"',
     'Walkin\' & talkin\'',
     'Sparkly fabric',
     'Colored beverage shows up',
-    '"Lifesigns/Life forms"',
-    
+    '"Lifesigns" or "Lifeforms"',
     ];
 
 
