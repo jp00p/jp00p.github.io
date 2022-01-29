@@ -13,11 +13,12 @@
 			padding: 0;
 			text-align: center;
 			background-color: black;
+			color:#fff;
 		}
 
 		#canvas {
 			display: block;
-			margin: 0;
+			margin: 35px auto;
 			color: white;
 			max-width:1024px;
 			max-height:600px;
@@ -62,6 +63,10 @@
 			box-shadow: 0 0 2px 1px #1B1C22;
 			border-radius: 2px;
 			visibility: visible;
+		}
+
+		#tips {
+			text-align:center;
 		}
 
 		@media only screen and (orientation:portrait) {
@@ -122,6 +127,7 @@
 		HTML5 canvas appears to be unsupported in the current browser.<br />
 		Please try updating or use a different browser.
 	</canvas>
+
 	<div id='status'>
 		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
 		<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
@@ -135,6 +141,12 @@
 			<div></div>
 		</div>
 		<div id='status-notice' class='godot' style='display: none;'></div>
+	</div>
+
+	<div id="tips">
+		<p>Use arrow keys to move</p>
+		<p>Use spacebar to dash while moving</p>
+		<p>Complete the tasks!</p>
 	</div>
 
 	<script type='text/javascript' src='index.js'></script>
