@@ -199,9 +199,19 @@ img { max-width:100%; }
     padding:2rem 0;
     background:$green;
     color:#fff;
+    font-size:18px;
+    .wrapper {
+        justify-content: center;
+        align-items: center;
+    }
     .review {
         text-align: center;
         padding:0 2rem;
+        flex-basis: 33%;
+    }
+    h3 {
+        font-size:24px;
+        margin:0;
     }
 }
 
@@ -266,7 +276,7 @@ img { max-width:100%; }
     .loaf-selector {
         padding:3rem 0 0 0;
         display:flex;
-        
+        .icon { padding:0 2rem; }
     }
     .slider-wrapper {
         padding:3rem 0;
