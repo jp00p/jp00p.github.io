@@ -66,6 +66,17 @@ h6 {
     line-height: 20px;
 }
 
+@media screen and (max-width:768px){
+    h1 {
+        font-size:48px;
+        line-height:66px;
+    }
+    h2 {
+        font-size:40px;
+        line-height: 56px;
+    }
+}
+
 strong {
     font-weight:700;
 }
@@ -115,6 +126,8 @@ img { max-width:100%; }
 .main-nav {
     padding:33px 0;    
     background:#fff;
+    .mobile { display:none; }
+    .desktop { display:flex; }
     ul {
         li {
             display:inline-block;
@@ -142,11 +155,28 @@ img { max-width:100%; }
         border-radius:100%;
         background:#ccc;
     }
+    @media screen and (max-width:768px){
+        .mobile { display:flex; }
+        .desktop { display:none; }
+        .wrapper {
+            align-items: center;
+            justify-content: space-between;
+            padding:0 33px;
+        }
+        ul {
+            li {
+                padding-right:0;
+            }
+        }
+    }
 }
 
 .banner-promo {
     padding:10px 0;
     background:$yellow;
+    @media screen and (max-width:768px) {
+        text-align: center;
+    }
 }
 
 .full-hero {
@@ -193,6 +223,22 @@ img { max-width:100%; }
     &.bg-right .content {
         justify-content: flex-end;
     }
+
+    @media screen and (max-width:768px){
+        .wrapper {
+            flex-direction: column;
+        }
+        .image, .content {
+            width:100%;
+            text-align: center;
+            .text {
+                max-width:100%;
+            }
+        }
+        .content {
+            padding:2rem;
+        }
+    }
 }
 
 .review-banner {
@@ -212,6 +258,15 @@ img { max-width:100%; }
     h3 {
         font-size:24px;
         margin:0;
+    }
+    @media screen and (max-width:768px){
+        .wrapper {
+            flex-direction: column;
+        }
+        .review {
+            padding:2rem;
+            flex-basis: 100%;
+        }
     }
 }
 
@@ -264,7 +319,11 @@ img { max-width:100%; }
             }
         }
     }
-
+    @media screen and (max-width:768px){
+        .icon-grid {
+            display:none;
+        }
+    }
 }
 
 .loaf-slider {
@@ -298,7 +357,12 @@ img { max-width:100%; }
             }
         }
     }
-    
+    @media screen and (max-width:768px) {
+        .loaf-features {
+            width:100%;
+            flex-direction: column;
+        }
+    }
 }
 
 .ba-slider {
@@ -426,6 +490,30 @@ img { max-width:100%; }
             }
         }
     }
+    @media screen and (max-width:768px) {
+        .wrapper {
+            padding:0;
+        }
+        .calc-form {
+            form {
+                flex-direction: column;
+                .column {
+                    width:100%;
+                }
+            }
+            .meal-plans {
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                .card {
+                    max-width:100%;
+                    .content {
+                        padding:1rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -460,6 +548,17 @@ img { max-width:100%; }
                 li {
                     padding-bottom:0.5rem;
                 }
+            }
+        }
+    }
+    @media screen and (max-width:768px) {
+        .cards {
+            width:100%;
+            flex-direction: column;
+            justify-content: center;
+            .card {
+                width:100%;
+                padding:2rem;
             }
         }
     }
@@ -506,6 +605,14 @@ img { max-width:100%; }
         }
         img { display:block; }
     }
+    @media screen and (max-width: 768px) {
+        .images {
+            flex-direction: column;
+            & > div {
+                padding:1rem;
+            }
+        }
+    }
 }
 
 
@@ -541,6 +648,17 @@ img { max-width:100%; }
             border-radius:75px;
         }
     }
+    @media screen and (max-width:768px) {
+        .wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding:0 3rem;
+        }
+        .nav-column {
+            width:100%;
+        }
+    }
 }
 
 .footer-bottom {
@@ -562,7 +680,12 @@ img { max-width:100%; }
             padding-left:1rem;
         }
     }
-    
+    @media screen and (max-width:768px) {
+        .wrapper {
+            flex-direction: column;
+            text-align: center;
+        }
+    }    
 }
 
 
