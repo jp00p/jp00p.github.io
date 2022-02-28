@@ -323,6 +323,9 @@ img { max-width:100%; }
         .icon-grid {
             display:none;
         }
+        .intro {
+            padding:1rem;
+        }
     }
 }
 
@@ -492,23 +495,30 @@ img { max-width:100%; }
     }
     @media screen and (max-width:768px) {
         .wrapper {
-            padding:0;
+            padding:2rem;
         }
         .calc-form {
             form {
                 flex-direction: column;
                 .column {
                     width:100%;
+                    padding:0;
                 }
             }
             .meal-plans {
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
+                width:100%;
                 .card {
-                    max-width:100%;
+                    width:100%;
+                    max-width: 100%;
+                    margin-bottom: 1rem;
                     .content {
                         padding:1rem;
+                    }
+                    h3 {
+                        font-size:40px;
                     }
                 }
             }
@@ -556,9 +566,13 @@ img { max-width:100%; }
             width:100%;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            padding:2rem;
             .card {
+                font-size:18px;
                 width:100%;
-                padding:2rem;
+                max-width:100%;
+                margin-bottom:1rem;
             }
         }
     }
