@@ -1,4 +1,13 @@
+const activity_levels = {
+  1: "Not very active",
+  2: "Active",
+  3: "Very active",
+  4: "Pro athlete"
+}
+
 $(document).ready(function(){
+
+    $("#dog-age, #dog-activity").val(1)
 
     $('.ba-slider').each(function(){
       var cur = $(this);
@@ -8,17 +17,123 @@ $(document).ready(function(){
       // Bind dragging events
       drags(cur.find('.handle'), cur.find('.resize'), cur);
     });
+
+    $("#zipcode").on("keyup", function(){
+      if(!checkZip($(this).val())){
+        $("#zip-input").addClass("error")
+        $("#zip-input .error-text").text("Sorry, that zip code is not in our delivery range.")
+      } else {
+        $("#zip-input").removeClass("error")
+      }
+    });
+
+    $('#dog-age').on('input', function(){
+      let age = $("#dog-age").val()
+      if (age == 1) {
+        $("#age-label").text(`${age} year`)
+      } else {
+        $("#age-label").text(`${age} years`)
+      }
+    });
+
+    $("#dog-name").on("keyup", function(){
+      if($(this).val() != ""){
+        let dog_name = $("#dog-name").val()+"'s"
+        $("#dog-name-label").text(dog_name);
+      } else {
+        $("#dog-name-label").text("Your dog's");
+      }
+    });
+
+    $("#dog-weight").on('keyup', function(){
+      let weight = parseInt($(this).val())
+      if(weight <= 0 || weight > 250){
+        $("#weight-input").addClass("error");
+        $("#weight-input .error-text").text("Invalid weight, please enter a number between 1-250")
+      } else {
+        $("#weight-input").removeClass("error");
+      
+        setTimeout(function(){
+          var price1 = parseFloat($("#dog-weight").val() * 0.33).toFixed(2);
+          var price2 = parseFloat($("#dog-weight").val() * 0.12).toFixed(2);
+          var total1 = parseFloat(price1 * 14).toFixed(2);
+          var total2 = parseFloat(price2 * 14).toFixed(2);
+
+          $("#price1").text("$"+price1);
+          $("#price2").text("$"+price2);
+          $("#total1").text("$"+total1);
+          $("#total2").text("$"+total2);
+        }, 250)
+
+      }
+      
+    });
+
+    $('#dog-activity').on('input', function(){
+      $("#activity-label").text(activity_levels[$("#dog-activity").val()])
+    })
+
+    $('.meal-selector-button').on('click', function(e){
+      e.preventDefault();
+      $('.meal-selector-button').removeClass("active")
+      $(this).toggleClass("active")
+      let mealplan = $(this).data("meal-plan")
+      $("#meal-selections").data("meal-plan", mealplan)
+    });
+
+    $('.meal-icon-toggle').on('click', function(e){
+      e.preventDefault();
+      $('.meal-icon-toggle').removeClass("active")
+      $(this).addClass("active")
+    });
+
+    $(".loaf-selector a").on('click', function(e){
+      e.preventDefault();
+      let section = $(this).data("content")
+      console.log(section)
+      $(".loaf-content").removeClass("active")
+      $(".loaf-slider #"+section).addClass("active")
+      initSliders();  
+    });
+
+    $("#review-carousel").slick({
+      slidesToShow: 3,
+      prevArrow: $("#carousel-prev"),
+      nextArrow: $("#carousel-next")
+    });
+
+    $(window).on("scroll", function(){
+      if($(window).scrollTop() > 640){
+        $(".main-nav").addClass("scrolled");
+      } else {
+        $(".main-nav").removeClass("scrolled");
+      }
+    })
+
   });
   
 
   $(window).resize(function(){
-    $('.ba-slider').each(function(){
-      var cur = $(this);
-      var width = cur.width()+'px';
-      cur.find('.resize img').css('width', width);
-    });
+    initSliders();
   });
 
+  
+
+function initSliders(){
+  $('.ba-slider').each(function(){
+    var cur = $(this);
+    var width = cur.width()+'px';
+    cur.find('.resize img').css('width', width);
+  });
+}
+
+function checkZip(zip){
+  let zipcodes = ['12345', '97201', '98663'];
+  if(zipcodes.includes(zip)){
+    return true;
+  }
+  return false;
+}
   
 function drags(dragElement, resizeElement, container) {
 	

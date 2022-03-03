@@ -7,7 +7,7 @@
     <title>Fetch 2022</title>
     <link rel="stylesheet" href="https://use.typekit.net/cwz5rlh.css">
     
-    
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
@@ -63,7 +63,7 @@
 
     <div class="banner-promo">
         <div class="wrapper">
-            <div><strong>Save 70% off your first order</strong> with subscription</div>
+            <div><a href="#"><strong>Save 70% off your first order</strong> with subscription <img src="images/small-arrow.png"></a></div>
         </div>
     </div>
 
@@ -74,28 +74,32 @@
             </div>
             <div class="content">
                 <div class="text">
-                    <h2 class="wow animate__backInRight">Feed <span class="green">your dog</span><br>
+                    <h2 class="wow animate__flipInX">Feed <span class="green">your dog</span><br>
                         like family</h2>
-                    <p>Excitement, Joy, Love. That’s what makes Fetch’s fresh, chef-baked dog food a must-have in your pup’s bowl, giving them a longer, healthier life in every bite.</p>
-                    <p><a href="#" class="button">shop now</a></p>
+                    <p class="wow animate__fadeIn" data-wow-delay="0.3s">Excitement, Joy, Love. That’s what makes Fetch’s fresh, chef-baked dog food a must-have in your pup’s bowl, giving them a longer, healthier life in every bite.</p>
+                    <p class="wow animate__fadeInUp" data-wow-delay="1s"><a href="#" class="button">shop now</a></p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="review-banner">
+        <div class="animated-truck wow animate__lightSpeedOutRight" data-wow-duration="2s" data-wow-delay="0.1s">
+            <img src="images/gifs/Fetch (1).gif">
+        </div>
         <div class="wrapper">
-            <div class="review">
+            
+            <div class="review wow animate__flipInX" data-wow-delay="0.5s">
                 <img src="images/stars.png">
                 <h3>4.8 star average dog review</h3>
                 <p>Learn why pup parents feed their dog like family</p>
             </div>
-            <div class="review">
+            <div class="review wow animate__flipInY" data-wow-delay="1s">
                 <img src="images/shield.png">
                 <h3>Happy pups, 100% guaranteed</h3>
                 <p>Put our top-quality fresh dog food to the test with our 100% money back guarantee</p>
             </div>
-            <div class="review">
+            <div class="review wow animate__flipInX" data-wow-delay="1.5s">
                 <img src="images/bowl.png">
                 <h3>60,000 full bellies (and counting)</h3>
                 <p>Discover what makes our best-selling Puploaf tail-wagging good.</p>
@@ -155,7 +159,7 @@
         <div class="wrapper">
             <div class="content">
                 <div class="text">
-                    <h2 class="wow animate__backInLeft">What's in your dog bowl?</h2>
+                    <h2 class="wow animate__flipInX">What's in your dog bowl?</h2>
                     <p class="white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A architecto aperiam labore ab aspernatur dicta explicabo asperiores? Ex minus, accusamus tenetur omnis doloribus ratione odit similique, debitis nisi aliquid non.</p>
                 </div>
             </div>
@@ -168,49 +172,95 @@
 
     <div class="loaf-slider">
         <div class="wrapper">
+            
             <div class="intro">
                 <h2 class="wow animate__backInUp">Puploaf is the most <span class="green">fresh</span></h2>
             </div>
             
             <div class="loaf-selector">
                 <div class="icon">
-                    <img src="images/turkey-icon.png">
-                    <p>Turkey</p>
+                    <a class="meal-icon-toggle active" href="#" data-content="turkey">
+                        <img src="images/turkey-icon_on.png" class="on">
+                        <img src="images/turkey-icon_off.png" class="off">
+                        <p>Turkey</p>
+                    </a>
                 </div>
                 <div class="icon">
-                    <img src="images/beef-icon.png">
-                    <p>Beef</p>
+                    <a class="meal-icon-toggle" href="#" data-content="beef">
+                        <img src="images/beef-icon_on.png" class="on">
+                        <img src="images/beef-icon_off.png" class="off">
+                        <p>Beef</p>
+                    </a>
                 </div>
             </div>
-            
-            <div class="slider-wrapper">
-                <div class="ba-slider">
-                    <img src="images/dog.jpeg" alt="">       
-                    <div class="resize">
-                    <img src="images/food.jpeg" alt="">
+
+            <div class="loaf-content active" id="turkey">
+                
+                <div class="slider-wrapper loaf-feature-slider">
+                    <div class="ba-slider">
+                        <img src="images/food2.jpg" alt="">       
+                        <div class="resize" style="width:20%">
+                        <img src="images/food.jpeg" alt="">
+                        </div>
+                        <span class="handle" style="left:20%"></span>
                     </div>
-                    <span class="handle"></span>
                 </div>
+
+                <div class="loaf-features">
+                    <div class="feature">
+                        <div class="icon"><img src="images/leaf-icon.png"></div>
+                        <div class="text">Natural whole food ingredients</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/leaf-icon.png"></div>
+                        <div class="text">Natural whole food ingredients</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/leaf-icon.png"></div>
+                        <div class="text">Natural whole food ingredients</div>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="button">shop now</a>
+                </div>
+
             </div>
 
-            <div class="loaf-features">
-                <div class="feature">
-                    <div class="icon"><img src="images/leaf-icon.png"></div>
-                    <div class="text">Natural whole food ingredients</div>
-                </div>
-                <div class="feature">
-                    <div class="icon"><img src="images/leaf-icon.png"></div>
-                    <div class="text">Natural whole food ingredients</div>
-                </div>
-                <div class="feature">
-                    <div class="icon"><img src="images/leaf-icon.png"></div>
-                    <div class="text">Natural whole food ingredients</div>
-                </div>
-            </div>
 
-            <div>
-                <a href="#" class="button">shop now</a>
+            <div class="loaf-content" id="beef">
+                
+                <div class="slider-wrapper loaf-feature-slider">
+                    <div class="ba-slider">
+                        <img src="images/raw-meat.jpg" alt="">       
+                        <div class="resize" style="width:20%;">
+                        <img src="images/loaf.jpeg" alt="">
+                        </div>
+                        <span class="handle" style="left:20%;"></span>
+                    </div>
+                </div>
+
+                <div class="loaf-features">
+                    <div class="feature">
+                        <div class="icon"><img src="images/leaf-icon.png"></div>
+                        <div class="text">Natural whole food ingredients</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/leaf-icon.png"></div>
+                        <div class="text">Natural whole food ingredients</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/leaf-icon.png"></div>
+                        <div class="text">Natural whole food ingredients</div>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#" class="button">shop now</a>
+                </div>
+
             </div>
+           
 
         </div>
     </div>
@@ -227,7 +277,7 @@
             </div>
             <div class="content">
                 <div class="text">
-                    <h2 class="wow animate__backInRight">How it works</h2>
+                    <h2 class="wow animate__flipInX">How it works</h2>
                     <div class="timeline">
                         <div class="entry wow animate__fadeIn">
                             <div class="digit"><span>1</span></div> 
@@ -250,7 +300,7 @@
     <div class="calculator">
         <div class="wrapper">
             <div class="intro">
-                <h2><span class="green dog-name">Mochi's</span>&nbsp;Meal Plan</h2>
+                <h2><span class="green dog-name-label" id="dog-name-label">Your dog's</span>&nbsp;Meal Plan</h2>
                 <p>Your doggo is one of a kind. That’s why our personalized meal plans are specially tailored to your pup’s needs, so you can feed them tasty food as wonderful as they are.</p>
             </div>
             <div class="calc-form">
@@ -259,20 +309,22 @@
                         <div class="form-input">
                             <label>
                                 <div>What is your dog's name?</div>
-                                <input type="text">
+                                <input type="text" id="dog-name">
                             </label>
                         </div>
-                        <div class="form-input">
+                        <div class="form-input" id="zip-input">
                             <label>
                                 <div>What is your zip code?</div>
-                                <input type="text">
+                                <input type="number" id="zipcode">
                             </label>
+                            <div class="error-text"></div>
                         </div>
                         <div class="form-input">
                             <label>
                                 <div>How old is your dog?</div>
-                                <input type="text">
+                                <input type="range" min="1" max="30" id="dog-age">
                             </label>
+                            <span id="age-label">1 years</span>
                         </div>
                     </div>
                     <div class="column">
@@ -282,17 +334,19 @@
                                 <input type="text">
                             </label>
                         </div>
-                        <div class="form-input">
+                        <div class="form-input" id="weight-input">
                             <label>
                                 <div>How much does your dog weigh?</div>
-                                <input type="text">
+                                <input type="number" min="1" max="250" id="dog-weight">
                             </label>
+                            <div class="error-text"></div>
                         </div>
                         <div class="form-input">
                             <label>
                                 <div>How active is your dog?</div>
-                                <input type="text">
+                                <input type="range" min="1" max="4" id="dog-activity">
                             </label>
+                            <span id="activity-label">Very active</span>
                         </div>
                     </div>
                     <div class="row">
@@ -300,18 +354,27 @@
                             <label>
                                 <div class="text-center">Select recipe</div>
                             </label>
-                            <div class="meal-selections">
+                            <div class="meal-selections" id="meal-selections" data-meal-plan="beef">
                                 <div>
-                                    <img src="images/turkey-icon.png">
-                                    <span>Turkey</span>
+                                    <a href="#" class="meal-selector-button" data-meal-plan="turkey">
+                                        <img src="images/turkey-icon_off.png" class="off">
+                                        <img src="images/turkey-icon_on.png" class="on">
+                                        <span>Turkey</span>
+                                    </a>
                                 </div>
                                 <div>
-                                    <img src="images/beef-icon.png">
-                                    <span>Beef</span>
+                                    <a href="#" class="meal-selector-button active" data-meal-plan="beef">
+                                        <img src="images/beef-icon_off.png" class="off">
+                                        <img src="images/beef-icon_on.png" class="on">
+                                        <span>Beef</span>
+                                    </a>
                                 </div>
                                 <div>
-                                    <img src="images/mix.png">
-                                    <span>Mix Pack</span>
+                                    <a href="#" class="meal-selector-button" data-meal-plan="mix">
+                                        <img src="images/mix-icon_off.png" class="off">
+                                        <img src="images/mix-icon_on.png" class="on">
+                                        <span>Mix Pack</span>
+                                    </a>
                                 </div>
 
                             </div>
@@ -325,8 +388,8 @@
                             <div class="content">
                                 <div class="pricing">
                                     <h4>Fetch Fresh Plan starting at</h4>
-                                    <h3><span class="green">$2.85</span>/day</h3>
-                                    <h4><span class="green">$39.90</span>/delivery period</h4>
+                                    <h3><span class="green" id="price1">$2.85</span>/day</h3>
+                                    <h4><span class="green" id="total1">$39.90</span>/delivery period</h4>
                                 </div>
                                 <p>Our most popular plan is intended to replace your dog's current diet fully with healthy food. Delivered fresh bi-weekly.</p>
                                 <p>For your dog, a single serving is a 1 1/8 inch slice (45 grams) - 300 calories</p>
@@ -340,8 +403,8 @@
                             <div class="content">
                                 <div class="pricing">
                                     <h4>Fetch Fresh Plan starting at</h4>
-                                    <h3><span class="green">$2.85</span>/day</h3>
-                                    <h4><span class="green">$39.90</span>/delivery period</h4>
+                                    <h3><span class="green" id="price2">$2.85</span>/day</h3>
+                                    <h4><span class="green" id="total2">$39.90</span>/delivery period</h4>
                                 </div>
                                 <p>Our most popular plan is intended to replace your dog's current diet fully with healthy food. Delivered fresh bi-weekly.</p>
                                 <p>For your dog, a single serving is a 1 1/8 inch slice (45 grams) - 300 calories</p>
@@ -358,7 +421,7 @@
         <div class="wrapper">
 
             <div class="intro">
-                <h2>Kibble comparison</h2>
+                <h2 class="wow animate__backInDown">Kibble comparison</h2>
                 <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum distinctio voluptatibus aperiam. Unde tenetur iure natus reprehenderit, deleniti, eos quod consequuntur aspernatur neque, veniam alias libero doloremque et aliquam provident.</p>
             </div>
 
@@ -392,10 +455,81 @@
     </div>
 
 
+    <div class="carousel-section light-gray-bg">
+        <div class="wrapper">
+
+            <div class="intro">
+                <h2 class="wow animate__backInDown">Pups are barking, parents are talking</h2>
+                <p>These are the stories of pups just like yours who love Fetch.</p>
+                <p>Want to see your dog here? Leave a review, tag us or use <span class="green">#FetchPDX</span></p>
+            </div>
+
+            <div class="slider">
+
+                <div class="slide-arrow prev" id="carousel-prev"><img src="images/small-arrow.png"></div>
+                <div class="slide-arrow next" id="carousel-next"><img src="images/small-arrow.png"></div>
+
+                <div class="slides-wrapper" id="review-carousel">
+                    <div class="slide">
+                        <div class="image">
+                            <img src="images/dog2.png">
+                        </div>
+                        <div class="content">
+                            <p>We love Fetch! And our dog Fido does too. We feed him twice a day with Fetch Beef Puploaf from our Fetch Fresh plan and his fur has gotten a whole new shine to it as he grows into his adult years.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="image">
+                            <img src="images/dog2.png">
+                        </div>
+                        <div class="content">
+                            <p>We love Fetch! And our dog Fido does too. We feed him twice a day with Fetch Beef Puploaf from our Fetch Fresh plan and his fur has gotten a whole new shine to it as he grows into his adult years.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="image">
+                            <img src="images/dog2.png">
+                        </div>
+                        <div class="content">
+                            <p>We love Fetch! And our dog Fido does too. We feed him twice a day with Fetch Beef Puploaf from our Fetch Fresh plan and his fur has gotten a whole new shine to it as he grows into his adult years.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="image">
+                            <img src="images/dog2.png">
+                        </div>
+                        <div class="content">
+                            <p>We love Fetch! And our dog Fido does too. We feed him twice a day with Fetch Beef Puploaf from our Fetch Fresh plan and his fur has gotten a whole new shine to it as he grows into his adult years.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="image">
+                            <img src="images/dog2.png">
+                        </div>
+                        <div class="content">
+                            <p>We love Fetch! And our dog Fido does too. We feed him twice a day with Fetch Beef Puploaf from our Fetch Fresh plan and his fur has gotten a whole new shine to it as he grows into his adult years.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="image">
+                            <img src="images/dog2.png">
+                        </div>
+                        <div class="content">
+                            <p>We love Fetch! And our dog Fido does too. We feed him twice a day with Fetch Beef Puploaf from our Fetch Fresh plan and his fur has gotten a whole new shine to it as he grows into his adult years.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
     <div class="story yellow-bg">
         <div class="wrapper">
             <div class="intro">
-                <h2>Our Story</h2>
+                <h2 class="wow animate__backInDown">Our Story</h2>
                 <p class="white">Fetch is what happens when pup-lovers decide to make food so good, your dog will feel like everyday is Thanksgiving! From our trusted veterinary experts to our in-house master chefs, each person on our team believes the best way to make dog food is from wholesome and delicious ingredients with all the nutrients your dog needs… and a whole lot of puppy love!</p>
             </div>
             <div class="images">
@@ -429,7 +563,7 @@
             </div>
             
             <div class="content">
-                <h2>Give us one week...</h2>
+                <h2 class="wow animate__backInRight">Give us one week...</h2>
                 <h3>and your pup will enjoy:</h3>
             </div>
             </div>  
@@ -454,21 +588,21 @@
             <div class="nav-column">
                 <h3>Site Map</h3>
                 <ul>
-                    <li><a href="#">link</a></li>
-                    <li><a href="#">link</a></li>
-                    <li><a href="#">link</a></li>
-                    <li><a href="#">link</a></li>
-                    <li><a href="#">link</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Nutrition</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Shop</a></li>
                 </ul>
             </div>
 
             <div class="nav-column">
                 <h3>Contact</h3>
-                <ul>
-                    <li><a href="#"><img src="images/mail-icon.png"> link</a></li>
-                    <li><a href="#"><img src="images/mail-icon.png"> link</a></li>
-                    <li><a href="#"><img src="images/mail-icon.png"> link</a></li>
-                    <li><a href="#"><img src="images/mail-icon.png"> link</a></li>
+                <ul class="contact-links">
+                    <li><a href="#"><img src="images/mail-icon.png">support@pdxfetch.com</a></li>
+                    <li><a href="#"><img src="images/instagram.png">@pdxfetch</a></li>
+                    <li><a href="#"><img src="images/facebook.png">pdxfetch</a></li>
+                    <li><a href="#"><img src="images/phone.png">503.894.5470</a></li>
                 </ul>
             </div>
 
@@ -500,6 +634,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/plugins/before-after.min.js"></script>
     <script src="js/plugins/wow.min.js"></script>
     <script>
