@@ -93,21 +93,58 @@ $(document).ready(function(){
       console.log(section)
       $(".loaf-content").removeClass("active")
       $(".loaf-slider #"+section).addClass("active")
+      $(".loaf-features").removeClass("active")
+      $(".loaf-slider #"+section+" .loaf-features:first").addClass("active")
       initSliders();  
     });
 
     $("#review-carousel").slick({
       slidesToShow: 3,
       prevArrow: $("#carousel-prev"),
-      nextArrow: $("#carousel-next")
+      nextArrow: $("#carousel-next"),
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true
+        },
+        }
+      ]
     });
 
     $(window).on("scroll", function(){
       if($(window).scrollTop() > 640){
         $(".main-nav").addClass("scrolled");
-      } else {
+      } else if($(window).scrollTop() < 300){
         $(".main-nav").removeClass("scrolled");
       }
+    });
+
+    $(".loaf-feature-slider").each(function(){
+      let featureName = $(this).data("features");
+      var featureId = 1;
+      let parent = $(this)
+      $(".handle", this).on("moved", function(e){
+        e.stopPropagation();
+        let progress = parseInt($(this)[0].style.left.replace("%",""));
+        if(progress < 30){
+          featureId = 1
+          $(".loaf-features").not("#"+featureName+"-"+featureId).removeClass("active");
+          $("#"+featureName+"-"+featureId).not(".active").addClass("active");
+        } 
+        if (progress >= 30 && progress < 60){
+          featureId = 2
+          $(".loaf-features").not("#"+featureName+"-"+featureId).removeClass("active");
+          $("#"+featureName+"-"+featureId).not(".active").addClass("active");
+        } 
+        if (progress >= 85) {
+          featureId = 3
+          $(".loaf-features").not("#"+featureName+"-"+featureId).removeClass("active");
+          $("#"+featureName+"-"+featureId).not(".active").addClass("active");
+        }
+      });
     })
 
   });
@@ -164,12 +201,15 @@ function drags(dragElement, resizeElement, container) {
         
         leftValue = moveX + posX - dragWidth;
         
+        
         // Prevent going off limits
         if ( leftValue < minLeft) {
           leftValue = minLeft;
         } else if (leftValue > maxLeft) {
           leftValue = maxLeft;
         }
+
+        
         
         // Translate the handle's left value to masked divs width.
         widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
@@ -190,7 +230,37 @@ function drags(dragElement, resizeElement, container) {
       dragElement.removeClass('draggable');
       resizeElement.removeClass('resizable');
     });
+
+    dragElement.on("mousemove touchmove", function(e){
+      
+      setTimeout(function(){
+        //dragElement.trigger("moved");
+      }, 500);
+      return true;
+      
+    });
+    
   }
   
   
-  
+
+jQuery.event.special.touchstart = {
+  setup: function( _, ns, handle ) {
+      this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+  }
+};
+jQuery.event.special.touchmove = {
+  setup: function( _, ns, handle ) {
+      this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+  }
+};
+jQuery.event.special.wheel = {
+  setup: function( _, ns, handle ){
+      this.addEventListener("wheel", handle, { passive: true });
+  }
+};
+jQuery.event.special.mousewheel = {
+  setup: function( _, ns, handle ){
+      this.addEventListener("mousewheel", handle, { passive: true });
+  }
+};

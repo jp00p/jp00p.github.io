@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <title>Fetch 2022</title>
+    <script src="https://kit.fontawesome.com/074e3ff602.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.typekit.net/cwz5rlh.css">
-    
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -163,9 +170,8 @@
                     <p class="white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A architecto aperiam labore ab aspernatur dicta explicabo asperiores? Ex minus, accusamus tenetur omnis doloribus ratione odit similique, debitis nisi aliquid non.</p>
                 </div>
             </div>
-            <div class="image" style="background-image:url(images/hero2.png)">
+            <div class="image blue-bg" style="background-image:url(images/hero2.png)">
                 <img src="images/hero2.png">
-                <div class="hero-bg"></div>
             </div>
         </div>
     </div>
@@ -196,7 +202,7 @@
 
             <div class="loaf-content active" id="turkey">
                 
-                <div class="slider-wrapper loaf-feature-slider">
+                <div class="slider-wrapper loaf-feature-slider" data-features="turkey-features">
                     <div class="ba-slider">
                         <img src="images/food2.jpg" alt="">       
                         <div class="resize" style="width:20%">
@@ -206,18 +212,46 @@
                     </div>
                 </div>
 
-                <div class="loaf-features">
+                <div class="loaf-features active" id="turkey-features-1">
                     <div class="feature">
-                        <div class="icon"><img src="images/leaf-icon.png"></div>
+                        <div class="icon"><img src="images/feature-icons/leaf.png"></div>
                         <div class="text">Natural whole food ingredients</div>
                     </div>
                     <div class="feature">
-                        <div class="icon"><img src="images/leaf-icon.png"></div>
-                        <div class="text">Natural whole food ingredients</div>
+                        <div class="icon"><img src="images/feature-icons/clock.png"></div>
+                        <div class="text">Delivered within 48 hours after baking</div>
                     </div>
                     <div class="feature">
-                        <div class="icon"><img src="images/leaf-icon.png"></div>
-                        <div class="text">Natural whole food ingredients</div>
+                        <div class="icon"><img src="images/feature-icons/zero.png"></div>
+                        <div class="text">Zero added preservatives</div>
+                    </div>
+                </div>
+                <div class="loaf-features" id="turkey-features-2">
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/heart.png"></div>
+                        <div class="text">Vet-approved nutrition</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/health.png"></div>
+                        <div class="text">Loaded with micro-nutrients</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/smile.png"></div>
+                        <div class="text">Gentle on digestion</div>
+                    </div>
+                </div>
+                <div class="loaf-features" id="turkey-features-3">
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/hand.png"></div>
+                        <div class="text">Hand-prepared by chefs</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/star.png"></div>
+                        <div class="text">Baked to perfection</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/food.png"></div>
+                        <div class="text">Serve either warm or cold</div>
                     </div>
                 </div>
 
@@ -230,7 +264,7 @@
 
             <div class="loaf-content" id="beef">
                 
-                <div class="slider-wrapper loaf-feature-slider">
+                <div class="slider-wrapper loaf-feature-slider" data-features="beef-features">
                     <div class="ba-slider">
                         <img src="images/raw-meat.jpg" alt="">       
                         <div class="resize" style="width:20%;">
@@ -240,18 +274,46 @@
                     </div>
                 </div>
 
-                <div class="loaf-features">
+                <div class="loaf-features active" id="beef-features-1">
                     <div class="feature">
-                        <div class="icon"><img src="images/leaf-icon.png"></div>
+                        <div class="icon"><img src="images/feature-icons/leaf.png"></div>
                         <div class="text">Natural whole food ingredients</div>
                     </div>
                     <div class="feature">
-                        <div class="icon"><img src="images/leaf-icon.png"></div>
-                        <div class="text">Natural whole food ingredients</div>
+                        <div class="icon"><img src="images/feature-icons/clock.png"></div>
+                        <div class="text">Delivered within 48 hours after baking</div>
                     </div>
                     <div class="feature">
-                        <div class="icon"><img src="images/leaf-icon.png"></div>
-                        <div class="text">Natural whole food ingredients</div>
+                        <div class="icon"><img src="images/feature-icons/zero.png"></div>
+                        <div class="text">Zero added preservatives</div>
+                    </div>
+                </div>
+                <div class="loaf-features" id="beef-features-2">
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/heart.png"></div>
+                        <div class="text">Vet-approved nutrition</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/health.png"></div>
+                        <div class="text">Loaded with micro-nutrients</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/smile.png"></div>
+                        <div class="text">Gentle on digestion</div>
+                    </div>
+                </div>
+                <div class="loaf-features" id="beef-features-3">
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/hand.png"></div>
+                        <div class="text">Hand-prepared by chefs</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/star.png"></div>
+                        <div class="text">Baked to perfection</div>
+                    </div>
+                    <div class="feature">
+                        <div class="icon"><img src="images/feature-icons/food.png"></div>
+                        <div class="text">Serve either warm or cold</div>
                     </div>
                 </div>
 
@@ -578,7 +640,9 @@
 
 
     <div class="footer-top">
-        <img src="images/footer-dogs.png">
+        <div class="wow animate__bounceInUp" data-wow-duration="1s">
+        <img src="images/footer-dogs.jpg">
+        </div>
     </div>
 
 
@@ -610,6 +674,7 @@
                 <h3>Join our newsletter</h3>
                 <form>
                     <input type="text" name="email">
+                    <button type="submit"><i class="fa-solid fa-check"></i></button>
                 </form>
             </div>
 
