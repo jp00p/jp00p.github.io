@@ -234,7 +234,7 @@ function drags(dragElement, resizeElement, container) {
     dragElement.on("mousemove touchmove", function(e){
       
       setTimeout(function(){
-        //dragElement.trigger("moved");
+        dragElement.trigger("moved");
       }, 500);
       return true;
       
