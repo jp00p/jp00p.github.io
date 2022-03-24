@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<!--
+
+ ██▓     ██████ ▓█████ ▓█████     █    ██
+▓██▒   ▒██    ▒ ▓█   ▀ ▓█   ▀     ██  ▓██▒
+▒██▒   ░ ▓██▄   ▒███   ▒███     y▓██  ▒██░song
+░██░     ▒   ██▒▒▓█  ▄ ▒▓█  ▄    ▓▓█  ░██░
+░██░   ▒██████▒▒░▒████▒░▒████▒   ▒▒█████▓
+░▓     ▒ ▒▓▒ ▒ ░░░ ▒░ ░░░ ▒░ ░   ░▒▓▒ ▒ ▒
+ ▒ ░   ░ ░▒  ░ ░ ░ ░  ░ ░ ░  ░   ░░▒░ ░ ░
+ ▒ ░   ░  ░  ░     ░      ░       ░░░ ░ ░
+ ░           ░     ░  ░   ░  ░      ░
+
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>YUSONG BINGO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+      html,body {
+        width:100%;
+        height:100%;
+        margin:0;
+        text-align:center;
+        font-family:'Oswald', sans-serif;
+      }
+      body { 
+        background-color:#000;
+        background-image:url(bg.jpg);
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
+        padding:0;
+      }
+      p { color:#0f0; cursor: pointer; text-shadow:0px 0px 3px #000; }
+      #free span { color:#ccc; }
+      .bingo-wrap { 
+        display:flex;
+        width:100%;
+        height:100%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      table {
+        font-size:26px;
+        border-radius:5px;
+        letter-spacing:0.6px;
+        box-sizing:border-box;
+        width:70%;
+        height:90%;
+        margin:0 auto;
+        border:1px #333 solid;
+        background:#fff;
+        opacity:0.95;
+        border-collapse:collapse;
+      }
+      td { border:none; }
+      td {
+        font-weight:900;
+        padding:0;
+        border-collapse:collapse;
+        width:20%;
+        height:20%;
+        text-align:center;
+        vertical-align:middle;
+        background-size:cover;
+        background-repeat:no-repeat;
+        cursor:pointer;
+        background-position:center;
+        color:#333;
+        transition:all 0.2s ease-in;
+        position:relative;
+      }
+
+      td.active {
+        color:#fff;
+        text-shadow:0px 0px 8px #000;
+        background-color:#000;
+      }
+
+      tr:nth-child(odd) td:nth-child(even), 
+      tr:nth-child(even) td:nth-child(odd) {
+        background-color:#eee;
+      }
+
+      @media screen and (max-width : 1000px){
+        table {
+            width:100%;
+            height:100%;
+        }
+      }
+
+      @media screen and (max-width : 640px){
+        html,body { overflow:hidden; }
+        table {
+            width:100%;
+            font-size:0.8em;
+            margin:0;
+            height:50vh;
+            border:none;
+            table-layout:fixed;
+        }
+        td {
+            border:1px #333 solid;
+            word-wrap: break-word;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bingo-wrap">
+    <table cellspacing="0" cellpadding="0">
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td id="free"><span>Nice to </span> Free <span>You</span></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<p><a onclick="window.location.reload()">Refresh to get a new board!</a></p>
+</div>
+<script>
+
+    var api_key = "FR57D8JH3LYH";
+    var search_terms = ["Yusong Liu", "Doughboys podcast", "Seasonal birds", "Nancy drew", "Kiryu", "Majima", "Super mario sunshine", "Yakuza", "Kirby", "Mantine", "Hamilton"];
+
+    var stuff = [
+      'Yusong screams in anger',
+      'The SO appears',
+      'David mentioned',
+      'Parents mentioned',
+      'Yusong screams in joy',
+      '"1 in the chat..."',
+      'Doughboys reference',
+      'The SO is mentioned',
+      'Camera super zoom',
+      'Chat gets horny',
+      'Yusong gets horny',
+      'Yusong goes pee',
+      'Yusong drinks something',
+      'Hamilton lyric',
+      'Yusong hasn\'t seen a movie',
+      '"Juice me squeeze me"',
+      '"In this house..."',
+      '"Can\'t come to the phone"',
+      '"My kingdom"',
+      '"pog" or "poggers"',
+      'Yusong gets stuck in the game',
+      'Yusong makes a breakthrough',
+      'Subs are gifted',
+      'Bits are spent',
+      'Audio drop is played',
+      'Yusong makes you LOL',
+      'Chat makes you LOL',
+      'Yusong blames his controller or computer',
+      'Yusong threatens to kill someone (in minecraft)',
+      'Technical difficulties',
+      'Yusong stretches',
+    ];
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var cells = document.querySelectorAll('td:not(#free)');
+        cells.forEach(function(cell){
+            pick = Math.floor(Math.random()*stuff.length);
+            cell.innerHTML = stuff[pick];
+            stuff.splice(pick, 1);
+        })
+
+        var allcells = document.querySelectorAll('td')
+        allcells.forEach(function(cell){
+            cell.addEventListener('click', function(){
+
+                var toggle = this.style;
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                
+                cell.className = cell.className ? "" : "active";
+                
+                if(cell.className == "active"){
+                    fetch(search_url)
+                    .then(data => data.json())
+                    .then(data => {
+                        toggle.backgroundImage = "url("+data.results[0].media[0].tinygif.url+")";
+                    })
+                } else {
+                    toggle.backgroundImage = "";
+                }
+            });
+        })
+    });
+
+
+
+  </script>
+  </body>
+</html>
