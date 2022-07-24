@@ -18,145 +18,172 @@
   <head>
     <meta charset="UTF-8">
     <title>VOYAGER BINGO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <style>
-      html,body {
-        width:100%;
-        height:100%;
-        margin:0;
-        text-align:center;
-        font-family:'Oswald', sans-serif;
-      }
-      body { 
-        background-color:#000;
-        background-image:url(new-bg.jpg);
-        background-repeat:repeat;
-        background-size:33%;
-        background-position:center;
-        padding:0;
-      }
-      p { color:#0f0; cursor: pointer; text-shadow:0px 0px 3px #000; }
-      
-      .bingo-wrap { 
-        display:flex;
-        width:100%;
-        height:100%;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-      }
-      table {
-        font-size:26px;
-        border-radius:5px;
-        letter-spacing:0.6px;
-        box-sizing:border-box;
-        width:70%;
-        height:90%;
-        margin:0 auto;
-        border:1px #333 solid;
-        background:#fff;
-        opacity:0.95;
-        border-collapse:collapse;
-      }
-      td { border:none; }
-      td {
-        font-weight:900;
-        padding:0;
-        border-collapse:collapse;
-        width:20%;
-        height:20%;
-        text-align:center;
-        vertical-align:middle;
-        background-size:cover;
-        background-repeat:no-repeat;
-        cursor:pointer;
-        background-position:center;
-        color:#333;
-        transition:all 0.2s ease-in;
-        position:relative;
-      }
-
-      td.active {
-        color:#fff;
-        text-shadow:0px 0px 8px #000;
-        background-color:#000;
-      }
-
-      tr:nth-child(odd) td:nth-child(even), 
-      tr:nth-child(even) td:nth-child(odd) {
-        background-color:#eee;
-      }
-
-      @media screen and (max-width : 1000px){
-        table {
-            width:100%;
-            height:100%;
-        }
-      }
-
-      @media screen and (max-width : 640px){
-        html,body { overflow:hidden; }
-        table {
-            width:100%;
-            font-size:0.8em;
-            margin:0;
-            height:50vh;
-            border:none;
-            table-layout:fixed;
-        }
-        td {
-            border:1px #333 solid;
-            word-wrap: break-word;
-        }
-
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="lcars-classic.min.css">
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <div class="bingo-wrap">
-    <table cellspacing="0" cellpadding="0">
-    <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td id="free">Free</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-    </tr>
-</table>
-<p><a onclick="window.location.reload()">Refresh to get a new board!</a></p>
-</div>
-<script>
+  <body id="stretch">
+  
+  <div class="wrap" id="gap">
+    <div class="left-frame galaxy" id="short" >
+      <div>
+        <div class="panel-3 galaxy"><span class="hop"></span></div>
+        <div class="sidebar-buttons">
+          <a class="yellow" href="#" onclick="window.location.reload();">New board</a>
+        </div>
+        <div class="panel-4 gray"><span class="hop"></span></div>
+        <div class="panel-5 sky"><span class="hop"></span></div>
+      </div>
+    </div>
+    <div class="right-frame">
+      
+      <div class="bar-panel">
+        <div class="bar-6 galaxy"></div>
+        <div class="bar-7 blue"></div>
+        <div class="bar-8 gray"></div>
+        <div class="bar-9 sky"></div>
+        <div class="bar-10 galaxy"></div>
+      </div>
+      
+      <div class="corner-bg" style="background:#444a77">
+        <div class="corner"></div>
+      </div>
+      
+      <div class="content">
+
+        <div class="bingo-board">
+          
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell" id="free">
+            <div class="text">Free</div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+          <div class="cell">
+            <div class="text"></div>
+          </div>
+
+        </div>
+
+      </div>
+        		
+    </div>
+  </div>
+    
+  
+  <script>
 
     var api_key = "FR57D8JH3LYH";
-    var search_terms = ["Star Trek Voyager", "Trek Janeway", "Voyager Doctor", "Neelix", "Harry Kim Voyager", "Seven of Nine", "Tom Paris Voyager", "Chakotay", "Trek Voyager Funny"];
+    var search_terms = [
+      "Janeway",
+      "Janeway coffee",
+      "Neelix",
+      "Tuvok",
+      "Tuvix",
+      "Belanna",
+      "Chakotay",
+      "Tom Paris",
+      "Harry Kim",
+      "Seven of Nine",
+      "Jeri Ryan",
+      "Kathryn Janeway",
+      "Kes"
+    ];
 
     var stuff = [
     'Shields are down to 15% or lower',
@@ -182,6 +209,7 @@
     'Kes or Seven does something Alien',
     'Lifeforms invade the ship or take over the crew',
     'Neelix boasts',
+    '"DO IT"',
     'Neelix cooks something',
     'Tuvok finds something illogical',
     'Try to eject the warp core',
@@ -190,6 +218,7 @@
     'Someone gets kidnapped',
     'Miraculous medical procedure',
     'Panflutes',
+    'Chakotay is diplomatic',
     'Tom Paris witticism about alien on viewscreen',
     'Starfleet regulations thrown out',
     'Temporal anomaly!',
@@ -266,34 +295,48 @@
 
     document.addEventListener("DOMContentLoaded", function(){
 
-        var cells = document.querySelectorAll('td:not(#free)');
+        var cells = document.querySelectorAll('.bingo-board > div:not(#free) > div.text');
         cells.forEach(function(cell){
             pick = Math.floor(Math.random()*stuff.length);
             cell.innerHTML = stuff[pick];
             stuff.splice(pick, 1);
         })
 
-        var allcells = document.querySelectorAll('td')
+        var allcells = document.querySelectorAll('.bingo-board > div')
         allcells.forEach(function(cell){
-            cell.addEventListener('click', function(){
+            
+            cell.addEventListener('click', function(e){
+
+              e.preventDefault();
 
                 var toggle = this.style;
-                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + "&key=" + api_key + "&limit=5&contentfilter=low";
+                var search_url = "https://api.tenor.com/v1/random?q=" + search_terms[Math.floor(Math.random()*search_terms.length)] + " star+trek+voyager&key=" + api_key + "&limit=5&contentfilter=off&locale=en_US";
                 
-                cell.className = cell.className ? "" : "active";
-                
-                if(cell.className == "active"){
-                    fetch(search_url)
-                    .then(data => data.json())
-                    .then(data => {
-                        toggle.backgroundImage = "url("+data.results[0].media[0].tinygif.url+")";
-                    })
+                if(cell.classList.contains("active")){
+                  cell.classList.remove("active")
+                  toggle.backgroundImage = "none";
                 } else {
-                    toggle.backgroundImage = "";
-                }
+                  cell.classList.add("active")
+                  fetch(search_url)
+                  .then(data => data.json())
+                  .then(data => {
+                      toggle.backgroundImage = "url("+data.results[Math.floor(Math.random()*data.results.length)].media[0].tinygif.url+")";
+                  })
+                } 
             });
-        })
+        });
+
+      const event = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+      });
+
+      document.getElementById("free").dispatchEvent(event);
     });
+
+    
+    
 
 
 

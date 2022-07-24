@@ -1,0 +1,99 @@
+html,body { overflow: hidden; }
+
+.bingo-board {
+  display:flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-collapse: collapse;
+  table-layout: fixed;
+  overflow: hidden;
+  min-height:420px;
+  height:90vh;
+  width:80vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url(bg2.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-blend-mode: multiply;
+}
+
+
+.bingo-board > div {
+  transition:all 0.23s ease-out;
+  text-shadow: 1px 1px 2px #000;
+  vertical-align: middle;
+  margin:5px 5px;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
+  background-position: center center !important;
+  background-image:none;
+  cursor: pointer;
+  color:rgba(200,200,200,0.9);
+  text-align: center;
+  font-weight:900;
+  font-size: clamp(13px, 2vw, 3.1vh);
+  overflow: hidden;
+  width:calc(20% - 10px);
+  height:calc(20% - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:5px;
+  border:2px transparent solid;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.bingo-board > div:hover {
+  background-color:rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.bingo-board > div.active {
+  text-shadow: 10px 0px 10px #000, -10px 0px 10px #000, 0px 10px 10px #000, 0px -10px 10px #000;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8), 0px 0px 15px rgba(0,255,255,1);
+  background-color:rgba(255,255,255,0.5);
+  border:2px #fff solid;
+  color:#fff;
+}
+.bingo-board > div.active div.text { opacity:1; }
+
+
+
+
+@media screen and (max-width:1024px){
+  
+  .bingo-board { 
+    width:95vw;
+    height:95vh;
+    margin:0 auto;
+    border-radius: 0px;
+  }
+  .bingo-board > div {
+    font-weight:600;
+  }
+  .content {
+    padding:0 0 10px 0px !important;
+  }
+  .left-frame, .bar-panel, .corner-bg {
+    display:none;
+  }
+}
+
+@media screen and (max-width:768px){
+  
+  .bingo-board > div:focus, .bingo-board >  div:hover, .bingo-board > div:active { background-color:rgba(11,11,11,0.9); outline: none;}
+
+  .left-frame {
+    width:30px;
+    min-width:30px;
+  }
+  .right-frame {
+    width:auto;
+  }
+  .content {
+    padding:10px;
+  }
+
+}
