@@ -1,5 +1,7 @@
 html,body { overflow: hidden; }
 
+.content { height:100vh; }
+
 .bingo-board {
   display:flex;
   align-items: flex-start;
@@ -9,8 +11,8 @@ html,body { overflow: hidden; }
   table-layout: fixed;
   overflow: hidden;
   min-height:420px;
-  height:90vh;
-  width:80vw;
+  height:85vh;
+  width:75vw;
   background-color: rgba(0, 0, 0, 0.7);
   background-image: url(bg2.jpg);
   background-size:cover;
@@ -85,6 +87,9 @@ html,body { overflow: hidden; }
   
   .bingo-board > div:focus, .bingo-board >  div:hover, .bingo-board > div:active { background-color:rgba(11,11,11,0.9); outline: none;}
 
+  .bingo-board {
+    height:90vh;
+  }
   .left-frame {
     width:30px;
     min-width:30px;
