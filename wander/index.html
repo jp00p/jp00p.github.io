@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500&display=swap" rel="stylesheet">
+  <title>Wanderhome tools for FOOLS</title>
+  <style>
+    html,body { height:100%; margin:0; padding:0; }
+    
+    body { 
+      background:url("bg.png") no-repeat center center; 
+      background-size:cover;
+    }
+
+    main { 
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap:32px;
+      height:100%;
+    }
+    * { font-family:"Cormorant"; }
+    button {
+      appearance: none;
+      font-size:2rem;
+      border:none;
+      color:#444;
+      background:bisque;
+      padding:1rem 2rem;
+      border-radius:5px;
+      transition:all 0.2s;
+      cursor: pointer;
+    }
+    button:hover {
+      background:burlywood;
+    }
+    #output {
+      font-size:1.5rem;
+      text-align: center;
+      color:#fff;
+      text-shadow: 1px 1px #000;
+    }
+  </style>  
+</head>
+<body>
+  
+  <main>
+    <button id="gen">Looks</button>
+    <div id="output"></div>
+  </main>
+
+  <script>
+
+    function choose(choices) {
+      var index = Math.floor(Math.random() * choices.length);
+      return choices[index];
+    }
+
+    const items = [
+      "Practical Walking Boots","Patchwork Jacket","Frayed Gloves","Slightly Inaccurate Map Of The Area","The Bare Minimum Needed To Get By","Fundamental Confidence In The World","Wooden Sandals","Huge Glasses","Scratchy Cloak","Wheelchair","Loose Papers Covered In Sketches And Notes","Ceremonial Robes","Paint-Stained Pants","Sea-Blue Clay Canteen","Flowing Dress","Faded Shawl","Plain Ceramic Mask","A Constant Rhythmic Tapping","Sunset-Shade Robes","Golden Jewelry","Loose-Fitting Pants","Outrageously Long Scarf","Elaborate Silks","Cloak Covered In Glowing Fungi","Stylized Mask","Wicker Basket Full Of Costumes","Trekking Pole","Bandage-Wrapped Feet","Necklace Of Huge Strung Beads","A Gleam In Your Eye","Cloak Big Enough To Hide In","Carefully-Carved Wooden Mask","Stolen Lace","Shirt No One Knows How To Repair","Ornate Ceremonial Scepter","Traditional Marriage Gown","Brutal Scar","Intricate Tattoos From Your Home","Fancy Pipe","Improvised Crutches","A Sacred Text From Your People","A Deep And Profound Loneliness","Mud-Soaked Cloak","Reliable Wooden Staff","Wide-Brimmed Hat That Covers Your Eyes","Warm And Comfortable Gloves","Patchwork Work Pants","Deck Of Playing Cards","Well-Loved Fiddle","Badly Ripped Dress","Box Of Medical Supplies","Small And Practical Knife","Book Of Small Rituals","Shining Eyes That Pierce Through Darkness","Garishly Purple Pants","Pet Ant","Noble Attire","Flamboyant Hat","Elaborate Makeup","Polka-Dot Bindle","Flowing Cape","Lots And Lots Of Beads","Flower Behind Your Ear","Cloak Unsuitable For The Weather","Trick Deck Of Cards","A Complete Lack Of Foresight","Cloak Big Enough To Hide Your Ward","Stained Apron","Pots & Pans","Thick Muddy Boots","Fishing Kit","Shield Almost As Big As You","Forged Paperwork","Austere Formal-Wear","Reading Glasses","Sturdy Cane","Heavy Earrings","Seemingly Endless Patience","Tweed Vest","Well-Worn Moth-Tending Uniform","Shining Lantern","Small Reading Glasses","Satchel Full Of Papers","Ink-Stained Gloves","Mottled Bark-Colored Cloak","Finely-Tailored Tie","Out-Of-Place Dress","Nearly-Threadbare Gloves","Map Of Local Moth Towers","A Deep Sense That You're In Over Your Head","Patched-Up Mustard Cloak","Dress From A Distant Land","Fingers Adorned With Rings","Glasses With Many Adjusting Lenses","Once-Fancy Hat","Manual Wheelchair","Fat Cigars","Abacus","Overburdened Backpack","Ledgers","Fine Silk Handkerchief","Non-Stop Banter","Battered Gray Cloak","Sturdy Walking Stick","Fresh Bandages","Weather-Beaten Hood","Leather-Bound Book Of Poems","Straw Hat","Delicate Spectacles","Argyle Sweater Vest","Cloak Full Of Pockets","Coarse Button Down","Practical Plaid Skirt","Pockets Full Of Burnt Smokes","Battered Briefcase","Tweed Jacket With Shoulder Pads","Fashionable Cap","Cane With A Comfortable Grip","Ink-Stained Hands","A Literary Quote For Every Occasion","Grass-Stained Jeans","Bandages","Stuffed Animal","Suspenders","Cap That’s Always Worn Backwards","Awkwardly-Sized Maroon Cloak","Flowers Forever In Hand","Ocarina","Sundress That Whooshes When You Spin","Pokin’ Stick","Stompin’ Boots","An Overwhelming Love For Life","Plaid Button-Down","Shepherd’s Crook","Bug-Calling Whistle","Woolen Cloak","Puffy Jacket","Old-Fashioned Pipe","Hiking Boots","Smock Frock","Patchwork Overalls","Practical And Bunched-Up Dress","A Superstitious Turn Of Phrase","Satchel Of Books","Dusty Blazer","Oversized Glasses","Conservative Dress","Time-Worn Cane","Service Ant","Well-Kept Unobtrusive Cloak","Journal Full Of Notes","Comfortable Hat","Dangling Earrings","Tie With A Splash Of Color","A Performatively Bright Smile","Black Cloak","Terrifying Mask","Gauze-Wrapped Splint","Ostentatious Belt","Scarf Big Enough To Hide In","Stylish And Wide-Brimmed Hat","Fingerless Gloves","Hood That Covers Your Eyes","Pack Of Smokes","Wanted Posters Of Your Own Face","A Quick Word And A Sharp Jab","Billowing Cloak","Hidden Armor","Many Scars","Prosthetic Limb","Lyre Missing A String","Torn Standard","Broken Tooth","Wide-Brimmed Hat","Blood Soaked Handkerchief","Walking Stick","A Nervous Tic"
+    ]
+
+    button = document.getElementById("gen");
+    output = document.getElementById("output");
+
+    button.addEventListener("click", function(){
+      output.innerHTML = choose(items) + "<br>" + choose(items) + "<br>" + choose(items)
+    });
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+    });
+  </script>
+</body>
+</html>
