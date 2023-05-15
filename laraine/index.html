@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>kandi 4 Laraine</title>
+    <style>
+    * { box-sizing: border-box; }
+    body {
+      background:url("bg.jpg");
+      background-size:fill;
+      font-family: Tahoma, Verdana;
+      font-size:12px;
+    }
+    .wrap {
+      background:rgba(0, 0, 0, 0.5);
+      display:flex;
+      padding:25px;
+      width:100%;
+      flex-direction: column;
+    }
+    #phrases {
+      display: flex;
+      flex-wrap: wrap;
+      width:100%;
+    }
+
+    .phrase {
+      display:table;
+      align-items: center;
+      flex-wrap: wrap;
+      padding:5px;
+      max-width:100%;
+    }
+    .word {
+      display:table-cell;
+      width:auto;
+      max-width:50%;
+      padding-right:32px;
+    }
+    .letter-cell {
+      display:table-cell;
+      width:auto;
+      max-width:33%;
+    }
+    .letter{
+      max-width:100%;
+      width:auto;
+    }
+    .letter img {
+      height:auto;
+      width:100%;
+    }
+    button {
+      background:purple;
+      color:antiquewhite;
+      font-size:14px;
+      border-radius:12px;
+      padding:12px;
+      border:2px plum solid;
+      margin-bottom:12px;
+    }
+  </style>
+  </head>
+  <body>
+
+    <div class="wrap">
+      <button onclick="generatePhrases()">~=.- make kandi -.=~ </button>
+      <div id="phrases"></div>
+    </div>
+
+    <script>
+    // Define the lists of words using image file names
+    var firstWords = ["Babe","Princess","Dancing Queen","PLUR Princess","Unicorn","Cupcake","Heartbreaker","Honey","Flawless","Fancy","Angel","Babydoll","Sweetheart","Baddie","Badass","Queen","King","Goddess","Adorable ","Girl Power","Girl Gang","Slay","Cutie","Flower Child","Flower Power","Secret admirer ","Beautiful","Rave","EDM","Kandi","PLUR","DJ","Dance","Vibes","Euphoria","Glowsticks","Shuffle","Bass","Festival","Neon","Candy","Unity","Love","Energy","Ecstasy","Lights","Trance","Techno","House","Psychedelic","EDM Family","Rave Culture","Groove","Freedom","Underground","Breakbeat","Acid","Spiral","Peace","Happiness","Celebration","DJ Booth","Party","EDM Community","Pulsating","Fantasy","Uplifting","Mind Expansion","Unicorns","Dreams","Flow","Glow Party","Laser Show","PLUR Warriors","Outfit","Melody","Bass Drop","Dancing Shoes","Neon Colors","Energetic","Glow Accessories","Ecstatic","Unity Bracelets","Insomnia","Fun","Crowd","Beat","Peaceful Chaos","Fantasyland","Oneness","Joyful","Happy","Hugs","Club","Euphoric State","Spirituality","Rhythm","Freedom of Expression","Harmonious","Hardstyle","EDM Fam","Hippy","Synth","Headbanging","Family","Dance Floor","Glitter","Ecstatic Experience","Lightshow","Carnival","Cosmic","Psytrance","BPM","Hug","Melodic","Friendship","Daydreaming","Remix","Drop","Chill","Electronica","Laser","Uplift","Vinyl","Chillout","Houseparty","Ambient","Sound","Producer","Stage","Mix","Synthesis","Progressive","Downtempo","Drum","Dancer","Nightlife","Eclectic","Digital","Groovy","Turntable","Electrify","Resonate","Audio","Deep","Chillwave","Groovetastic","Sonic","Dub","Harmonic","Pulse","Synthesized","Electro","Break","Ibiza","Househead","Electronaut","Anthem","Funky","Bassline","Trancer","Raver","Synthesizer","Dancefloor","Resonance","DJing","Drummer","Synthwave","Acidic","Tech-house","Clubbing","Frequency","Synthesizing","Warehouse","Groovebox","Speaker","Bassdrop","Festivalgoer","Groovemaker","Dancehall","Technocrat","Sampler","Grooveadelic","Soundscape","Smile","Joy","Sweet","Cuddle","Adorable","Sunshine","Lovely","Kindness","Delight","Cherish","Heart","Bubbly","Sparkle","Darling","Gratitude","Serenity","Magic","Snuggle","Bliss","Dream","Rainbow","Playful","Precious","Comfort","Gentle","Tender","Hope","Cute","Laughter","Radiant","Smooch","Angelic","Warmth","Enchanting","Soothe","Bouncy","Cheer","Lovable","Giggly","Butterfly","Admire","Carefree","Affection","Charming","Heartfelt","Sprinkle","Purr","Huggable","Tickle","Pleased","Fairy","Snuggly","Paradise","Petal","Glowing","Sweetie","Elation","Kiss","Sincere","Wonder","Enthusiasm","Jolly","Sugar","Harmony","Savor","Twinkle","Chirpy","Affirm","Squeeze","Dazzling","Glee","Care","Fluffy","Giggles","Delicate","Frolic","Cutey","Hopeful","Magical","Tranquil","Breezy","Lively","Sprout","Tenderhearted","Phat","Fly","Fresh","Da bomb","Wazzup","As if","Boo-yah","Bling-bling","Not!","Fo shizzle","Talk to the hand","Dope","Hella","Trippin","Wicked","Scrub","Poppin","Rad","Hype","Fierce","Jiggy","Yo","Cowabunga","Whatever","Wigged out","Gnarly","Take a chill pill","Phreak","Gag me with a spoon","Home skillet","Tubular","Get jiggy with it","Kickin it","Sike","Boo","Blunted","Bust a move","Talkin smack","Pimpin","Schwing","Dawg","Ballin","Fly girl","Slammin","Mad props","Word","Crunk","Wannabe","Flossin","Homie","Bomb diggity","Hypebeast","Baggy","411","Whassup","Phat beats","Homeboy","Irie","All that jazz","Baby mama","Baby daddy","Ghetto","Cheeseball","Pimped out","Bling bling","Phreaky","Bootylicious","All that","Skrilla","Cray","Chillax","Bounce","Booyah","Ill","Baby phat","Tasty","Hottie","Baller","Booty call","No diggity","Butter","Stoked","Foxy","Dime","Sup","Jank","Whatevs","Diggity","Off the hook","Check yo self","Phat ride","Whoomp","Supa fly"];
+    var secondWords = ["Babe","Princess","Dancing Queen","PLUR Princess","Unicorn","Cupcake","Heartbreaker","Honey","Flawless","Fancy","Angel","Babydoll","Sweetheart","Baddie","Badass","Queen","King","Goddess","Adorable ","Girl Power","Girl Gang","Slay","Cutie","Flower Child","Flower Power","Secret admirer ","Beautiful","Rave","EDM","Kandi","PLUR","DJ","Dance","Vibes","Euphoria","Glowsticks","Shuffle","Bass","Festival","Neon","Candy","Unity","Love","Energy","Ecstasy","Lights","Trance","Techno","House","Psychedelic","EDM Family","Rave Culture","Groove","Freedom","Underground","Breakbeat","Acid","Spiral","Peace","Happiness","Celebration","DJ Booth","Party","EDM Community","Pulsating","Fantasy","Uplifting","Mind Expansion","Unicorns","Dreams","Flow","Glow Party","Laser Show","PLUR Warriors","Outfit","Melody","Bass Drop","Dancing Shoes","Neon Colors","Energetic","Glow Accessories","Ecstatic","Unity Bracelets","Insomnia","Fun","Crowd","Beat","Peaceful Chaos","Fantasyland","Oneness","Joyful","Happy","Hugs","Club","Euphoric State","Spirituality","Rhythm","Freedom of Expression","Harmonious","Hardstyle","EDM Fam","Hippy","Synth","Headbanging","Family","Dance Floor","Glitter","Ecstatic Experience","Lightshow","Carnival","Cosmic","Psytrance","BPM","Hug","Melodic","Friendship","Daydreaming","Remix","Drop","Chill","Electronica","Laser","Uplift","Vinyl","Chillout","Houseparty","Ambient","Sound","Producer","Stage","Mix","Synthesis","Progressive","Downtempo","Drum","Dancer","Nightlife","Eclectic","Digital","Groovy","Turntable","Electrify","Resonate","Audio","Deep","Chillwave","Groovetastic","Sonic","Dub","Harmonic","Pulse","Synthesized","Electro","Break","Ibiza","Househead","Electronaut","Anthem","Funky","Bassline","Trancer","Raver","Synthesizer","Dancefloor","Resonance","DJing","Drummer","Synthwave","Acidic","Tech-house","Clubbing","Frequency","Synthesizing","Warehouse","Groovebox","Speaker","Bassdrop","Festivalgoer","Groovemaker","Dancehall","Technocrat","Sampler","Grooveadelic","Soundscape","Smile","Joy","Sweet","Cuddle","Adorable","Sunshine","Lovely","Kindness","Delight","Cherish","Heart","Bubbly","Sparkle","Darling","Gratitude","Serenity","Magic","Snuggle","Bliss","Dream","Rainbow","Playful","Precious","Comfort","Gentle","Tender","Hope","Cute","Laughter","Radiant","Smooch","Angelic","Warmth","Enchanting","Soothe","Bouncy","Cheer","Lovable","Giggly","Butterfly","Admire","Carefree","Affection","Charming","Heartfelt","Sprinkle","Purr","Huggable","Tickle","Pleased","Fairy","Snuggly","Paradise","Petal","Glowing","Sweetie","Elation","Kiss","Sincere","Wonder","Enthusiasm","Jolly","Sugar","Harmony","Savor","Twinkle","Chirpy","Affirm","Squeeze","Dazzling","Glee","Care","Fluffy","Giggles","Delicate","Frolic","Cutey","Hopeful","Magical","Tranquil","Breezy","Lively","Sprout","Tenderhearted","Phat","Fly","Fresh","Da bomb","Wazzup","As if","Boo-yah","Bling-bling","Not!","Fo shizzle","Talk to the hand","Dope","Hella","Trippin","Wicked","Scrub","Poppin","Rad","Hype","Fierce","Jiggy","Yo","Cowabunga","Whatever","Wigged out","Gnarly","Take a chill pill","Phreak","Gag me with a spoon","Home skillet","Tubular","Get jiggy with it","Kickin it","Sike","Boo","Blunted","Bust a move","Talkin smack","Pimpin","Schwing","Dawg","Ballin","Fly girl","Slammin","Mad props","Word","Crunk","Wannabe","Flossin","Homie","Bomb diggity","Hypebeast","Baggy","411","Whassup","Phat beats","Homeboy","Irie","All that jazz","Baby mama","Baby daddy","Ghetto","Cheeseball","Pimped out","Bling bling","Phreaky","Bootylicious","All that","Skrilla","Cray","Chillax","Bounce","Booyah","Ill","Baby phat","Tasty","Hottie","Baller","Booty call","No diggity","Butter","Stoked","Foxy","Dime","Sup","Jank","Whatevs","Diggity","Off the hook","Check yo self","Phat ride","Whoomp","Supa fly"];
+
+    // Function to generate random phrases
+    function generatePhrases() {
+      var phrasesContainer = document.getElementById('phrases');
+      phrasesContainer.innerHTML = ''; // Clear previous phrases
+
+      for (var i = 0; i < 10; i++) { // Generate 5 phrases
+        var phrase = getRandomElement(firstWords) + ' ' + getRandomElement(secondWords);
+        var phraseElement = document.createElement('div');
+        phraseElement.classList.add('phrase');
+
+        var words = phrase.split(' ');
+        for (var j = 0; j < words.length; j++) {
+          var wordElement = document.createElement('div');
+          wordElement.classList.add('word');
+
+          for (var k = 0; k < words[j].length; k++) {
+            var letterCell = document.createElement('div')
+            letterCell.classList.add('letter-cell')
+            var letterElement = document.createElement('img');
+            letterElement.classList.add('letter');
+            letterElement.src = 'alpha/' + words[j][k].toLowerCase() + '.png';
+            letterCell.appendChild(letterElement)
+            wordElement.appendChild(letterCell);
+          }
+
+          phraseElement.appendChild(wordElement);
+        }
+
+        phrasesContainer.appendChild(phraseElement);
+      }
+    }
+
+    // Function to get a random element from an array
+    function getRandomElement(array) {
+      var randomIndex = Math.floor(Math.random() * array.length);
+      return array[randomIndex];
+    }
+  </script>
+  </body>
+</html>

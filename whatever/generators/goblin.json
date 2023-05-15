@@ -1,0 +1,132 @@
+{
+  "A": [
+    "Axe",
+    "Ash",
+    "Auk"
+  ],
+  "B": [
+    "Bite",
+    "Bash",
+    "Bog"
+  ],
+  "C": [
+    "Claw",
+    "Crush",
+    "Crag"
+  ],
+  "D": [
+    "Dirt",
+    "Dusk",
+    "Dreg"
+  ],
+  "E": [
+    "Ear",
+    "Eye",
+    "Ember"
+  ],
+  "F": [
+    "Fang",
+    "Fury",
+    "Fog"
+  ],
+  "G": [
+    "Gloom",
+    "Gnash",
+    "Grot"
+  ],
+  "H": [
+    "Horn",
+    "Hag",
+    "Hiss"
+  ],
+  "I": [
+    "Iron",
+    "Ivy",
+    "Ink"
+  ],
+  "J": [
+    "Jaw",
+    "Jolt",
+    "Jade"
+  ],
+  "K": [
+    "Knob",
+    "Kelp",
+    "Kraken"
+  ],
+  "L": [
+    "Lash",
+    "Lug",
+    "Lichen"
+  ],
+  "M": [
+    "Mud",
+    "Mire",
+    "Moss"
+  ],
+  "N": [
+    "Nose",
+    "Nail",
+    "Nimble"
+  ],
+  "O": [
+    "Ogre",
+    "Oath",
+    "Oak"
+  ],
+  "P": [
+    "Pike",
+    "Pest",
+    "Puddle"
+  ],
+  "Q": [
+    "Quell",
+    "Quake",
+    "Quartz"
+  ],
+  "R": [
+    "Razor",
+    "Rage",
+    "Rubble"
+  ],
+  "S": [
+    "Slime",
+    "Stump",
+    "Shard"
+  ],
+  "T": [
+    "Tooth",
+    "Troll",
+    "Tangle"
+  ],
+  "U": [
+    "Urchin",
+    "Umber",
+    "Undead"
+  ],
+  "V": [
+    "Vile",
+    "Vex",
+    "Vine"
+  ],
+  "W": [
+    "Wart",
+    "Woe",
+    "Willow"
+  ],
+  "X": [
+    "Xanthous",
+    "Xerarch",
+    "Xeno"
+  ],
+  "Y": [
+    "Yawn",
+    "Yak",
+    "Yucca"
+  ],
+  "Z": [
+    "Zest",
+    "Zigzag",
+    "Zephyr"
+  ]
+}

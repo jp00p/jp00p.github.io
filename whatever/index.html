@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Name Generator</title>
+    <script src="cool.js"></script>
+  </head>
+  <body>
+    <h1>Name Generator</h1>
+    <form>
+      <label for="initials">Enter your initials:</label>
+      <input type="text" id="initials" name="initials">
+      <br>
+      <label for="generator">Choose a generator:</label>
+      <select id="generator" name="generator">
+        <option value="pirate">Pirate Name</option>
+        <option value="superhero">Superhero Name</option>
+        <option value="cocktail">Cocktail Recipe</option>
+      </select>
+      <br>
+      <button type="button" onclick="generateName()">Generate</button>
+    </form>
+    <p id="result"></p>
+  </body>
+</html>
