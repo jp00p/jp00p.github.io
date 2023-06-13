@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Tattoo';
+    src: url('Tattoo-Regular.woff2') format('woff2'),
+        url('Tattoo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'tattoo god demo';
+    src: url('tattoogoddemo-Regular.woff2') format('woff2'),
+        url('tattoogoddemo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tattoo Ink';
+    src: url('TattooInk.woff2') format('woff2'),
+        url('TattooInk.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'New Era Casual';
+    src: url('NewEraCasualRegular.woff2') format('woff2'),
+        url('NewEraCasualRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

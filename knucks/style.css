@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Tattoo1';
+  src: url('fonts/Tattoo-Regular.woff2') format('woff2'),
+    url('fonts/Tattoo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tattoo2';
+  src: url('fonts/tattoogoddemo-Regular.woff2') format('woff2'),
+    url('fonts/tattoogoddemo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tattoo3';
+  src: url('fonts/TattooInk.woff2') format('woff2'),
+    url('fonts/TattooInk.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tattoo4';
+  src: url('fonts/NewEraCasualRegular.woff2') format('woff2'),
+    url('fonts/NewEraCasualRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #c848ff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1vw;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+
+#reload {
+  display: block;
+  position: absolute;
+  z-index: 99;
+  top: 10px;
+}
+
+.word {
+  padding: 10px;
+  font-size: 5vw;
+  width: 50%;
+  max-width: 50%;
+  height: 100vh;
+  white-space: nowrap;
+  background-image: url(fist-r.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: relative;
+  font-family: "Tattoo2";
+}
+
+.word+.word {
+  background-image: url(fist-l.png);
+}
+
+.word div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.word span {
+  display: inline-block;
+  width: 22.5%;
+  font-size: 10vw;
+  text-align: center;
+  font-weight: normal;
+}
+
+@media screen and (min-width:1600px) {
+  #word1 {
+    padding-left: 2vw;
+  }
+}
