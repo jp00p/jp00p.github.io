@@ -105,7 +105,7 @@ body {
   font-weight: normal;
 }
 
-@media screen and (min-width:1600px) {
+@media screen and (min-width:1000px) {
   #word1 {
     padding-left: 2vw;
   }
