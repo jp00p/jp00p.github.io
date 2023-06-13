@@ -45,6 +45,7 @@ html {
 
 body {
   background-color: #c848ff;
+  overflow: hidden;
 }
 
 .container {
