@@ -154,20 +154,24 @@
 
             switch (currentCategory) {
                 case "category1":
-                    
                     currentQuestions = [...category1Questions];
+                    shuffleArray(currentQuestions);
                     break;
                 case "category2":
                     currentQuestions = [...category2Questions];
+                    shuffleArray(currentQuestions);
                     break;
                 case "category3":
                     currentQuestions = [...category3Questions];
+                    shuffleArray(currentQuestions);
                     break;
                 case "category4":
                     currentQuestions = [...category4Questions];
+                    shuffleArray(currentQuestions);
                     break;
                 case "category5":
                     currentQuestions = [...category5Questions];
+                    shuffleArray(currentQuestions);
                     break;
                 default:
                     currentQuestions = [...category1Questions, ...category2Questions, ...category3Questions, ...category4Questions, ...category5Questions];
