@@ -1,9 +1,27 @@
 @use 'sass:math';
 
 body {
+  background:#FFF;
+  padding:0;
   display: flex;
   flex-wrap: wrap;
-  gap:32px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap:8px;
+  align-items: center;
+}
+
+@media screen and (min-width:768px){
+  .container {
+    flex-direction: row;
+  }
 }
 
 $width: 187px;
@@ -27,8 +45,9 @@ $height: 285px;
 }
 
 .card {
-  box-shadow: 0 1px 5px #00000099;  
-  border-radius: 4px;
+  display:none;
+  
+  border-radius: 8px;
   position: relative;
   transition-duration: 300ms;
   transition-property: transform, box-shadow;
@@ -36,11 +55,31 @@ $height: 285px;
   transform: rotate3d(0);
   width:$width;
   height:$height;
+  padding:0px;
+  font-size:0px;
+  box-sizing:border-box;
+  overflow: hidden;
 }
 
 .card:hover {
   transition-duration: 150ms;
-  box-shadow: 0 5px 20px 5px #00000044;
+}
+
+.card.show {
+  display:block;
+}
+.picked-1 { margin-left:0px; }
+.picked-2 { margin-left:25px; } 
+.picked-3 { margin-left:50px; }
+
+@media screen and (min-width:768px){
+  .picked-1, .picked-2, .picked-3 {
+    margin-left:0px;
+  }
+}
+
+.card.reversed {
+  transform:rotate(180deg)
 }
 
 .card .glow {
@@ -52,7 +91,7 @@ $height: 285px;
   background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
 }
 
-@for $sheet from 1 through 5 {
+@for $sheet from 1 through 6 {
   @for $card from 0 through 11 {
     .card-#{$sheet}-#{$card+1} {
       @include card($sheet, $card);

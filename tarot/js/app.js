@@ -19,6 +19,7 @@ function rotateToMouse(e, card = null) {
       0,
       ${Math.log(distance) * 2}deg
     )
+    translateY(0)
   `;
 
   card.querySelector('.glow').style.backgroundImage = `
@@ -42,5 +43,21 @@ document.querySelectorAll(".card").forEach(function (card) {
   card.addEventListener('mouseleave', (ev) => {
     ev.target.style.transform = '';
   });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const cards = Array.from(document.querySelectorAll(".card"));
+  const shuffled = cards.sort(() => 0.5 - Math.random());
+  let selected = shuffled.slice(0, 3);
+  selected.forEach((e, i) => {
+    e.classList.add("show")
+    e.classList.add("picked-" + (i + 1))
+    if (Math.random() * 100 <= 10) {
+      e.classList.add("reversed")
+    }
+  })
+
 
 });
