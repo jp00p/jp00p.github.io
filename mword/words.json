@@ -1132,5 +1132,460 @@
     "Feature",
     "Cinema",
     "Flick"
+  ],
+  "Element": [
+    "Component",
+    "Constituent",
+    "Part",
+    "Ingredient",
+    "Factor"
+  ],
+  "Perfect": [
+    "Flawless",
+    "Ideal",
+    "Excellent",
+    "Impeccable",
+    "Pristine"
+  ],
+  "Storm": [
+    "Tempest",
+    "Cyclone",
+    "Squall",
+    "Gale",
+    "Whirlwind"
+  ],
+  "Beach": [
+    "Shore",
+    "Coast",
+    "Seaside",
+    "Strand",
+    "Seashore"
+  ],
+  "Cell": [
+    "Chamber",
+    "Room",
+    "Compartment",
+    "Unit",
+    "Cavity"
+  ],
+  "Gift": [
+    "Present",
+    "Offering",
+    "Donation",
+    "Grant",
+    "Endowment"
+  ],
+  "Bone": [
+    "Skeleton",
+    "Frame",
+    "Structure",
+    "Calcium",
+    "Osseous"
+  ],
+  "Collector": [
+    "Gatherer",
+    "Accumulator",
+    "Hunter",
+    "Curator",
+    "Compiler"
+  ],
+  "Deep": [
+    "Profound",
+    "Bottomless",
+    "Abyssal",
+    "Vast",
+    "Fathomless"
+  ],
+  "End": [
+    "Finish",
+    "Conclusion",
+    "Termination",
+    "Finale",
+    "Close"
+  ],
+  "Fast": [
+    "Quick",
+    "Rapid",
+    "Swift",
+    "Speedy",
+    "Fleet"
+  ],
+  "Lane": [
+    "Path",
+    "Track",
+    "Route",
+    "Way",
+    "Road"
+  ],
+  "Glass": [
+    "Crystal",
+    "Pane",
+    "Window",
+    "Mirror",
+    "Lens"
+  ],
+  "House": [
+    "Home",
+    "Dwelling",
+    "Residence",
+    "Building",
+    "Abode"
+  ],
+  "Mexican": [
+    "Hispanic",
+    "Latin",
+    "Southwestern",
+    "Spanish",
+    "Aztec"
+  ],
+  "Score": [
+    "Result",
+    "Tally",
+    "Points",
+    "Total",
+    "Mark"
+  ],
+  "Others": [
+    "Rest",
+    "Remainder",
+    "Additional",
+    "Extra",
+    "Remaining"
+  ],
+  "Ring": [
+    "Band",
+    "Circle",
+    "Loop",
+    "Hoop",
+    "Circuit"
+  ],
+  "Hot": [
+    "Warm",
+    "Heated",
+    "Burning",
+    "Scorching",
+    "Fiery"
+  ],
+  "Chick": [
+    "Bird",
+    "Fowl",
+    "Hatchling",
+    "Fledgling",
+    "Nestling"
+  ],
+  "Time": [
+    "Period",
+    "Duration",
+    "Era",
+    "Epoch",
+    "Age"
+  ],
+  "Machine": [
+    "Device",
+    "Apparatus",
+    "Mechanism",
+    "Contraption",
+    "Gadget"
+  ],
+  "Tuxedo": [
+    "Suit",
+    "Formal wear",
+    "Evening wear",
+    "Attire",
+    "Dinner jacket"
+  ],
+  "Negotiator": [
+    "Mediator",
+    "Arbitrator",
+    "Diplomat",
+    "Intermediary",
+    "Broker"
+  ],
+  "Wild": [
+    "Untamed",
+    "Feral",
+    "Natural",
+    "Uncontrolled",
+    "Savage"
+  ],
+  "Things": [
+    "Items",
+    "Objects",
+    "Articles",
+    "Matters",
+    "Elements"
+  ],
+  "Rising": [
+    "Ascending",
+    "Climbing",
+    "Mounting",
+    "Soaring",
+    "Lifting"
+  ],
+  "Ever": [
+    "Always",
+    "Constantly",
+    "Eternally",
+    "Forever",
+    "Perpetually"
+  ],
+  "After": [
+    "Following",
+    "Subsequent",
+    "Later",
+    "Beyond",
+    "Afterward"
+  ],
+  "Snake": [
+    "Serpent",
+    "Reptile",
+    "Viper",
+    "Creature",
+    "Beast"
+  ],
+  "Eyes": [
+    "Vision",
+    "Sight",
+    "Gaze",
+    "View",
+    "Perception"
+  ],
+  "Faculty": [
+    "Staff",
+    "Ability",
+    "Talent",
+    "Skill",
+    "Capacity"
+  ],
+  "Thin": [
+    "Slim",
+    "Slender",
+    "Lean",
+    "Narrow",
+    "Fine"
+  ],
+  "Line": [
+    "Row",
+    "Queue",
+    "Streak",
+    "Trail",
+    "Path"
+  ],
+  "Little": [
+    "Small",
+    "Tiny",
+    "Minor",
+    "Slight",
+    "Miniature"
+  ],
+  "Shop": [
+    "Store",
+    "Market",
+    "Boutique",
+    "Outlet",
+    "Establishment"
+  ],
+  "Horrors": [
+    "Terrors",
+    "Frights",
+    "Fears",
+    "Nightmares",
+    "Dread"
+  ],
+  "Craft": [
+    "Skill",
+    "Art",
+    "Trade",
+    "Vessel",
+    "Handiwork"
+  ],
+  "Island": [
+    "Isle",
+    "Atoll",
+    "Land",
+    "Peninsula",
+    "Shore"
+  ],
+  "Cruel": [
+    "Harsh",
+    "Unkind",
+    "Heartless",
+    "Severe",
+    "Mean"
+  ],
+  "Intentions": [
+    "Plans",
+    "Aims",
+    "Goals",
+    "Purposes",
+    "Objectives"
+  ],
+  "Blue": [
+    "Azure",
+    "Cerulean",
+    "Sapphire",
+    "Cobalt",
+    "Indigo"
+  ],
+  "Sea": [
+    "Ocean",
+    "Waters",
+    "Deep",
+    "Marine",
+    "Aquatic"
+  ],
+  "Double": [
+    "Twice",
+    "Dual",
+    "Twin",
+    "Paired",
+    "Doubled"
+  ],
+  "Jeopardy": [
+    "Danger",
+    "Risk",
+    "Peril",
+    "Hazard",
+    "Threat"
+  ],
+  "Days": [
+    "Time",
+    "Period",
+    "Duration",
+    "Span",
+    "Era"
+  ],
+  "General": [
+    "Common",
+    "Universal",
+    "Overall",
+    "Basic",
+    "Standard"
+  ],
+  "Messenger": [
+    "Courier",
+    "Bearer",
+    "Carrier",
+    "Deliverer",
+    "Herald"
+  ],
+  "Insider": [
+    "Member",
+    "Associate",
+    "Participant",
+    "Colleague",
+    "Affiliate"
+  ],
+  "Iron": [
+    "Metal",
+    "Steel",
+    "Ferrous",
+    "Strong",
+    "Solid"
+  ],
+  "Giant": [
+    "Huge",
+    "Massive",
+    "Enormous",
+    "Colossal",
+    "Immense"
+  ],
+  "Talented": [
+    "Skilled",
+    "Gifted",
+    "Capable",
+    "Proficient",
+    "Accomplished"
+  ],
+  "Muse": [
+    "Inspiration",
+    "Influence",
+    "Stimulus",
+    "Motivation",
+    "Guide"
+  ],
+  "Siege": [
+    "Blockade",
+    "Encirclement",
+    "Surrounding",
+    "Containment",
+    "Enclosure"
+  ],
+  "Dish": [
+    "Plate",
+    "Bowl",
+    "Platter",
+    "Container",
+    "Vessel"
+  ],
+  "Way": [
+    "Path",
+    "Route",
+    "Road",
+    "Course",
+    "Direction"
+  ],
+  "Core": [
+    "Center",
+    "Heart",
+    "Middle",
+    "Interior",
+    "Nucleus"
+  ],
+  "Crush": [
+    "Press",
+    "Squeeze",
+    "Compress",
+    "Compact",
+    "Flatten"
+  ],
+  "Sweet": [
+    "Sugary",
+    "Honeyed",
+    "Pleasant",
+    "Gentle",
+    "Kind"
+  ],
+  "Below": [
+    "Under",
+    "Beneath",
+    "Underneath",
+    "Lower",
+    "Down"
+  ],
+  "Dark": [
+    "Dim",
+    "Shadowy",
+    "Murky",
+    "Gloomy",
+    "Dusky"
+  ],
+  "High": [
+    "Tall",
+    "Elevated",
+    "Lofty",
+    "Towering",
+    "Rising"
+  ],
+  "Crimes": [
+    "Offenses",
+    "Violations",
+    "Wrongs",
+    "Misdeeds",
+    "Felonies"
+  ],
+  "Queen": [
+    "Monarch",
+    "Ruler",
+    "Sovereign",
+    "Crown",
+    "Majesty"
+  ],
+  "Hearts": [
+    "Centers",
+    "Cores",
+    "Spirits",
+    "Souls",
+    "Essences"
   ]
 }

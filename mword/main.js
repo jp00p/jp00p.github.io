@@ -3,6 +3,8 @@ let previousGuesses = [];
 let movies = [];
 let synonyms = {};
 let filesLoaded = 0;
+let correctGuesses = 0;
+let incorrectGuesses = 0;
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -55,9 +57,11 @@ function handleGuess(event) {
     const guess = normalizeString(guessInput.value.trim());
 
     if (guess === normalizeString(movies[currentMovieIndex].title)) {
+      correctGuesses++;
+      document.getElementById('correct-count').textContent = correctGuesses;
       guessInput.style.color = 'green';
       setTimeout(() => {
-        previousGuesses.push(`<span style="color: white;">${guessInput.value.trim()}</span>`);
+        previousGuesses.push(`<span style="color: green;">${guessInput.value.trim()}</span>`);
         document.getElementById('previous-guesses').innerHTML = previousGuesses.join(', ');
         guessInput.value = '';
         guessInput.style.color = '';
@@ -65,6 +69,8 @@ function handleGuess(event) {
         displayMovie();
       }, 500);
     } else {
+      incorrectGuesses++;
+      document.getElementById('incorrect-count').textContent = incorrectGuesses;
       guessInput.style.color = 'red';
       setTimeout(() => {
         previousGuesses.push(`<span style="color: red;">${guessInput.value.trim()}</span>`);
@@ -77,6 +83,8 @@ function handleGuess(event) {
 }
 
 function handleSkip() {
+  incorrectGuesses++;
+  document.getElementById('incorrect-count').textContent = incorrectGuesses;
   const movie = movies[currentMovieIndex];
   previousGuesses.push(`<span style="color: red;">${movie.title}</span>`);
   document.getElementById('previous-guesses').innerHTML = previousGuesses.join(', ');

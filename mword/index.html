@@ -15,13 +15,15 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
-            background:#333;
+            background:#121212;
+            color:#fff;
         }
         #game-container {
             text-align: center;
             width: 100%;
             max-width: 600px;
         }
+        #clue { font-size:2em; }
         #guess-input {
             margin-top: 20px;
             padding: 10px;
@@ -34,8 +36,9 @@
             word-wrap: break-word;
         }
         .standard-word {
-            color: #ccc;
+            color: #aaa;
         }
+        #year { color:#f0f; }
         #skip-button {
             margin-top: 20px;
             padding: 10px;
@@ -43,6 +46,18 @@
             cursor: pointer;
             width: 100%;
             box-sizing: border-box;
+        }
+        #stats {
+          margin: 10px 0;
+          font-size: 1.2em;
+        }
+        #correct-count {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        #incorrect-count {
+            color: #f44336;
+            font-weight: bold;
         }
         @media (max-width: 600px) {
             #guess-input, #skip-button {
@@ -55,6 +70,13 @@
   <body>
     <div id="game-container">
       <h1>Movie Guessing Game</h1>
+      <p>Guess the movie title! The words in the title have been swapped with
+        synoynms.</p>
+      <div id="stats">
+        <span>Correct: <span id="correct-count">0</span></span>
+        <span style="margin-left: 20px">Incorrect: <span
+            id="incorrect-count">0</span></span>
+      </div>
       <p id="clue"></p>
       <p id="year"></p>
       <input type="text" id="guess-input" placeholder="Type your guess here..."

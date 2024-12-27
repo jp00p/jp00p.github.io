@@ -12,10 +12,6 @@
     "year": 1993
   },
   {
-    "title": "The Lion King",
-    "year": 1994
-  },
-  {
     "title": "The Sixth Sense",
     "year": 1999
   },
@@ -92,10 +88,6 @@
     "year": 1995
   },
   {
-    "title": "Batman Returns",
-    "year": 1992
-  },
-  {
     "title": "True Lies",
     "year": 1994
   },
@@ -122,14 +114,6 @@
   {
     "title": "The Santa Clause",
     "year": 1994
-  },
-  {
-    "title": "The Prince of Egypt",
-    "year": 1998
-  },
-  {
-    "title": "Waterworld",
-    "year": 1995
   },
   {
     "title": "The Hunt for Red October",
@@ -270,5 +254,205 @@
   {
     "title": "A Goofy Movie",
     "year": 1995
+  },
+  {
+    "title": "The Fifth Element",
+    "year": 1997
+  },
+  {
+    "title": "The Green Mile",
+    "year": 1999
+  },
+  {
+    "title": "The Sixth Day",
+    "year": 2000
+  },
+  {
+    "title": "The Perfect Storm",
+    "year": 2000
+  },
+  {
+    "title": "The Beach",
+    "year": 2000
+  },
+  {
+    "title": "The Cell",
+    "year": 2000
+  },
+  {
+    "title": "The Gift",
+    "year": 2000
+  },
+  {
+    "title": "The Kid",
+    "year": 2000
+  },
+  {
+    "title": "The Bone Collector",
+    "year": 1999
+  },
+  {
+    "title": "The Deep End",
+    "year": 2001
+  },
+  {
+    "title": "The Fast Lane",
+    "year": 2001
+  },
+  {
+    "title": "The Glass House",
+    "year": 2001
+  },
+  {
+    "title": "The Mexican",
+    "year": 2001
+  },
+  {
+    "title": "The One",
+    "year": 2001
+  },
+  {
+    "title": "The Score",
+    "year": 2001
+  },
+  {
+    "title": "The Others",
+    "year": 2001
+  },
+  {
+    "title": "The Ring",
+    "year": 2002
+  },
+  {
+    "title": "The Hot Chick",
+    "year": 2002
+  },
+  {
+    "title": "The Time Machine",
+    "year": 2002
+  },
+  {
+    "title": "The Tuxedo",
+    "year": 2002
+  },
+  {
+    "title": "The Negotiator",
+    "year": 1998
+  },
+  {
+    "title": "Wild Things",
+    "year": 1998
+  },
+  {
+    "title": "Deep Rising",
+    "year": 1998
+  },
+  {
+    "title": "Ever After",
+    "year": 1998
+  },
+  {
+    "title": "Snake Eyes",
+    "year": 1998
+  },
+  {
+    "title": "The Faculty",
+    "year": 1998
+  },
+  {
+    "title": "The Thin Red Line",
+    "year": 1998
+  },
+  {
+    "title": "Little Shop of Horrors",
+    "year": 1996
+  },
+  {
+    "title": "The Craft",
+    "year": 1996
+  },
+  {
+    "title": "The Island",
+    "year": 1996
+  },
+  {
+    "title": "Cruel Intentions",
+    "year": 1999
+  },
+  {
+    "title": "Deep Blue Sea",
+    "year": 1999
+  },
+  {
+    "title": "Double Jeopardy",
+    "year": 1999
+  },
+  {
+    "title": "End of Days",
+    "year": 1999
+  },
+  {
+    "title": "The General",
+    "year": 1998
+  },
+  {
+    "title": "The Messenger",
+    "year": 1999
+  },
+  {
+    "title": "The Insider",
+    "year": 1999
+  },
+  {
+    "title": "The Iron Giant",
+    "year": 1999
+  },
+  {
+    "title": "The Talented Mr",
+    "year": 1999
+  },
+  {
+    "title": "The Muse",
+    "year": 1999
+  },
+  {
+    "title": "The Siege",
+    "year": 1998
+  },
+  {
+    "title": "The Dish",
+    "year": 2000
+  },
+  {
+    "title": "The Way",
+    "year": 2001
+  },
+  {
+    "title": "The Core",
+    "year": 2003
+  },
+  {
+    "title": "Blue Crush",
+    "year": 2002
+  },
+  {
+    "title": "Sweet Home",
+    "year": 2002
+  },
+  {
+    "title": "Below",
+    "year": 2002
+  },
+  {
+    "title": "Dark Water",
+    "year": 2002
+  },
+  {
+    "title": "High Crimes",
+    "year": 2002
+  },
+  {
+    "title": "Queen of Hearts",
+    "year": 2001
   }
 ]
