@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #game-container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        #guess-input {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #previous-guesses {
+            margin-top: 20px;
+            word-wrap: break-word;
+        }
+        .standard-word {
+            color: #ccc;
+        }
+        #skip-button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        @media (max-width: 600px) {
+            #guess-input, #skip-button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div id="game-container">
+      <h1>Movie Guessing Game</h1>
+      <p id="clue"></p>
+      <p id="year"></p>
+      <input type="text" id="guess-input" placeholder="Type your guess here..."
+        autofocus>
+      <button id="skip-button">Skip</button>
+      <div id="previous-guesses"></div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

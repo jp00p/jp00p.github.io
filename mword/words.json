@@ -1,0 +1,1136 @@
+{
+  "Titanic": [
+    "Gigantic",
+    "Colossal",
+    "Massive",
+    "Enormous",
+    "Huge"
+  ],
+  "Star": [
+    "Celestial",
+    "Astral",
+    "Luminous",
+    "Radiant",
+    "Stellar"
+  ],
+  "Wars": [
+    "Conflicts",
+    "Battles",
+    "Fights",
+    "Struggles",
+    "Clashes"
+  ],
+  "Episode": [
+    "Chapter",
+    "Installment",
+    "Segment",
+    "Part",
+    "Section"
+  ],
+  "Phantom": [
+    "Ghost",
+    "Specter",
+    "Apparition",
+    "Spirit",
+    "Wraith"
+  ],
+  "Menace": [
+    "Threat",
+    "Danger",
+    "Peril",
+    "Hazard",
+    "Risk"
+  ],
+  "Jurassic": [
+    "Prehistoric",
+    "Ancient",
+    "Dinosaur",
+    "Mesozoic",
+    "Fossil"
+  ],
+  "Park": [
+    "Garden",
+    "Playground",
+    "Recreation",
+    "Reserve",
+    "Sanctuary"
+  ],
+  "Lion": [
+    "Panthera",
+    "Cat",
+    "Beast",
+    "Predator",
+    "King"
+  ],
+  "King": [
+    "Monarch",
+    "Ruler",
+    "Sovereign",
+    "Emperor",
+    "Leader"
+  ],
+  "Forrest": [
+    "Woods",
+    "Timberland",
+    "Woodland",
+    "Jungle",
+    "Forest"
+  ],
+  "Gump": [
+    "Simpleton",
+    "Fool",
+    "Dunce",
+    "Idiot",
+    "Nincompoop"
+  ],
+  "Sixth": [
+    "6th",
+    "Sextuple",
+    "Hexad",
+    "Senary",
+    "Hexagonal"
+  ],
+  "Sense": [
+    "Perception",
+    "Awareness",
+    "Feeling",
+    "Intuition",
+    "Sensation"
+  ],
+  "Independence": [
+    "Freedom",
+    "Autonomy",
+    "Liberty",
+    "Self-rule",
+    "Sovereignty"
+  ],
+  "Day": [
+    "Daytime",
+    "Sunlight",
+    "Period",
+    "Epoch",
+    "Era"
+  ],
+  "Home": [
+    "House",
+    "Residence",
+    "Dwelling",
+    "Abode",
+    "Habitat"
+  ],
+  "Alone": [
+    "Solitary",
+    "Solo",
+    "Unaccompanied",
+    "Isolated",
+    "Single"
+  ],
+  "Men": [
+    "Males",
+    "Gentlemen",
+    "Guys",
+    "Fellows",
+    "Blokes"
+  ],
+  "Black": [
+    "Dark",
+    "Ebony",
+    "Jet",
+    "Onyx",
+    "Sable"
+  ],
+  "Toy": [
+    "Plaything",
+    "Doll",
+    "Figure",
+    "Model",
+    "Trinket"
+  ],
+  "Story": [
+    "Tale",
+    "Narrative",
+    "Account",
+    "Chronicle",
+    "Saga"
+  ],
+  "Lost": [
+    "Missing",
+    "Gone",
+    "Misplaced",
+    "Vanished",
+    "Unfound"
+  ],
+  "World": [
+    "Earth",
+    "Globe",
+    "Planet",
+    "Realm",
+    "Universe"
+  ],
+  "Saving": [
+    "Rescuing",
+    "Preserving",
+    "Conserving",
+    "Safeguarding",
+    "Salvaging"
+  ],
+  "Private": [
+    "Personal",
+    "Confidential",
+    "Secret",
+    "Exclusive",
+    "Individual"
+  ],
+  "Ryan": [
+    "Surname",
+    "Name",
+    "Moniker",
+    "Title",
+    "Handle"
+  ],
+  "Ghost": [
+    "Spirit",
+    "Phantom",
+    "Apparition",
+    "Specter",
+    "Wraith"
+  ],
+  "Matrix": [
+    "Grid",
+    "Framework",
+    "Array",
+    "Structure",
+    "Network"
+  ],
+  "Tarzan": [
+    "Jungle Man",
+    "Wild Man",
+    "Forest Man",
+    "Savage",
+    "Hero"
+  ],
+  "Aladdin": [
+    "Genie",
+    "Arabian",
+    "Magic",
+    "Lamp",
+    "Adventure"
+  ],
+  "Twister": [
+    "Tornado",
+    "Cyclone",
+    "Whirlwind",
+    "Storm",
+    "Vortex"
+  ],
+  "Armageddon": [
+    "Apocalypse",
+    "Catastrophe",
+    "Doomsday",
+    "End",
+    "Destruction"
+  ],
+  "Mrs.": [
+    "Madam",
+    "Lady",
+    "Woman",
+    "Wife",
+    "Spouse"
+  ],
+  "Doubtfire": [
+    "Disguise",
+    "Nanny",
+    "Comedy",
+    "Robin Williams",
+    "Character"
+  ],
+  "Beauty": [
+    "Attractiveness",
+    "Charm",
+    "Elegance",
+    "Grace",
+    "Loveliness"
+  ],
+  "Beast": [
+    "Creature",
+    "Monster",
+    "Animal",
+    "Brute",
+    "Fiend"
+  ],
+  "Batman": [
+    "Dark Knight",
+    "Caped Crusader",
+    "Bruce Wayne",
+    "Vigilante",
+    "Hero"
+  ],
+  "Forever": [
+    "Eternally",
+    "Always",
+    "Perpetually",
+    "Endlessly",
+    "Infinitely"
+  ],
+  "Terminator": [
+    "Cyborg",
+    "Robot",
+    "Assassin",
+    "Machine",
+    "Destroyer"
+  ],
+  "Judgment": [
+    "Verdict",
+    "Decision",
+    "Ruling",
+    "Decree",
+    "Conclusion"
+  ],
+  "Bugs": [
+    "Insect's",
+    "Critter's",
+    "Pest's",
+    "Beetle's",
+    "Creepy-crawly's"
+  ],
+  "Life": [
+    "Existence",
+    "Being",
+    "Living",
+    "Vitality",
+    "Animation"
+  ],
+  "Mummy": [
+    "Mother",
+    "Mom",
+    "Matriarch",
+    "Parent",
+    "Guardian"
+  ],
+  "Pocahontas": [
+    "Native American",
+    "Princess",
+    "Historical Figure",
+    "Powhatan",
+    "Explorer"
+  ],
+  "Hunchback": [
+    "Deformed",
+    "Crooked",
+    "Bent",
+    "Curved",
+    "Misshapen"
+  ],
+  "Notre": [
+    "Our",
+    "Ours",
+    "Belonging to us",
+    "Owned by us",
+    "Possessed by us"
+  ],
+  "Dame": [
+    "Lady",
+    "Woman",
+    "Female",
+    "Madam",
+    "Matron"
+  ],
+  "Fugitive": [
+    "Runaway",
+    "Escapee",
+    "Outlaw",
+    "Refugee",
+    "Absconder"
+  ],
+  "Apollo": [
+    "God",
+    "Deity",
+    "Sun God",
+    "Greek God",
+    "Mythological Figure"
+  ],
+  "13": [
+    "Thirteen",
+    "XIII",
+    "Baker's Dozen",
+    "Dozen Plus One",
+    "Prime Number"
+  ],
+  "Lethal": [
+    "Deadly",
+    "Fatal",
+    "Mortal",
+    "Killing",
+    "Deathly"
+  ],
+  "Weapon": [
+    "Armament",
+    "Arm",
+    "Gun",
+    "Sword",
+    "Tool"
+  ],
+  "Mask": [
+    "Disguise",
+    "Veil",
+    "Cover",
+    "Facade",
+    "Camouflage"
+  ],
+  "Speed": [
+    "Velocity",
+    "Pace",
+    "Rate",
+    "Quickness",
+    "Swiftness"
+  ],
+  "Die": [
+    "Perish",
+    "Expire",
+    "Pass away",
+    "Decease",
+    "Succumb"
+  ],
+  "Hard": [
+    "Difficult",
+    "Challenging",
+    "Tough",
+    "Arduous",
+    "Strenuous"
+  ],
+  "Vengeance": [
+    "Revenge",
+    "Retribution",
+    "Payback",
+    "Retaliation",
+    "Avenge"
+  ],
+  "Returns": [
+    "Comes back",
+    "Reappears",
+    "Reverts",
+    "Resumes",
+    "Recurs"
+  ],
+  "True": [
+    "Real",
+    "Genuine",
+    "Authentic",
+    "Actual",
+    "Veritable"
+  ],
+  "Lies": [
+    "Falsehoods",
+    "Deceptions",
+    "Untruths",
+    "Fabrications",
+    "Fibs"
+  ],
+  "Rock": [
+    "Stone",
+    "Boulder",
+    "Pebble",
+    "Crag",
+    "Cliff"
+  ],
+  "Dances": [
+    "Moves",
+    "Steps",
+    "Twirls",
+    "Pirouettes",
+    "Jigs"
+  ],
+  "Wolves": [
+    "Canines",
+    "Predators",
+    "Pack animals",
+    "Wild dogs",
+    "Lupines"
+  ],
+  "Mission": [
+    "Task",
+    "Assignment",
+    "Operation",
+    "Duty",
+    "Objective"
+  ],
+  "Impossible": [
+    "Unachievable",
+    "Unattainable",
+    "Unfeasible",
+    "Impractical",
+    "Unrealizable"
+  ],
+  "Robin": [
+    "Bird",
+    "Songbird",
+    "Redbreast",
+    "Thrush",
+    "Flycatcher"
+  ],
+  "Hood": [
+    "Cover",
+    "Cowl",
+    "Headgear",
+    "Cap",
+    "Helmet"
+  ],
+  "Prince": [
+    "Royalty",
+    "Heir",
+    "Noble",
+    "Duke",
+    "Sovereign"
+  ],
+  "Thieves": [
+    "Robbers",
+    "Burglars",
+    "Bandits",
+    "Crooks",
+    "Looters"
+  ],
+  "Bodyguard": [
+    "Protector",
+    "Guardian",
+    "Escort",
+    "Defender",
+    "Shield"
+  ],
+  "Flintstones": [
+    "Cavemen",
+    "Stone Age",
+    "Prehistoric",
+    "Cartoon",
+    "Bedrock"
+  ],
+  "Jumanji": [
+    "Game",
+    "Adventure",
+    "Fantasy",
+    "Jungle",
+    "Quest"
+  ],
+  "Santa": [
+    "Saint Nicholas",
+    "Father Christmas",
+    "Kris Kringle",
+    "Saint Nick",
+    "Claus"
+  ],
+  "Clause": [
+    "Provision",
+    "Condition",
+    "Stipulation",
+    "Term",
+    "Article"
+  ],
+  "Egypt": [
+    "Nile Country",
+    "Pharaoh's Land",
+    "Pyramids",
+    "Ancient Civilization",
+    "Cairo"
+  ],
+  "Blair": [
+    "Surname",
+    "Name",
+    "Moniker",
+    "Title",
+    "Handle"
+  ],
+  "Witch": [
+    "Sorceress",
+    "Enchantress",
+    "Hag",
+    "Crone",
+    "Spellcaster"
+  ],
+  "Project": [
+    "Plan",
+    "Scheme",
+    "Undertaking",
+    "Task",
+    "Assignment"
+  ],
+  "Water": [
+    "H2O",
+    "Aqua",
+    "Liquid",
+    "Fluid",
+    "Moisture"
+  ],
+  "Hunt": [
+    "Search",
+    "Chase",
+    "Pursuit",
+    "Quest",
+    "Expedition"
+  ],
+  "Red": [
+    "Crimson",
+    "Scarlet",
+    "Ruby",
+    "Cherry",
+    "Maroon"
+  ],
+  "October": [
+    "10th month",
+    "Autumn",
+    "Fall",
+    "Harvest",
+    "Halloween"
+  ],
+  "Firm": [
+    "Company",
+    "Business",
+    "Corporation",
+    "Enterprise",
+    "Agency"
+  ],
+  "101": [
+    "Basics",
+    "Introduction",
+    "Fundamentals",
+    "Beginner",
+    "Elementary"
+  ],
+  "Dalmatians": [
+    "Spotted Dogs",
+    "Canines",
+    "Puppies",
+    "Firehouse Dogs",
+    "Pets"
+  ],
+  "Sister": [
+    "Sibling",
+    "Female Relative",
+    "Sis",
+    "Kin",
+    "Family Member"
+  ],
+  "Act": [
+    "Deed",
+    "Action",
+    "Performance",
+    "Stunt",
+    "Move"
+  ],
+  "Birdcage": [
+    "Aviary",
+    "Cage",
+    "Enclosure",
+    "Pen",
+    "Coop"
+  ],
+  "Hand": [
+    "Palm",
+    "Fist",
+    "Grasp",
+    "Clutch",
+    "Grip"
+  ],
+  "Rocks": [
+    "Sways",
+    "Swings",
+    "Wobbles",
+    "Oscillates",
+    "Teeters"
+  ],
+  "Cradle": [
+    "Bassinet",
+    "Cot",
+    "Crib",
+    "Bed",
+    "Rocking Bed"
+  ],
+  "Pelican": [
+    "Bird",
+    "Seabird",
+    "Waterfowl",
+    "Fisher",
+    "Pouch Bird"
+  ],
+  "Brief": [
+    "Short",
+    "Concise",
+    "Summary",
+    "Synopsis",
+    "Outline"
+  ],
+  "Bridges": [
+    "Overpasses",
+    "Viaducts",
+    "Spans",
+    "Crossings",
+    "Archways"
+  ],
+  "Madison": [
+    "City",
+    "Capital",
+    "Town",
+    "Metropolis",
+    "Municipality"
+  ],
+  "County": [
+    "District",
+    "Region",
+    "Area",
+    "Territory",
+    "Province"
+  ],
+  "Nutty": [
+    "Crazy",
+    "Wacky",
+    "Zany",
+    "Eccentric",
+    "Mad"
+  ],
+  "Professor": [
+    "Teacher",
+    "Educator",
+    "Instructor",
+    "Academic",
+    "Scholar"
+  ],
+  "Jerry": [
+    "Name",
+    "Moniker",
+    "Title",
+    "Handle",
+    "Nickname"
+  ],
+  "Green": [
+    "Verdant",
+    "Emerald",
+    "Jade",
+    "Olive",
+    "Lime"
+  ],
+  "Mile": [
+    "Distance",
+    "Kilometer",
+    "League",
+    "Nautical mile",
+    "Statute mile"
+  ],
+  "Notting": [
+    "Place",
+    "Location",
+    "Area",
+    "District",
+    "Region"
+  ],
+  "Hill": [
+    "Mound",
+    "Knoll",
+    "Rise",
+    "Slope",
+    "Elevation"
+  ],
+  "Truman": [
+    "Surname",
+    "Name",
+    "Moniker",
+    "Title",
+    "Handle"
+  ],
+  "Show": [
+    "Display",
+    "Exhibit",
+    "Presentation",
+    "Performance",
+    "Demonstration"
+  ],
+  "Best": [
+    "Finest",
+    "Top",
+    "Greatest",
+    "Prime",
+    "Optimal"
+  ],
+  "Friends": [
+    "Companion's",
+    "Pal's",
+    "Buddy's",
+    "Mate's",
+    "Ally's"
+  ],
+  "Wedding": [
+    "Marriage",
+    "Nuptials",
+    "Ceremony",
+    "Union",
+    "Matrimony"
+  ],
+  "Parent": [
+    "Guardian",
+    "Caretaker",
+    "Mother",
+    "Father",
+    "Provider"
+  ],
+  "Trap": [
+    "Snare",
+    "Catch",
+    "Ambush",
+    "Pitfall",
+    "Lure"
+  ],
+  "Runaway": [
+    "Fugitive",
+    "Escapee",
+    "Absconder",
+    "Deserter",
+    "Refugee"
+  ],
+  "Bride": [
+    "Spouse",
+    "Wife",
+    "Newlywed",
+    "Partner",
+    "Mate"
+  ],
+  "Singer": [
+    "Vocalist",
+    "Performer",
+    "Artist",
+    "Musician",
+    "Chanter"
+  ],
+  "Got": [
+    "Obtained",
+    "Acquired",
+    "Received",
+    "Gained",
+    "Secured"
+  ],
+  "Mail": [
+    "Post",
+    "Correspondence",
+    "Letters",
+    "Parcels",
+    "Packages"
+  ],
+  "Sleepless": [
+    "Restless",
+    "Wakeful",
+    "Insomniac",
+    "Alert",
+    "Awake"
+  ],
+  "Seattle": [
+    "City",
+    "Metropolis",
+    "Emerald City",
+    "Urban Area",
+    "Municipality"
+  ],
+  "Pretty": [
+    "Attractive",
+    "Lovely",
+    "Beautiful",
+    "Charming",
+    "Appealing"
+  ],
+  "Woman": [
+    "Female",
+    "Lady",
+    "Girl",
+    "Gal",
+    "Dame"
+  ],
+  "Father": [
+    "Dad",
+    "Papa",
+    "Patriarch",
+    "Parent",
+    "Guardian"
+  ],
+  "Part": [
+    "Section",
+    "Portion",
+    "Segment",
+    "Piece",
+    "Fragment"
+  ],
+  "II": [
+    "Second",
+    "2nd",
+    "Two",
+    "Double",
+    "Duo"
+  ],
+  "While": [
+    "During",
+    "As",
+    "Whilst",
+    "At the same time",
+    "Meanwhile"
+  ],
+  "Sleeping": [
+    "Resting",
+    "Slumbering",
+    "Napping",
+    "Dozing",
+    "Snoozing"
+  ],
+  "First": [
+    "Initial",
+    "Primary",
+    "Foremost",
+    "Earliest",
+    "Premier"
+  ],
+  "Wives": [
+    "Spouses",
+    "Partners",
+    "Mates",
+    "Consorts",
+    "Better halves"
+  ],
+  "Club": [
+    "Group",
+    "Association",
+    "Society",
+    "Organization",
+    "Team"
+  ],
+  "Stepmom": [
+    "Stepmother",
+    "Second mother",
+    "Bonus mom",
+    "Guardian",
+    "Parent"
+  ],
+  "American": [
+    "US",
+    "United States",
+    "USA",
+    "Yankee",
+    "North American"
+  ],
+  "President": [
+    "Leader",
+    "Chief",
+    "Head",
+    "Commander",
+    "Executive"
+  ],
+  "City": [
+    "Metropolis",
+    "Urban Area",
+    "Municipality",
+    "Town",
+    "Borough"
+  ],
+  "Slickers": [
+    "Raincoats",
+    "Jackets",
+    "Coats",
+    "Parkas",
+    "Macs"
+  ],
+  "Grumpy": [
+    "Irritable",
+    "Cranky",
+    "Grouchy",
+    "Surly",
+    "Cantankerous"
+  ],
+  "Old": [
+    "Aged",
+    "Ancient",
+    "Elderly",
+    "Senior",
+    "Vintage"
+  ],
+  "Grumpier": [
+    "More irritable",
+    "More cranky",
+    "More grouchy",
+    "More surly",
+    "More cantankerous"
+  ],
+  "Analyze": [
+    "Examine",
+    "Inspect",
+    "Study",
+    "Scrutinize",
+    "Evaluate"
+  ],
+  "This": [
+    "This one",
+    "This thing",
+    "This item",
+    "This object",
+    "This matter"
+  ],
+  "Good": [
+    "Excellent",
+    "Great",
+    "Fine",
+    "Superb",
+    "Wonderful"
+  ],
+  "Gets": [
+    "Receives",
+    "Obtains",
+    "Acquires",
+    "Gains",
+    "Secures"
+  ],
+  "Full": [
+    "Complete",
+    "Entire",
+    "Whole",
+    "Total",
+    "Filled"
+  ],
+  "Monty": [
+    "Name",
+    "Moniker",
+    "Title",
+    "Handle",
+    "Nickname"
+  ],
+  "Theres": [
+    "There is",
+    "There exists",
+    "There lies",
+    "There stands",
+    "There remains"
+  ],
+  "Something": [
+    "Thing",
+    "Object",
+    "Item",
+    "Matter",
+    "Entity"
+  ],
+  "About": [
+    "Regarding",
+    "Concerning",
+    "Relating to",
+    "Pertaining to",
+    "With reference to"
+  ],
+  "Mary": [
+    "Name",
+    "Moniker",
+    "Title",
+    "Handle",
+    "Nickname"
+  ],
+  "Liar": [
+    "Deceiver",
+    "Fibber",
+    "Falsifier",
+    "Prevaricator",
+    "Fabricator"
+  ],
+  "Austin": [
+    "City",
+    "Capital",
+    "Metropolis",
+    "Municipality",
+    "Urban Area"
+  ],
+  "Powers": [
+    "Abilities",
+    "Skills",
+    "Talents",
+    "Strengths",
+    "Capabilities"
+  ],
+  "International": [
+    "Global",
+    "Worldwide",
+    "Universal",
+    "Transnational",
+    "Multinational"
+  ],
+  "Man": [
+    "Male",
+    "Gentleman",
+    "Guy",
+    "Fellow",
+    "Bloke"
+  ],
+  "Mystery": [
+    "Enigma",
+    "Puzzle",
+    "Riddle",
+    "Conundrum",
+    "Secret"
+  ],
+  "Cable": [
+    "Wire",
+    "Cord",
+    "Line",
+    "Rope",
+    "Conduit"
+  ],
+  "Guy": [
+    "Man",
+    "Fellow",
+    "Bloke",
+    "Chap",
+    "Dude"
+  ],
+  "Happy": [
+    "Joyful",
+    "Cheerful",
+    "Content",
+    "Pleased",
+    "Delighted"
+  ],
+  "Gilmore": [
+    "Surname",
+    "Name",
+    "Moniker",
+    "Title",
+    "Handle"
+  ],
+  "Billy": [
+    "Name",
+    "Moniker",
+    "Title",
+    "Handle",
+    "Nickname"
+  ],
+  "Waterboy": [
+    "Hydration Assistant",
+    "Water Carrier",
+    "Water Bearer",
+    "Hydration Specialist",
+    "Water Provider"
+  ],
+  "Big": [
+    "Large",
+    "Huge",
+    "Gigantic",
+    "Enormous",
+    "Massive"
+  ],
+  "Daddy": [
+    "Father",
+    "Dad",
+    "Papa",
+    "Patriarch",
+    "Guardian"
+  ],
+  "Goofy": [
+    "Silly",
+    "Wacky",
+    "Zany",
+    "Eccentric",
+    "Clumsy"
+  ],
+  "Movie": [
+    "Film",
+    "Motion Picture",
+    "Feature",
+    "Cinema",
+    "Flick"
+  ]
+}
