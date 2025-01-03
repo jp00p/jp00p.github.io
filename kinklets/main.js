@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function copyContentToClipboard() {
     const copyImageBtn = document.getElementById('copy-image-btn');
-    html2canvas(document.getElementById('random-string')).then(canvas => {
+    html2canvas(document.getElementById('random-string'), { backgroundColor: '#000' }).then(canvas => {
       canvas.toBlob(blob => {
         const item = new ClipboardItem({ 'image/png': blob });
         navigator.clipboard.write([item]).then(() => {
