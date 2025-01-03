@@ -1,0 +1,414 @@
+body {
+  background: linear-gradient(to bottom, #000, #100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#random-string {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.bead {
+  width: 15px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  margin: 0 1px;
+}
+
+/* Primary color beads */
+.bead-red {
+  background: linear-gradient(to bottom, #ff0000, #cc0000);
+}
+
+.bead-blue {
+  background: linear-gradient(to bottom, #0000ff, #0000cc);
+}
+
+.bead-yellow {
+  background: linear-gradient(to bottom, #ffff00, #cccc00);
+}
+
+/* Additional color beads */
+.bead-green {
+  background: linear-gradient(to bottom, #00ff00, #00cc00);
+}
+
+.bead-purple {
+  background: linear-gradient(to bottom, #800080, #660066);
+}
+
+.bead-orange {
+  background: linear-gradient(to bottom, #ffa500, #cc8400);
+}
+
+/* Sparkle beads */
+.bead-sparkle {
+  background: linear-gradient(to bottom, #ffcc00, #ff9900);
+  position: relative;
+  overflow: hidden;
+}
+
+.bead-sparkle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="20" viewBox="0 0 20 20"><circle cx="2" cy="2" r="1" fill="white" opacity="0.8"/><circle cx="10" cy="5" r="1" fill="white" opacity="0.8"/><circle cx="18" cy="8" r="1" fill="white" opacity="0.8"/><circle cx="5" cy="15" r="1" fill="white" opacity="0.8"/><circle cx="15" cy="18" r="1" fill="white" opacity="0.8"/></svg>') repeat;
+  border-radius: 50%;
+}
+
+/* Neon colored beads */
+.bead-neon-green {
+  background: linear-gradient(to bottom, #39ff14, #32cd32);
+}
+
+.bead-neon-pink {
+  background: linear-gradient(to bottom, #ff1493, #ff69b4);
+}
+
+.bead-neon-orange {
+  background: linear-gradient(to bottom, #ff4500, #ff8c00);
+}
+
+/* Additional 20 bead colors */
+.bead-cyan {
+  background: linear-gradient(to bottom, #00ffff, #00cccc);
+}
+
+.bead-magenta {
+  background: linear-gradient(to bottom, #ff00ff, #cc00cc);
+}
+
+.bead-lime {
+  background: linear-gradient(to bottom, #bfff00, #99cc00);
+}
+
+.bead-teal {
+  background: linear-gradient(to bottom, #008080, #006666);
+}
+
+.bead-olive {
+  background: linear-gradient(to bottom, #808000, #666600);
+}
+
+.bead-maroon {
+  background: linear-gradient(to bottom, #800000, #660000);
+}
+
+.bead-navy {
+  background: linear-gradient(to bottom, #000080, #000066);
+}
+
+.bead-aqua {
+  background: linear-gradient(to bottom, #00ffff, #00cccc);
+}
+
+.bead-fuchsia {
+  background: linear-gradient(to bottom, #ff00ff, #cc00cc);
+}
+
+.bead-silver {
+  background: linear-gradient(to bottom, #c0c0c0, #a0a0a0);
+}
+
+.bead-gold {
+  background: linear-gradient(to bottom, #ffd700, #ccac00);
+}
+
+.bead-coral {
+  background: linear-gradient(to bottom, #ff7f50, #cc6640);
+}
+
+.bead-salmon {
+  background: linear-gradient(to bottom, #fa8072, #cc665a);
+}
+
+.bead-khaki {
+  background: linear-gradient(to bottom, #f0e68c, #ccc06a);
+}
+
+.bead-plum {
+  background: linear-gradient(to bottom, #dda0dd, #b380b3);
+}
+
+.bead-indigo {
+  background: linear-gradient(to bottom, #4b0082, #3a0066);
+}
+
+.bead-violet {
+  background: linear-gradient(to bottom, #ee82ee, #bb66bb);
+}
+
+.bead-turquoise {
+  background: linear-gradient(to bottom, #40e0d0, #33b3a3);
+}
+
+.bead-lavender {
+  background: linear-gradient(to bottom, #e6e6fa, #b3b3cc);
+}
+
+.bead-mint {
+  background: linear-gradient(to bottom, #98ff98, #79cc79);
+}
+
+.bead-rose {
+  background: linear-gradient(to bottom, #ff007f, #cc0066);
+}
+
+.bead-peach {
+  background: linear-gradient(to bottom, #ffdab9, #ccae8a);
+}
+
+.bead-amber {
+  background: linear-gradient(to bottom, #ffbf00, #cc9900);
+}
+
+.bead-emerald {
+  background: linear-gradient(to bottom, #50c878, #3da65e);
+}
+
+.bead-ruby {
+  background: linear-gradient(to bottom, #e0115f, #b00d4b);
+}
+
+.bead-sapphire {
+  background: linear-gradient(to bottom, #0f52ba, #0c4191);
+}
+
+.bead-ivory {
+  background: linear-gradient(to bottom, #fffff0, #cccccc);
+}
+
+.bead-charcoal {
+  background: linear-gradient(to bottom, #36454f, #2b363d);
+}
+
+.bead-cream {
+  background: linear-gradient(to bottom, #fffdd0, #cccaa0);
+}
+
+.bead-bronze {
+  background: linear-gradient(to bottom, #cd7f32, #a66626);
+}
+
+.bead-copper {
+  background: linear-gradient(to bottom, #b87333, #8f5726);
+}
+
+.bead-pearl {
+  background: linear-gradient(to bottom, #eae0c8, #b3a38f);
+}
+
+.bead-onyx {
+  background: linear-gradient(to bottom, #353839, #2a2c2d);
+}
+
+.bead-jade {
+  background: linear-gradient(to bottom, #00a86b, #008056);
+}
+
+.bead-amethyst {
+  background: linear-gradient(to bottom, #9966cc, #7a52a3);
+}
+
+.bead-topaz {
+  background: linear-gradient(to bottom, #ffc87c, #cc9f63);
+}
+
+.bead-opal {
+  background: linear-gradient(to bottom, #a8c3bc, #879d96);
+}
+
+.bead-garnet {
+  background: linear-gradient(to bottom, #733635, #5c2b2b);
+}
+
+.bead-obsidian {
+  background: linear-gradient(to bottom, #0d0d0d, #0a0a0a);
+}
+
+.bead-quartz {
+  background: linear-gradient(to bottom, #d9d9f3, #b3b3cc);
+}
+
+.bead-tanzanite {
+  background: linear-gradient(to bottom, #1c1cf0, #1515c0);
+}
+
+.bead-malachite {
+  background: linear-gradient(to bottom, #0bda51, #099a3a);
+}
+
+.bead-lapis {
+  background: linear-gradient(to bottom, #26619c, #1f4d7a);
+}
+
+.bead-citrine {
+  background: linear-gradient(to bottom, #e4d00a, #b3a308);
+}
+
+.bead-peridot {
+  background: linear-gradient(to bottom, #e6e200, #b3b300);
+}
+
+.bead-aquamarine {
+  background: linear-gradient(to bottom, #7fffd4, #66ccaa);
+}
+
+.bead-moonstone {
+  background: linear-gradient(to bottom, #f0e6f6, #c0b3cc);
+}
+
+.bead-sunstone {
+  background: linear-gradient(to bottom, #ffcc99, #cc9966);
+}
+
+.bead-hematite {
+  background: linear-gradient(to bottom, #2e2e2e, #1f1f1f);
+}
+
+.bead-turquoise {
+  background: linear-gradient(to bottom, #40e0d0, #33b3a3);
+}
+
+.bead-lavender {
+  background: linear-gradient(to bottom, #e6e6fa, #b3b3cc);
+}
+
+.bead-mint {
+  background: linear-gradient(to bottom, #98ff98, #79cc79);
+}
+
+.bead-rose {
+  background: linear-gradient(to bottom, #ff007f, #cc0066);
+}
+
+.bead-peach {
+  background: linear-gradient(to bottom, #ffdab9, #ccae8a);
+}
+
+.bead-amber {
+  background: linear-gradient(to bottom, #ffbf00, #cc9900);
+}
+
+.bead-emerald {
+  background: linear-gradient(to bottom, #50c878, #3da65e);
+}
+
+.bead-ruby {
+  background: linear-gradient(to bottom, #e0115f, #b00d4b);
+}
+
+.bead-sapphire {
+  background: linear-gradient(to bottom, #0f52ba, #0c4191);
+}
+
+.bead-ivory {
+  background: linear-gradient(to bottom, #fffff0, #cccccc);
+}
+
+.bead-charcoal {
+  background: linear-gradient(to bottom, #36454f, #2b363d);
+}
+
+.bead-cream {
+  background: linear-gradient(to bottom, #fffdd0, #cccaa0);
+}
+
+.bead-bronze {
+  background: linear-gradient(to bottom, #cd7f32, #a66626);
+}
+
+.bead-copper {
+  background: linear-gradient(to bottom, #b87333, #8f5726);
+}
+
+.bead-pearl {
+  background: linear-gradient(to bottom, #eae0c8, #b3a38f);
+}
+
+.bead-onyx {
+  background: linear-gradient(to bottom, #353839, #2a2c2d);
+}
+
+.bead-jade {
+  background: linear-gradient(to bottom, #00a86b, #008056);
+}
+
+.bead-amethyst {
+  background: linear-gradient(to bottom, #9966cc, #7a52a3);
+}
+
+.bead-topaz {
+  background: linear-gradient(to bottom, #ffc87c, #cc9f63);
+}
+
+.bead-opal {
+  background: linear-gradient(to bottom, #a8c3bc, #879d96);
+}
+
+.bead-garnet {
+  background: linear-gradient(to bottom, #733635, #5c2b2b);
+}
+
+.bead-obsidian {
+  background: linear-gradient(to bottom, #0d0d0d, #0a0a0a);
+}
+
+.bead-quartz {
+  background: linear-gradient(to bottom, #d9d9f3, #b3b3cc);
+}
+
+.bead-tanzanite {
+  background: linear-gradient(to bottom, #1c1cf0, #1515c0);
+}
+
+.bead-malachite {
+  background: linear-gradient(to bottom, #0bda51, #099a3a);
+}
+
+.bead-lapis {
+  background: linear-gradient(to bottom, #26619c, #1f4d7a);
+}
+
+.bead-citrine {
+  background: linear-gradient(to bottom, #e4d00a, #b3a308);
+}
+
+.bead-peridot {
+  background: linear-gradient(to bottom, #e6e200, #b3b300);
+}
+
+.bead-aquamarine {
+  background: linear-gradient(to bottom, #7fffd4, #66ccaa);
+}
+
+.bead-moonstone {
+  background: linear-gradient(to bottom, #f0e6f6, #c0b3cc);
+}
+
+.bead-sunstone {
+  background: linear-gradient(to bottom, #ffcc99, #cc9966);
+}
+
+.bead-hematite {
+  background: linear-gradient(to bottom, #2e2e2e, #1f1f1f);
+}
