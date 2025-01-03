@@ -204,7 +204,6 @@ big-hearted
 biodegradable
 bite-sized
 bitter
-black
 black-and-white
 bland
 blank
@@ -1161,7 +1160,6 @@ sorrowful
 soulful
 soupy
 sour
-Spanish
 sparkling
 sparse
 specific
@@ -1406,7 +1404,6 @@ which
 whimsical
 whirlwind
 whispered
-white
 whole
 whopping
 wicked
