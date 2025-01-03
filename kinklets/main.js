@@ -2,22 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const BEAD_CLASSES = [
     'bead-red', 'bead-blue', 'bead-yellow',
     'bead-green', 'bead-purple', 'bead-orange',
-    'bead-sparkle',
     'bead-neon-green', 'bead-neon-pink', 'bead-neon-orange',
+    'bead-neon-blue', 'bead-neon-purple', 'bead-neon-yellow',
     'bead-cyan', 'bead-magenta', 'bead-lime', 'bead-teal', 'bead-olive',
     'bead-maroon', 'bead-navy', 'bead-aqua', 'bead-fuchsia', 'bead-silver',
     'bead-gold', 'bead-coral', 'bead-salmon', 'bead-khaki', 'bead-plum',
     'bead-indigo', 'bead-violet', 'bead-turquoise', 'bead-lavender', 'bead-mint',
     'bead-rose', 'bead-peach', 'bead-amber', 'bead-emerald', 'bead-ruby',
-    'bead-sapphire', 'bead-ivory', 'bead-charcoal', 'bead-cream', 'bead-bronze',
-    'bead-copper', 'bead-pearl', 'bead-onyx', 'bead-jade', 'bead-amethyst',
-    'bead-topaz', 'bead-opal', 'bead-garnet', 'bead-obsidian', 'bead-quartz',
+    'bead-sapphire', 'bead-ivory', 'bead-cream', 'bead-bronze',
+    'bead-copper', 'bead-pearl', 'bead-jade', 'bead-amethyst',
+    'bead-topaz', 'bead-opal', 'bead-garnet', 'bead-quartz',
     'bead-tanzanite', 'bead-malachite', 'bead-lapis', 'bead-citrine', 'bead-peridot',
     'bead-aquamarine', 'bead-moonstone', 'bead-sunstone', 'bead-hematite'
   ];
 
   const randomStringDiv = document.getElementById('random-string');
   const newStringBtn = document.getElementById('new-string-btn');
+  const copyImageBtn = document.getElementById('copy-image-btn');
 
   Promise.all([
     fetch('adjectives.txt').then(response => response.text()),
@@ -29,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     newStringBtn.addEventListener('click', () => {
       displayRandomString(adjectives, words);
+    });
+
+    copyImageBtn.addEventListener('click', () => {
+      copyContentToClipboard();
     });
   });
 
@@ -98,11 +103,29 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < numBeadTypes; i++) {
       selectedBeads.push(beadClassesCopy.splice(Math.floor(Math.random() * beadClassesCopy.length), 1)[0]);
     }
-    const patternLength = Math.floor(Math.random() * 4) + 1;
+    const patternLength = Math.floor(Math.random() * 2) + 1;
     const beadPattern = [];
     for (let i = 0; i < patternLength; i++) {
       beadPattern.push(selectedBeads[i % selectedBeads.length]);
     }
     return beadPattern;
+  }
+
+  function copyContentToClipboard() {
+    const copyImageBtn = document.getElementById('copy-image-btn');
+    html2canvas(document.getElementById('random-string')).then(canvas => {
+      canvas.toBlob(blob => {
+        const item = new ClipboardItem({ 'image/png': blob });
+        navigator.clipboard.write([item]).then(() => {
+          const originalText = copyImageBtn.textContent;
+          copyImageBtn.textContent = 'copied!';
+          setTimeout(() => {
+            copyImageBtn.textContent = originalText;
+          }, 1500);
+        }).catch(err => {
+          console.error('Failed to copy image: ', err);
+        });
+      });
+    });
   }
 });
