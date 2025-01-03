@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < numBeadTypes; i++) {
       selectedBeads.push(beadClassesCopy.splice(Math.floor(Math.random() * beadClassesCopy.length), 1)[0]);
     }
-    const patternLength = Math.floor(Math.random() * 2) + 1;
+    const patternLength = Math.floor(Math.random() * 3) + 1;
     const beadPattern = [];
     for (let i = 0; i < patternLength; i++) {
       beadPattern.push(selectedBeads[i % selectedBeads.length]);
