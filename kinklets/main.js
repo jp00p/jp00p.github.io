@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('adjectives.txt').then(response => response.text()),
     fetch('list_of_words.txt').then(response => response.text())
   ]).then(([adjectivesText, wordsText]) => {
-    const adjectives = processWords(adjectivesText);
-    const words = processWords(wordsText);
+    let adjectives = processWords(adjectivesText);
+    let words = processWords(wordsText);
     displayRandomString(adjectives, words);
 
     newStringBtn.addEventListener('click', () => {
@@ -86,8 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function generateRandomString(adjectives, words) {
-    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    const randomWord = words[Math.floor(Math.random() * words.length)];
+    let randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    let randomWord = words[Math.floor(Math.random() * words.length)];
+    while (randomAdjective === randomWord) {
+      randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+      randomWord = words[Math.floor(Math.random() * words.length)];
+    }
     return `${randomAdjective} ${randomWord}`;
   }
 
