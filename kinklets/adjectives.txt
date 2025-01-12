@@ -104,7 +104,6 @@ tomorrow
 wake
 wrap
 yesterday
-gistfile1.txt
 abandoned
 able
 absolute
