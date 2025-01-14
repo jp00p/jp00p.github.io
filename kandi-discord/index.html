@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kandi text</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+      body {
+        background: #111;
+        color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Press Start 2P', cursive;
+        margin: 0;
+      }
+      .container {
+        background: rgba(26, 26, 26, 0.9);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+      }
+      .btn-custom {
+        background: #000;
+        color: #fff;
+        border: none;
+      }
+      .btn-custom:hover, .btn-custom:focus {
+        background:#333;
+        color:#fff;
+      }
+      .form-control {
+        background-color: #444;
+        color: #f5f5f5;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+      .form-control:focus {
+        background-color: #555;
+        color: #f5f5f5;
+      }
+      label {
+        color: #fff;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        min-height:10rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-group">
+        <label for="inputText">Enter text:</label>
+        <input type="text" class="form-control" id="inputText"
+          oninput="updateConvertedText()">
+      </div>
+      <div class="form-group">
+        <label for="convertedText">Converted text:</label>
+        <pre class="form-control" id="convertedText"></pre>
+      </div>
+      <button class="btn btn-custom" id="copyButton"
+        onclick="copyToClipboard()">Copy to
+        Clipboard</button>
+    </div>
+    <script>
+      const emojiMap = {
+        a: '<:a:1328820350154313758>',
+        b: '<:b:1328820348635844721>',
+        c: '<:c:1328820347331674233>',
+        d: '<:d:1328820346174046228>',
+        e: '<:e:1328820344924147792>',
+        f: '<:f:1328820343196090390>',
+        g: '<:g:1328820342315024555>',
+        h: '<:h:1328820447579734099>',
+        i: '<:i:1328820399881982054>',
+        j: '<:j:1328820398581743668>',
+        k: '<:k:1328820396962742293>',
+        l: '<:l:1328820395352002653>',
+        m: '<:m:1328820394253090898>',
+        n: '<:n:1328820393259044884>',
+        o: '<:o:1328820391875055656>',
+        p: '<:p:1328820390834995290>',
+        q: '<:q:1328820611090223314>',
+        r: '<:r:1328820555981262850>',
+        s: '<:s:1328820555100586014>',
+        t: '<:t:1328820553922117754>',
+        u: '<:u:1328820552487538779>',
+        v: '<:v:1328820551564787712>',
+        w: '<:w:1328820549417435168>',
+        x: '<:x:1328820547806822493>',
+        y: '<:y:1328820546745667748>',
+        z: '<:z:1328820545315147807>'
+      };
+
+      function convertToEmoji(text) {
+        return text.toLowerCase().replace(/[a-z]/g, letter => emojiMap[letter] || letter);
+      }
+
+      function updateConvertedText() {
+        const inputText = document.getElementById('inputText').value;
+        const convertedText = convertToEmoji(inputText);
+        document.getElementById('convertedText').innerText = convertedText;
+      }
+
+      function copyToClipboard() {
+        const convertedText = document.getElementById('convertedText').innerText;
+        navigator.clipboard.writeText(convertedText).then(() => {
+          const copyButton = document.getElementById('copyButton');
+          const originalText = copyButton.innerText;
+          copyButton.innerText = 'Copied!';
+          setTimeout(() => {
+            copyButton.innerText = originalText;
+          }, 2000);
+        });
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
